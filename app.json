@@ -1,0 +1,34 @@
+{
+  "id": "86735892-de5c-4ac7-afa5-d22064c81f75",
+  "name": "WanaClose",
+  "publisher": "Wanamics",
+  "version": "21.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "21.0.0.0",
+  "idRanges": [
+    {
+      "from": 87200,
+      "to": 87299
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "10.0",
+  "features": [
+    "NoImplicitWith",
+    "TranslationFile", 
+    "GenerateCaptions"
+  ]
+}
