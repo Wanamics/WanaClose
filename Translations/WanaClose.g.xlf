@@ -69,9 +69,14 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1964510777 - ReportDataItem 913177062 - Method 3715240 - NamedType 4288424883" size-unit="char" translate="yes" xml:space="preserve">
-          <source>%1 "%2" updated</source>
+          <source>%1 "%2" processed</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - ReportDataItem No. Series Line - Method OnPostDataItem - NamedType DoneMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 1964510777 - ReportDataItem 913177062 - Method 72583909 - NamedType 2989294795" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ReplaceBy is required</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - ReportDataItem No. Series Line - Method OnPreDataItem - NamedType ReplaceByIsRequiredErr</note>
         </trans-unit>
         <trans-unit id="Report 1964510777 - ReportDataItem 913177062 - Method 72583909 - NamedType 2294662597" size-unit="char" translate="yes" xml:space="preserve">
           <source>Do you want to set next line for %1 "%2"?</source>

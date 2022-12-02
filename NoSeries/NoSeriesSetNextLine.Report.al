@@ -7,50 +7,47 @@ report 87200 "wan Set Next No. Series Line"
     {
         dataitem("No. Series Line"; "No. Series Line")
         {
-            DataItemTableView = where("Starting No." = const(''));
+            DataItemTableView = where("Starting No." = filter('*__*'), "Starting Date" = const());
             trigger OnPreDataItem()
             var
+                ReplaceByIsRequiredErr: Label 'ReplaceBy is required';
                 ConfirmMsg: Label 'Do you want to set next line for %1 "%2"?';
             begin
-                SetRange("Starting Date", StartingDate);
+                if ReplaceBy = '' then
+                    Error(ReplaceByIsRequiredErr);
                 if not confirm(ConfirmMsg, false, Count, TableCaption()) then
                     CurrReport.Quit();
             end;
 
             trigger OnAfterGetRecord()
             var
-                FirstNoSeriesLine: Record "No. Series Line";
-                String: Text;
-                NextNoSerieLine: Record "No. Series Line";
+                StringNo: Text;
+                NoSeriesLine: Record "No. Series Line";
             begin
-                FirstNoSeriesLine.SetRange("Series Code", "Series Code");
-                FirstNoSeriesLine.SetRange("Starting Date", 0D);
-                FirstNoSeriesLine.SetFilter("Starting No.", '*__*');
-                if FirstNoSeriesLine.FindFirst() then begin
-                    NextNoSerieLine := "No. Series Line";
-                    NextNoSerieLine."Starting Date" := NextStartingDate;
-                    NextNoSerieLine."Line No." += 10000;
-                    NextNoSerieLine.Insert(true);
-                    String := FirstNoSeriesLine."Starting No.";
-                    "Starting No." := String.Replace('__', ReplaceBy);
-                    String := FirstNoSeriesLine."Ending No.";
-                    "Ending No." := String.Replace('__', ReplaceBy);
-                    Modify(true);
-                    CountUpdate += 1;
-                end;
-
+                SetNoSeriesLine(NoSeriesLine, "No. Series Line", StartingDate);
+                StringNo := "Starting No.";
+                if NoSeriesLine."Starting No." = '' then
+                    NoSeriesLine.Validate("Starting No.", StringNo.Replace('__', ReplaceBy));
+                StringNo := "Ending No.";
+                if NoSeriesLine."Ending No." = '' then
+                    NoSeriesLine.Validate("Ending No.", StringNo.Replace('__', ReplaceBy));
+                NoSeriesLine.Modify(true);
+                SetNoSeriesLine(NoSeriesLine, "No. Series Line", NextStartingDate);
+                CountProcessed += 1;
             end;
+
 
             trigger OnPostDataItem()
             var
-                DoneMsg: Label '%1 "%2" updated';
+                DoneMsg: Label '%1 "%2" processed';
             begin
-                Message(DoneMsg, CountUpdate, TableCaption);
+                Message(DoneMsg, CountProcessed, TableCaption);
             end;
         }
     }
     requestpage
     {
+        SaveValues = true;
         layout
         {
             area(content)
@@ -94,5 +91,22 @@ report 87200 "wan Set Next No. Series Line"
         StartingDate: Date;
         NextStartingDate: Date;
         ReplaceBy: Code[2];
-        CountUpdate: Integer;
+        CountProcessed: Integer;
+
+    local procedure SetNoSeriesLine(var pToNoSerieLine: Record "No. Series Line"; pFromNoSeriesLine: Record "No. Series Line"; pStartingDate: Date)
+    begin
+        pToNoSerieLine.SetRange("Series Code", pFromNoSeriesLine."Series Code");
+        pToNoSerieLine.SetRange("Starting Date", pStartingDate);
+        if not pToNoSerieLine.FindFirst() then begin
+            pToNoSerieLine.SetRange("Starting Date");
+            if pToNoSerieLine.FindLast() then;
+            pToNoSerieLine.TransferFields(pFromNoSeriesLine, false);
+            pToNoSerieLine."Line No." += 10000;
+            pToNoSerieLine."Starting Date" := pStartingDate;
+            pToNoSerieLine.Validate("Starting Date", pStartingDate);
+            pToNoSerieLine.Validate("Starting No.", '');
+            pToNoSerieLine.Validate("Ending No.", '');
+            pToNoSerieLine.Insert(true);
+        end;
+    end;
 }
