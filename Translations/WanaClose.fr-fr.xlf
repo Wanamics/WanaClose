@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="fr-fr" original="WanaClose.g.xlf">
+  <file datatype="xml" source-language="en-US" target-language="fr-fr" original="WanaClose">
     <body>
       <group id="body">
         <trans-unit id="Report 7068477 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -45,6 +45,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Method SetInitGenJournalLine - NamedType JournalMustBeEmpty</note>
         </trans-unit>
+        <trans-unit id="Report 7068477 - Control 1831623764 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account root 38 on a french chart of account.</source>
+          <target state="needs-translation">Compte de racine 38 au plan comptable français.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Control PermanentInventoryAccountNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 7068477 - Control 1831623764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Permanent Inventory AccountNo Account No.</source>
+          <target state="needs-translation">Compte inventaire permanent</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Control PermanentInventoryAccountNo - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 7068477 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Date</source>
           <target>Date comptabilisation</target>
@@ -82,10 +94,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1964510777 - ReportDataItem 913177062 - Method 3715240 - NamedType 4288424883" size-unit="char" translate="yes" xml:space="preserve">
-          <source>%1 "%2" updated</source>
-          <target>%1 "%2" mises à jour</target>
+          <source>%1 "%2" processed</source>
+          <target state="needs-adaptation">%1 "%2" mises à jour</target>
+          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - ReportDataItem No. Series Line - Method OnPostDataItem - NamedType DoneMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 1964510777 - ReportDataItem 913177062 - Method 72583909 - NamedType 2989294795" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ReplaceBy is required</source>
+          <target state="needs-translation"></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - ReportDataItem No. Series Line - Method OnPreDataItem - NamedType ReplaceByIsRequiredErr</note>
         </trans-unit>
         <trans-unit id="Report 1964510777 - ReportDataItem 913177062 - Method 72583909 - NamedType 2294662597" size-unit="char" translate="yes" xml:space="preserve">
           <source>Do you want to set next line for %1 "%2"?</source>
