@@ -25,7 +25,7 @@ report 87210 "wan Purch. Rcpt. not Inv."
             var
                 AmountRcptNotInvLCY: Decimal;
             begin
-                if ("Posting Group" = '') or (Type <> Type::Item) or not InventorySetup."Expected Cost Posting to G/L" then begin
+                if ("Posting Group" = '') or (Type <> Type::Item) or PermanentInventory/*not InventorySetup."Expected Cost Posting to G/L"*/ then begin
                     if xPurchRcptLine."Document No." = '' then
                         xPurchRcptLine := PurchRcptLine;
                     if (OrderChange() or AllocationChange()) and (SumAmountRcptNotInvLCY <> 0) then begin
@@ -107,6 +107,14 @@ report 87210 "wan Purch. Rcpt. not Inv."
                         ToolTip = 'Account root 44586 on a french chart of account.';
                         TableRelation = "G/L Account" where("Direct Posting" = const(true));
                     }
+                    field(PermanentInventoryAccountNo; PermanentInventoryAccountNo)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Permanent Inventory AccountNo Account No.';
+                        ToolTip = 'Account root 38 on a french chart of account.';
+                        TableRelation = "G/L Account" where("Direct Posting" = const(true));
+                        Visible = PermanentInventory;
+                    }
                 }
             }
         }
@@ -123,7 +131,7 @@ report 87210 "wan Purch. Rcpt. not Inv."
         //DocumentNo: Code[20];
         ReceiptNotInvAccountNo: Code[20];
         ReceiptNotInvVATAccountNo: Code[20];
-        InventorySetup: Record "Inventory Setup";
+        PermanentInventoryAccountNo: Code[20];
         GenJournalLine: Record "Gen. Journal Line";
         xPurchRcptLine: Record "Purch. Rcpt. Line";
         PurchaseLine: Record "Purchase Line";
@@ -133,7 +141,16 @@ report 87210 "wan Purch. Rcpt. not Inv."
         SumAmountRcptNotInvLCY: Decimal;
         SumVAT: Decimal;
         GLAccount: Record "G/L Account";
-        InventoryPostingSetup: Record "Inventory Posting Setup";
+        PermanentInventory: Boolean;
+    //InventoryPostingSetup: Record "Inventory Posting Setup";
+
+    trigger OnInitReport()
+    var
+        InventorySetup: Record "Inventory Setup";
+    begin
+        InventorySetup.Get();
+        PermanentInventory := not InventorySetup."Expected Cost Posting to G/L";
+    end;
 
     trigger OnPreReport()
     var
@@ -145,7 +162,6 @@ report 87210 "wan Purch. Rcpt. not Inv."
             Error(ErrorMsg);
         if not Confirm(ConfirmQst + '\\' + WarningMsg, false, PostingDate) then
             CurrReport.Quit();
-        InventorySetup.Get();
     end;
 
     procedure SetInitGenJournalLine(pGenJournalLine: Record "Gen. Journal Line")
@@ -167,7 +183,7 @@ report 87210 "wan Purch. Rcpt. not Inv."
         TempGenJournalLine.Validate("Recurring Method", GenJournalLine."Recurring Method"::"RV Reversing Variable");
         Evaluate(TempGenJournalLine."Recurring Frequency", '<1D>');
         TempGenJournalLine.Validate("Recurring Frequency");
-        TempGenJournalLine.Validate("Expiration Date", PostingDate + 1);
+        //TempGenJournalLine.Validate("Expiration Date", PostingDate + 1);
     end;
 
     local procedure Initialize()
@@ -189,20 +205,23 @@ report 87210 "wan Purch. Rcpt. not Inv."
     end;
 
     local procedure AllocationChange(): Boolean
-    var
-        xInventoryPostingSetup: Record "Inventory Posting Setup";
+    //var
+    //    xInventoryPostingSetup: Record "Inventory Posting Setup";
     begin
-        if PurchRcptLine.Type = PurchRcptLine.Type::Item then begin
+        if PurchRcptLine.Type <> PurchRcptLine.Type::Item then
+            exit(
+                (PurchRcptLine."Dimension Set ID" <> xPurchRcptLine."Dimension Set ID") or
+                (PurchRcptLine."Gen. Bus. Posting Group" <> xPurchRcptLine."Gen. Bus. Posting Group") or
+                (PurchRcptLine."Gen. Prod. Posting Group" <> xPurchRcptLine."Gen. Prod. Posting Group"))
+        /*
+        else begin
             xInventoryPostingSetup := InventoryPostingSetup;
             if ((PurchRcptLine."Posting Group" <> InventoryPostingSetup."Invt. Posting Group Code") or
                  (PurchRcptLine."Location Code" <> InventoryPostingSetup."Location Code")) then
                 InventoryPostingSetup.Get(PurchRcptLine."Location Code", PurchRcptLine."Posting Group");
             exit(InventoryPostingSetup."Inventory Account" <> xInventoryPostingSetup."Inventory Account");
-        end else
-            exit(
-                (PurchRcptLine."Dimension Set ID" <> xPurchRcptLine."Dimension Set ID") or
-                (PurchRcptLine."Gen. Bus. Posting Group" <> xPurchRcptLine."Gen. Bus. Posting Group") or
-                (PurchRcptLine."Gen. Prod. Posting Group" <> xPurchRcptLine."Gen. Prod. Posting Group"));
+        end;
+        */
     end;
 
     local procedure InsertGenJournalLine()
@@ -225,7 +244,7 @@ report 87210 "wan Purch. Rcpt. not Inv."
         GenJnlAllocation."Journal Line No." := GenJournalLine."Line No.";
         GenJnlAllocation."Line No." += 10000;
         if xPurchRcptLine.Type = xPurchRcptLine.Type::Item then
-            GenJnlAllocation.Validate("Account No.", InventoryPostingSetup."Inventory Account")
+            GenJnlAllocation.Validate("Account No.", PermanentInventoryAccountNo) //InventoryPostingSetup."Inventory Account")
         else begin
             if (xPurchRcptLine."Gen. Bus. Posting Group" <> GeneralPostingSetup."Gen. Bus. Posting Group") or
                (xPurchRcptLine."Gen. Prod. Posting Group" <> GeneralPostingSetup."Gen. Prod. Posting Group") then begin

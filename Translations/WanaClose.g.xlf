@@ -38,6 +38,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Method SetInitGenJournalLine - NamedType JournalMustBeEmpty</note>
         </trans-unit>
+        <trans-unit id="Report 7068477 - Control 1831623764 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account root 38 on a french chart of account.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Control PermanentInventoryAccountNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 7068477 - Control 1831623764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Permanent Inventory AccountNo Account No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Control PermanentInventoryAccountNo - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 7068477 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
