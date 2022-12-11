@@ -43,11 +43,6 @@ report 87211 "wan Suggest Sales Provisions"
                         xSSL.Type, xSSL."Gen. Bus. Posting Group", xSSL."Gen. Prod. Posting Group",
                         xSSL."Shortcut Dimension 1 Code", xSSL."Shortcut Dimension 2 Code", xSSL."Dimension Set ID");
                 end;
-                if "Order No." <> SalesHeader."No." then begin
-                    SalesHeader.Get(SalesHeader."Document Type"::Order, "Order No.");
-                    if SalesHeader."Currency Factor" = 0 then
-                        SalesHeader."Currency Factor" := 1;
-                end;
                 if ("Order No." <> SalesLine."Document No.") or ("Order Line No." <> SalesLine."Line No.") then
                     SalesLine.Get(SalesLine."Document Type"::Order, "Order No.", "Order Line No.");
                 ProvisionAmount := -Round("Qty. Shipped Not Invoiced" * SalesLine."Unit Price" * SalesHeader."Currency Factor");
@@ -112,11 +107,6 @@ report 87211 "wan Suggest Sales Provisions"
                         xRRL.Type, xRRL."Gen. Bus. Posting Group", xRRL."Gen. Prod. Posting Group",
                         xRRL."Shortcut Dimension 1 Code", xRRL."Shortcut Dimension 2 Code", xSSL."Dimension Set ID");
                 end;
-                if "Return Order No." <> SalesHeader."No." then begin
-                    SalesHeader.Get(SalesHeader."Document Type"::"Return Order", "Return Order No.");
-                    if SalesHeader."Currency Factor" = 0 then
-                        SalesHeader."Currency Factor" := 1;
-                end;
                 if ("Return Order No." <> SalesLine."Document No.") or ("Return Order Line No." <> SalesLine."Line No.") then
                     SalesLine.Get(SalesLine."Document Type"::"Return Order", "Return Order No.", "Return Order Line No.");
                 ProvisionAmount := Round("Return Qty. Rcd. Not Invd." * SalesLine."Unit Cost (LCY)" * SalesHeader."Currency Factor");
@@ -134,7 +124,7 @@ report 87211 "wan Suggest Sales Provisions"
             begin
                 if SumProvisionAmount <> 0 then begin
                     UpdateGenJournalLineAmount();
-                    InsertGenJournalLine(xSSL."Sell-to Customer No.", xSSL."Order No.");
+                    InsertGenJournalLine(xRRL."Sell-to Customer No.", xRRL."Return Order No.");
                     TempGenJournalLine."Document Date" := 0D;
                 end;
                 InsertGenJnlAllocation(
@@ -265,6 +255,11 @@ end;
     local procedure OrderChange() ReturnValue: Boolean
     begin
         ReturnValue := SalesShipmentLine."Order No." <> xSSL."Order No.";
+        if ReturnValue then begin
+            SalesHeader.Get(SalesHeader."Document Type"::Order, xSSL."Order No.");
+            if SalesHeader."Currency Factor" = 0 then
+                SalesHeader."Currency Factor" := 1;
+        end;
     end;
 
     local procedure PurchRcptLineAllocationChange(): Boolean
@@ -279,6 +274,11 @@ end;
     local procedure ReturnOrderChange() ReturnValue: Boolean
     begin
         ReturnValue := ReturnReceiptLine."Return Order No." <> xRRL."Return Order No.";
+        if ReturnValue then begin
+            SalesHeader.Get(SalesHeader."Document Type"::"Return Order", xRRL."Return Order No.");
+            if SalesHeader."Currency Factor" = 0 then
+                SalesHeader."Currency Factor" := 1;
+        end;
     end;
 
     local procedure ReturnShipmentLineAllocationChange(): Boolean

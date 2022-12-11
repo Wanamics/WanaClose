@@ -124,7 +124,7 @@ report 87210 "wan Suggest Purch. Provisions"
             begin
                 if SumProvisionAmount <> 0 then begin
                     UpdateGenJournalLineAmount();
-                    InsertGenJournalLine(xPRL."Buy-from Vendor No.", xPRL."Order No.");
+                    InsertGenJournalLine(xRSL."Buy-from Vendor No.", xRSL."Return Order No.");
                     TempGenJournalLine."Document Date" := 0D;
                 end;
                 InsertGenJnlAllocation(
