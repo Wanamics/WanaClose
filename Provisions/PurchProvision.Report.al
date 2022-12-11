@@ -37,7 +37,7 @@ report 87210 "wan Suggest Purch. Provisions"
                         if xPRL."Order No." <> GenJournalLine."External Document No." then begin
                             UpdateGenJournalLineAmount();
                             InsertGenJournalLine(xPRL."Buy-from Vendor No.", xPRL."Order No.");
-                            TempGenJournalLine."Document Date" := 0D;
+                            TempGenJournalLine."Document Date" := "Posting Date";
                         end;
                         InsertGenJnlAllocation(
                             xPRL.Type, xPRL."Gen. Bus. Posting Group", xPRL."Gen. Prod. Posting Group",
@@ -101,7 +101,7 @@ report 87210 "wan Suggest Purch. Provisions"
                         if xRSL."Return Order No." <> GenJournalLine."External Document No." then begin
                             UpdateGenJournalLineAmount();
                             InsertGenJournalLine(xRSL."Buy-from Vendor No.", xRSL."Return Order No.");
-                            TempGenJournalLine."Document Date" := 0D;
+                            TempGenJournalLine."Document Date" := "Posting Date";
                         end;
                         InsertGenJnlAllocation(
                             xRSL.Type, xRSL."Gen. Bus. Posting Group", xRSL."Gen. Prod. Posting Group",

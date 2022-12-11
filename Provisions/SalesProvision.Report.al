@@ -37,7 +37,7 @@ report 87211 "wan Suggest Sales Provisions"
                     if xSSL."Order No." <> GenJournalLine."External Document No." then begin
                         UpdateGenJournalLineAmount();
                         InsertGenJournalLine(xSSL."Sell-to Customer No.", xSSL."Order No.");
-                        TempGenJournalLine."Document Date" := 0D;
+                        TempGenJournalLine."Document Date" := "Posting Date";
                     end;
                     InsertGenJnlAllocation(
                         xSSL.Type, xSSL."Gen. Bus. Posting Group", xSSL."Gen. Prod. Posting Group",
@@ -101,7 +101,7 @@ report 87211 "wan Suggest Sales Provisions"
                     if xRRL."Return Order No." <> GenJournalLine."External Document No." then begin
                         UpdateGenJournalLineAmount();
                         InsertGenJournalLine(xRRL."Sell-to Customer No.", xRRL."Return Order No.");
-                        TempGenJournalLine."Document Date" := 0D;
+                        TempGenJournalLine."Document Date" := "Posting Date";
                     end;
                     InsertGenJnlAllocation(
                         xRRL.Type, xRRL."Gen. Bus. Posting Group", xRRL."Gen. Prod. Posting Group",
