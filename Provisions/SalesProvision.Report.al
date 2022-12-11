@@ -30,29 +30,34 @@ report 87211 "wan Suggest Sales Provisions"
             var
                 ProvisionAmount: Decimal;
             begin
-                if ("Posting Group" = '') or (Type <> Type::Item) /*or not ExpectedCostPostingToGL*/ then begin
-                    if xSSL."Document No." = '' then
-                        xSSL := SalesShipmentLine;
-                    if (OrderChange() or PurchRcptLineAllocationChange()) and (SumProvisionAmount <> 0) then begin
-                        if xSSL."Order No." <> GenJournalLine."External Document No." then begin
-                            UpdateGenJournalLineAmount();
-                            InsertGenJournalLine(xSSL."Sell-to Customer No.", xSSL."Order No.");
-                            TempGenJournalLine."Document Date" := 0D;
-                        end;
-                        InsertGenJnlAllocation(
-                            xSSL.Type, xSSL."Gen. Bus. Posting Group", xSSL."Gen. Prod. Posting Group",
-                            xSSL."Shortcut Dimension 1 Code", xSSL."Shortcut Dimension 2 Code", xSSL."Dimension Set ID");
-                    end;
-                    if ("Order No." <> SalesLine."Document No.") or ("Order Line No." <> SalesLine."Line No.") then
-                        SalesLine.Get(SalesLine."Document Type"::Order, "Order No.", "Order Line No.");
-                    ProvisionAmount := Round("Qty. Shipped Not Invoiced" * SalesLine."Unit Price");
-                    SumProvisionAmount += ProvisionAmount;
-                    SumVATAmount += Round(ProvisionAmount * SalesShipmentLine."VAT %" / 100);
-                    if "Posting Date" < TempGenJournalLine."Document Date" then
-                        TempGenJournalLine."Document Date" := "Posting Date";
+                //if ("Posting Group" = '') or (Type <> Type::Item) /*or not ExpectedCostPostingToGL*/ then begin
+                if xSSL."Document No." = '' then
                     xSSL := SalesShipmentLine;
+                if (OrderChange() or PurchRcptLineAllocationChange()) and (SumProvisionAmount <> 0) then begin
+                    if xSSL."Order No." <> GenJournalLine."External Document No." then begin
+                        UpdateGenJournalLineAmount();
+                        InsertGenJournalLine(xSSL."Sell-to Customer No.", xSSL."Order No.");
+                        TempGenJournalLine."Document Date" := 0D;
+                    end;
+                    InsertGenJnlAllocation(
+                        xSSL.Type, xSSL."Gen. Bus. Posting Group", xSSL."Gen. Prod. Posting Group",
+                        xSSL."Shortcut Dimension 1 Code", xSSL."Shortcut Dimension 2 Code", xSSL."Dimension Set ID");
                 end;
+                if "Order No." <> SalesHeader."No." then begin
+                    SalesHeader.Get(SalesHeader."Document Type"::Order, "Order No.");
+                    if SalesHeader."Currency Factor" = 0 then
+                        SalesHeader."Currency Factor" := 1;
+                end;
+                if ("Order No." <> SalesLine."Document No.") or ("Order Line No." <> SalesLine."Line No.") then
+                    SalesLine.Get(SalesLine."Document Type"::Order, "Order No.", "Order Line No.");
+                ProvisionAmount := -Round("Qty. Shipped Not Invoiced" * SalesLine."Unit Price" * SalesHeader."Currency Factor");
+                SumProvisionAmount += ProvisionAmount;
+                SumVATAmount += Round(ProvisionAmount * SalesShipmentLine."VAT %" / 100);
+                if "Posting Date" < TempGenJournalLine."Document Date" then
+                    TempGenJournalLine."Document Date" := "Posting Date";
+                xSSL := SalesShipmentLine;
             end;
+            //end;
 
             trigger OnPostDataItem()
             begin
@@ -94,29 +99,34 @@ report 87211 "wan Suggest Sales Provisions"
             var
                 ProvisionAmount: Decimal;
             begin
-                if ("Posting Group" = '') or (Type <> Type::Item) /*or not ExpectedCostPostingToGL */then begin
-                    if xRRL."Document No." = '' then
-                        xRRL := ReturnReceiptLine;
-                    if (ReturnOrderChange() or ReturnShipmentLineAllocationChange()) and (SumProvisionAmount <> 0) then begin
-                        if xRRL."Return Order No." <> GenJournalLine."External Document No." then begin
-                            UpdateGenJournalLineAmount();
-                            InsertGenJournalLine(xRRL."Sell-to Customer No.", xRRL."Return Order No.");
-                            TempGenJournalLine."Document Date" := 0D;
-                        end;
-                        InsertGenJnlAllocation(
-                            xRRL.Type, xRRL."Gen. Bus. Posting Group", xRRL."Gen. Prod. Posting Group",
-                            xRRL."Shortcut Dimension 1 Code", xRRL."Shortcut Dimension 2 Code", xSSL."Dimension Set ID");
-                    end;
-                    if ("Return Order No." <> SalesLine."Document No.") or ("Return Order Line No." <> SalesLine."Line No.") then
-                        SalesLine.Get(SalesLine."Document Type"::"Return Order", "Return Order No.", "Return Order Line No.");
-                    ProvisionAmount := Round("Return Qty. Rcd. Not Invd." * SalesLine."Unit Cost (LCY)");
-                    SumProvisionAmount += ProvisionAmount;
-                    SumVATAmount += Round(ProvisionAmount * ReturnReceiptLine."VAT %" / 100);
-                    if "Posting Date" < TempGenJournalLine."Document Date" then
-                        TempGenJournalLine."Document Date" := "Posting Date";
+                //if ("Posting Group" = '') or (Type <> Type::Item) /*or not ExpectedCostPostingToGL */then begin
+                if xRRL."Document No." = '' then
                     xRRL := ReturnReceiptLine;
+                if (ReturnOrderChange() or ReturnShipmentLineAllocationChange()) and (SumProvisionAmount <> 0) then begin
+                    if xRRL."Return Order No." <> GenJournalLine."External Document No." then begin
+                        UpdateGenJournalLineAmount();
+                        InsertGenJournalLine(xRRL."Sell-to Customer No.", xRRL."Return Order No.");
+                        TempGenJournalLine."Document Date" := 0D;
+                    end;
+                    InsertGenJnlAllocation(
+                        xRRL.Type, xRRL."Gen. Bus. Posting Group", xRRL."Gen. Prod. Posting Group",
+                        xRRL."Shortcut Dimension 1 Code", xRRL."Shortcut Dimension 2 Code", xSSL."Dimension Set ID");
                 end;
+                if "Return Order No." <> SalesHeader."No." then begin
+                    SalesHeader.Get(SalesHeader."Document Type"::"Return Order", "Return Order No.");
+                    if SalesHeader."Currency Factor" = 0 then
+                        SalesHeader."Currency Factor" := 1;
+                end;
+                if ("Return Order No." <> SalesLine."Document No.") or ("Return Order Line No." <> SalesLine."Line No.") then
+                    SalesLine.Get(SalesLine."Document Type"::"Return Order", "Return Order No.", "Return Order Line No.");
+                ProvisionAmount := Round("Return Qty. Rcd. Not Invd." * SalesLine."Unit Cost (LCY)" * SalesHeader."Currency Factor");
+                SumProvisionAmount += ProvisionAmount;
+                SumVATAmount += Round(ProvisionAmount * ReturnReceiptLine."VAT %" / 100);
+                if "Posting Date" < TempGenJournalLine."Document Date" then
+                    TempGenJournalLine."Document Date" := "Posting Date";
+                xRRL := ReturnReceiptLine;
             end;
+            //end;
 
             trigger OnPostDataItem()
             var
@@ -186,6 +196,7 @@ report 87211 "wan Suggest Sales Provisions"
         GenJournalLine: Record "Gen. Journal Line";
         xSSL: Record "Sales Shipment Line";
         xRRL: Record "Return Receipt Line";
+        SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
         GenJnlAllocation: Record "Gen. Jnl. Allocation";
         Customer: Record Customer;

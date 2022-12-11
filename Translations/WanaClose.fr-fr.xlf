@@ -213,20 +213,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control PostingDate - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 3099164818 - Control 3685571563 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account root 38 on a french chart of account.</source>
-          <target state="needs-adaptation">Compte de racine 38 au plan comptable français.</target>
-          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionAccountNo - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 3099164818 - Control 3685571563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Provision Account No. (permanent inventory)</source>
-          <target state="needs-adaptation">Compte ventes à établir</target>
-          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionAccountNo - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Report 3099164818 - Control 592568410 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account root 418 on a french chart of account.</source>
           <target state="needs-translation">Compte de racine 418 au plan comptable français.</target>
@@ -242,7 +228,6 @@
         <trans-unit id="Report 3099164818 - Control 1162293398 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account root 44587 on a french chart of account.</source>
           <target state="needs-adaptation">Compte de racine 44587 au plan comptable français.</target>
-          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionVATAccountNo - Property ToolTip</note>
         </trans-unit>
@@ -266,7 +251,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 1087746450 - Action 1849577930 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3301928242">
           <source>Suggest Sales Provisions</source>
-          <target state="needs-translation">Proposer provisions ventes</target>
+          <target state="needs-translation">Proposer ventes à établir</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Recurring General Journal - Action wanSuggestSalesProvisions - Property Caption</note>
         </trans-unit>
