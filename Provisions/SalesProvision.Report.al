@@ -30,7 +30,7 @@ report 87211 "wan Suggest Sales Provisions"
             var
                 ProvisionAmount: Decimal;
             begin
-                if ("Posting Group" = '') or (Type <> Type::Item) or not ExpectedCostPostingToGL then begin
+                if ("Posting Group" = '') or (Type <> Type::Item) /*or not ExpectedCostPostingToGL*/ then begin
                     if xSSL."Document No." = '' then
                         xSSL := SalesShipmentLine;
                     if (OrderChange() or PurchRcptLineAllocationChange()) and (SumProvisionAmount <> 0) then begin
@@ -94,7 +94,7 @@ report 87211 "wan Suggest Sales Provisions"
             var
                 ProvisionAmount: Decimal;
             begin
-                if ("Posting Group" = '') or (Type <> Type::Item) or not ExpectedCostPostingToGL then begin
+                if ("Posting Group" = '') or (Type <> Type::Item) /*or not ExpectedCostPostingToGL */then begin
                     if xRRL."Document No." = '' then
                         xRRL := ReturnReceiptLine;
                     if (ReturnOrderChange() or ReturnShipmentLineAllocationChange()) and (SumProvisionAmount <> 0) then begin
@@ -163,6 +163,7 @@ report 87211 "wan Suggest Sales Provisions"
                         ToolTip = 'Account root 44587 on a french chart of account.';
                         TableRelation = "G/L Account" where("Direct Posting" = const(true));
                     }
+                    /*
                     field(ProvisionAccountNo; ProvisionAccountNo)
                     {
                         ApplicationArea = All;
@@ -171,6 +172,7 @@ report 87211 "wan Suggest Sales Provisions"
                         TableRelation = "G/L Account" where("Direct Posting" = const(true));
                         Visible = not ExpectedCostPostingToGL;
                     }
+                    */
                 }
             }
         }
@@ -180,27 +182,29 @@ report 87211 "wan Suggest Sales Provisions"
         PostingDate: Date;
         ProvisionBalAccountNo: Code[20];
         ProvisionVATAccountNo: Code[20];
-        ProvisionAccountNo: Code[20];
+        //ProvisionAccountNo: Code[20];
         GenJournalLine: Record "Gen. Journal Line";
         xSSL: Record "Sales Shipment Line";
         xRRL: Record "Return Receipt Line";
         SalesLine: Record "Sales Line";
         GenJnlAllocation: Record "Gen. Jnl. Allocation";
-        Vendor: Record Vendor;
+        Customer: Record Customer;
         GeneralPostingSetup: Record "General Posting Setup";
         SumProvisionAmount: Decimal;
         SumVATAmount: Decimal;
         GLAccount: Record "G/L Account";
-        ExpectedCostPostingToGL: Boolean;
+    /*
+    ExpectedCostPostingToGL: Boolean;
 
 
-    trigger OnInitReport()
-    var
-        InventorySetup: Record "Inventory Setup";
-    begin
-        InventorySetup.Get();
-        ExpectedCostPostingToGL := InventorySetup."Expected Cost Posting to G/L";
-    end;
+trigger OnInitReport()
+var
+    InventorySetup: Record "Inventory Setup";
+begin
+    InventorySetup.Get();
+    ExpectedCostPostingToGL := InventorySetup."Expected Cost Posting to G/L";
+end;
+*/
 
     trigger OnPreReport()
     var
@@ -208,8 +212,8 @@ report 87211 "wan Suggest Sales Provisions"
         ConfirmQst: Label 'Do you want to suggest Sales provisions on %1?';
         WarningMsg: Label 'Warning : This process should not be posted twice at the same posting date for the same selection!';
     begin
-        if (PostingDate = 0D) or (ProvisionBalAccountNo = '') or (ProvisionVATAccountNo = '') or
-            (ProvisionAccountNo = '') and not ExpectedCostPostingToGL then
+        if (PostingDate = 0D) or (ProvisionBalAccountNo = '') or (ProvisionVATAccountNo = '') /*or
+            (ProvisionAccountNo = '') and not ExpectedCostPostingToGL */then
             Error(ErrorMsg);
         if not Confirm(ConfirmQst + '\\' + WarningMsg, false, PostingDate) then
             CurrReport.Quit();
@@ -253,23 +257,12 @@ report 87211 "wan Suggest Sales Provisions"
     end;
 
     local procedure PurchRcptLineAllocationChange(): Boolean
-    //var
-    //    xInventoryPostingSetup: Record "Inventory Posting Setup";
     begin
         if SalesShipmentLine.Type <> SalesShipmentLine.Type::Item then
             exit(
                 (SalesShipmentLine."Dimension Set ID" <> xSSL."Dimension Set ID") or
                 (SalesShipmentLine."Gen. Bus. Posting Group" <> xSSL."Gen. Bus. Posting Group") or
                 (SalesShipmentLine."Gen. Prod. Posting Group" <> xSSL."Gen. Prod. Posting Group"))
-        /*
-        else begin
-            xInventoryPostingSetup := InventoryPostingSetup;
-            if ((PurchRcptLine."Posting Group" <> InventoryPostingSetup."Invt. Posting Group Code") or
-                 (PurchRcptLine."Location Code" <> InventoryPostingSetup."Location Code")) then
-                InventoryPostingSetup.Get(PurchRcptLine."Location Code", PurchRcptLine."Posting Group");
-            exit(InventoryPostingSetup."Inventory Account" <> xInventoryPostingSetup."Inventory Account");
-        end;
-        */
     end;
 
     local procedure ReturnOrderChange() ReturnValue: Boolean
@@ -286,15 +279,15 @@ report 87211 "wan Suggest Sales Provisions"
                 (ReturnReceiptLine."Gen. Prod. Posting Group" <> xRRL."Gen. Prod. Posting Group"))
     end;
 
-    local procedure InsertGenJournalLine(pVendorNo: Code[20]; pOrderNo: Code[20])
+    local procedure InsertGenJournalLine(pCustomerNo: Code[20]; pOrderNo: Code[20])
     begin
         TempGenJournalLine."Line No." += 10000;
         GenJournalLine.TransferFields(TempGenJournalLine, true);
         GenJournalLine."External Document No." := pOrderNo;
-        if pVendorNo <> Vendor."No." then
-            Vendor.Get(pVendorNo);
-        GenJournalLine.Description := CopyStr(Strsubstno(GenJournalLine.Description, pOrderNo, Vendor.Name), 1, maxstrlen(GenJournalLine.Description));
-        GenJournalLine."IC Partner Code" := Vendor."IC Partner Code";
+        if pCustomerNo <> Customer."No." then
+            Customer.Get(pCustomerNo);
+        GenJournalLine.Description := CopyStr(Strsubstno(GenJournalLine.Description, pOrderNo, Customer.Name), 1, maxstrlen(GenJournalLine.Description));
+        GenJournalLine."IC Partner Code" := Customer."IC Partner Code";
         GenJournalLine.Insert(true);
     end;
 
@@ -305,24 +298,30 @@ report 87211 "wan Suggest Sales Provisions"
         GenJnlAllocation.Init();
         GenJnlAllocation."Journal Line No." := GenJournalLine."Line No.";
         GenJnlAllocation."Line No." += 10000;
+        /*
         if pType = pType::Item then
             GenJnlAllocation.Validate("Account No.", ProvisionAccountNo)
         else begin
-            if (pGenProdPostingGroup <> GeneralPostingSetup."Gen. Bus. Posting Group") or
+            */
+        if (pGenProdPostingGroup <> GeneralPostingSetup."Gen. Bus. Posting Group") or
                (pGenBusPostingGroup <> GeneralPostingSetup."Gen. Prod. Posting Group") then begin
-                GeneralPostingSetup.Get(pGenProdPostingGroup, pGenBusPostingGroup);
-                if GeneralPostingSetup."Purch. Account" <> GLAccount."No." then begin
-                    GLAccount.Get(GeneralPostingSetup."Purch. Account");
-                    GLAccount.TestField("Direct Posting", true);
-                end;
+            GeneralPostingSetup.Get(pGenProdPostingGroup, pGenBusPostingGroup);
+            if GeneralPostingSetup."Purch. Account" <> GLAccount."No." then begin
+                GLAccount.Get(GeneralPostingSetup."Purch. Account");
+                GLAccount.TestField("Direct Posting", true);
             end;
-            GenJnlAllocation.Validate("Account No.", GeneralPostingSetup."Purch. Account");
+        end;
+        GenJnlAllocation.Validate("Account No.", GeneralPostingSetup."Purch. Account");
+        /*
         end;
         if pType <> pType::Item then begin
-            GenJnlAllocation."Shortcut Dimension 1 Code" := pShortcutDimension1Code;
-            GenJnlAllocation."Shortcut Dimension 2 Code" := pShortcutDimension2Code;
-            GenJnlAllocation."Dimension Set ID" := pDimensionSetID;
+        */
+        GenJnlAllocation."Shortcut Dimension 1 Code" := pShortcutDimension1Code;
+        GenJnlAllocation."Shortcut Dimension 2 Code" := pShortcutDimension2Code;
+        GenJnlAllocation."Dimension Set ID" := pDimensionSetID;
+        /*
         end;
+        */
         GenJnlAllocation.Insert(true);
         GenJnlAllocation.Validate(Amount, SumProvisionAmount);
         GenJnlAllocation.Modify(true);

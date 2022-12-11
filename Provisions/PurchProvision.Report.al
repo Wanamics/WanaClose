@@ -253,23 +253,12 @@ report 87210 "wan Suggest Purch. Provisions"
     end;
 
     local procedure PurchRcptLineAllocationChange(): Boolean
-    //var
-    //    xInventoryPostingSetup: Record "Inventory Posting Setup";
     begin
         if PurchRcptLine.Type <> PurchRcptLine.Type::Item then
             exit(
                 (PurchRcptLine."Dimension Set ID" <> xPRL."Dimension Set ID") or
                 (PurchRcptLine."Gen. Bus. Posting Group" <> xPRL."Gen. Bus. Posting Group") or
                 (PurchRcptLine."Gen. Prod. Posting Group" <> xPRL."Gen. Prod. Posting Group"))
-        /*
-        else begin
-            xInventoryPostingSetup := InventoryPostingSetup;
-            if ((PurchRcptLine."Posting Group" <> InventoryPostingSetup."Invt. Posting Group Code") or
-                 (PurchRcptLine."Location Code" <> InventoryPostingSetup."Location Code")) then
-                InventoryPostingSetup.Get(PurchRcptLine."Location Code", PurchRcptLine."Posting Group");
-            exit(InventoryPostingSetup."Inventory Account" <> xInventoryPostingSetup."Inventory Account");
-        end;
-        */
     end;
 
     local procedure ReturnOrderChange() ReturnValue: Boolean
