@@ -167,7 +167,7 @@
         </trans-unit>
         <trans-unit id="Report 3099164818 - Method 1544076788 - NamedType 750120336" size-unit="char" translate="yes" xml:space="preserve">
           <source>Do you want to suggest Sales provisions on %1?</source>
-          <target state="needs-translation">Voulez-vous proposer les provisions ventes au % ?</target>
+          <target state="needs-translation">Voulez-vous proposer les ventes à établir au %1 ?</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Method OnPreReport - NamedType ConfirmQst</note>
         </trans-unit>
@@ -215,14 +215,14 @@
         </trans-unit>
         <trans-unit id="Report 3099164818 - Control 3685571563 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account root 38 on a french chart of account.</source>
-          <target state="needs-adaptation">Compte de racine 418 au plan comptable français.</target>
+          <target state="needs-adaptation">Compte de racine 38 au plan comptable français.</target>
           <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionAccountNo - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 3099164818 - Control 3685571563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Provision Account No. (permanent inventory)</source>
-          <target state="needs-adaptation">Compte factures à établir</target>
+          <target state="needs-adaptation">Compte ventes à établir</target>
           <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionAccountNo - Property Caption</note>
