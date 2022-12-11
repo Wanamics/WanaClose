@@ -1,6 +1,5 @@
 report 87200 "wan Set Next No. Series Line"
 {
-    ApplicationArea = All;
     Caption = 'Set Next No. Series Line';
     ProcessingOnly = true;
     dataset
