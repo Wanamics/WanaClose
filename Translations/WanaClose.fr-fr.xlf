@@ -3,90 +3,6 @@
   <file datatype="xml" source-language="en-US" target-language="fr-fr" original="WanaClose">
     <body>
       <group id="body">
-        <trans-unit id="Report 7068477 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Suggest Purch. Rcpt. not Invoiced</source>
-          <target>Proposer factures non parvenues</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 7068477 - Method 59423316 - NamedType 542143158" size-unit="char" translate="yes" xml:space="preserve">
-          <source>RnI</source>
-          <target>FNP</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Method Initialize - NamedType tDocumentNo</note>
-        </trans-unit>
-        <trans-unit id="Report 7068477 - Method 737175832 - NamedType 1903387099" size-unit="char" translate="yes" xml:space="preserve">
-          <source>RnI %1 %2</source>
-          <target>FNP %1 %2</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Method InsertGenJournalLine - NamedType RcdNotInv</note>
-        </trans-unit>
-        <trans-unit id="Report 7068477 - Method 1544076788 - NamedType 331638123" size-unit="char" translate="yes" xml:space="preserve">
-          <source>All parameter are required</source>
-          <target>Tous les paramètres sont obligatoires</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Method OnPreReport - NamedType ErrorMsg</note>
-        </trans-unit>
-        <trans-unit id="Report 7068477 - Method 1544076788 - NamedType 750120336" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Do you want to suggest not Amt. Rcd. Not Invoiced on %1?</source>
-          <target>Voulez vous proposer les factures non parvenues au %1 ?</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Method OnPreReport - NamedType ConfirmQst</note>
-        </trans-unit>
-        <trans-unit id="Report 7068477 - Method 1544076788 - NamedType 1240717133" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Warning : This process should not be posted twice at the same posting date for the same selection!</source>
-          <target>Attention : ce traitement ne doit pas être lancé à la même date comptabilisation pour la même sélection !</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Method OnPreReport - NamedType WarningMsg</note>
-        </trans-unit>
-        <trans-unit id="Report 7068477 - Method 3694607773 - NamedType 3785045816" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Journal must be empty</source>
-          <target>La feuille de saisie doit être vide</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Method SetInitGenJournalLine - NamedType JournalMustBeEmpty</note>
-        </trans-unit>
-        <trans-unit id="Report 7068477 - Control 1831623764 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account root 38 on a french chart of account.</source>
-          <target state="needs-translation">Compte de racine 38 au plan comptable français.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Control PermanentInventoryAccountNo - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 7068477 - Control 1831623764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Permanent Inventory AccountNo Account No.</source>
-          <target state="needs-translation">Compte inventaire permanent</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Control PermanentInventoryAccountNo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 7068477 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posting Date</source>
-          <target>Date comptabilisation</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Control PostingDate - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 7068477 - Control 3646105996 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account root 408 on a french chart of account.</source>
-          <target>Compte de racine 408 au plan comptable français.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Control ReceiptNotInvAccountNo - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 7068477 - Control 3646105996 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Receipt not Inv. Account No.</source>
-          <target>Compte factures non parvenues</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Control ReceiptNotInvAccountNo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 7068477 - Control 530217373 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account root 44586 on a french chart of account.</source>
-          <target>Compte de racine 44586 au plan comptable français</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Control ReceiptNotInvVATAccountNo - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 7068477 - Control 530217373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Receipt not Inv. VAT Account No.</source>
-          <target>Compte TVA factures non parvenues</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Purch. Rcpt. not Inv. - Control ReceiptNotInvVATAccountNo - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Report 1964510777 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Set Next No. Series Line</source>
           <target>Définir Ligne souche de N° suivante</target>
@@ -96,13 +12,12 @@
         <trans-unit id="Report 1964510777 - ReportDataItem 913177062 - Method 3715240 - NamedType 4288424883" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 "%2" processed</source>
           <target state="needs-adaptation">%1 "%2" mises à jour</target>
-          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - ReportDataItem No. Series Line - Method OnPostDataItem - NamedType DoneMsg</note>
         </trans-unit>
         <trans-unit id="Report 1964510777 - ReportDataItem 913177062 - Method 72583909 - NamedType 2989294795" size-unit="char" translate="yes" xml:space="preserve">
           <source>ReplaceBy is required</source>
-          <target state="needs-translation"></target>
+          <target state="needs-translation">Remplacer __ par est obligatoire</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - ReportDataItem No. Series Line - Method OnPreDataItem - NamedType ReplaceByIsRequiredErr</note>
         </trans-unit>
@@ -142,17 +57,218 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - Control StartingDate - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 185042496 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suggest Purchase Provisions</source>
+          <target state="needs-translation">Proposer provision achats</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - Method 1544076788 - NamedType 331638123" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All parameter are required</source>
+          <target state="needs-translation">Tous les paramètres sont obligatoires</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Method OnPreReport - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - Method 1544076788 - NamedType 750120336" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to suggest purchase provisions on %1?</source>
+          <target state="needs-translation">Voulez-vous proposer les provisions achats au %1 ?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Method OnPreReport - NamedType ConfirmQst</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - Method 1544076788 - NamedType 1240717133" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Warning : This process should not be posted twice at the same posting date for the same selection!</source>
+          <target state="needs-translation">Attention : Ce traitement ne doit pas être renouvellé à la même date pour la même sélection !</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Method OnPreReport - NamedType WarningMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - Method 562636515 - NamedType 3785045816" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal must be empty</source>
+          <target state="needs-translation">La feuille de saisie doit être vide</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Method SetGenJournalLine - NamedType JournalMustBeEmpty</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - ReportDataItem 3338551105 - Method 72583909 - NamedType 3117834186" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ExpInv</source>
+          <target state="needs-translation">FNP</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - ReportDataItem PurchRcptLine - Method OnPreDataItem - NamedType DocumentNo</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - ReportDataItem 3338551105 - Method 72583909 - NamedType 3322125993" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exp.Inv. %1 %2</source>
+          <target state="needs-translation">FNP %1 %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - ReportDataItem PurchRcptLine - Method OnPreDataItem - NamedType ProvisionDescription</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - ReportDataItem 2864501128 - Method 72583909 - NamedType 3647225985" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ExpCM</source>
+          <target state="needs-translation">AAR</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - ReportDataItem ReturnShipmentLine - Method OnPreDataItem - NamedType ProvisionDocumentNo</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - ReportDataItem 2864501128 - Method 72583909 - NamedType 3322125993" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exp.CM %1 %2</source>
+          <target state="needs-translation">AAR %1 %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - ReportDataItem ReturnShipmentLine - Method OnPreDataItem - NamedType ProvisionDescription</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - Control 1831623764 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account root 38 on a french chart of account.</source>
+          <target state="needs-translation">Compte de racine 38 au plan comptable français.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control PermanentInventoryAccountNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - Control 1831623764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Permanent Inventory Account No.</source>
+          <target state="needs-translation">Compte coûts prévus (inventaire permanent)</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control PermanentInventoryAccountNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <target state="needs-translation">Date comptabilisation</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control PostingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - Control 3685571563 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account root 408 on a french chart of account.</source>
+          <target state="needs-translation">Compte de racine 408 au plan comptable français.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control ProvisionAccountNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - Control 3685571563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Provision Bal. Account No.</source>
+          <target state="needs-translation">Compte factures non parvenues</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control ProvisionAccountNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - Control 1162293398 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account root 44586 on a french chart of account.</source>
+          <target state="needs-translation">Compte de racine 44586 au plan comptable français.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control ProvisionVATAccountNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 185042496 - Control 1162293398 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Provision VAT Account No.</source>
+          <target state="needs-translation">Compte TVA sur factures non parvenues</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control ProvisionVATAccountNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suggest Sales Provisions</source>
+          <target state="needs-translation">Proposer provisions ventes</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - Method 1544076788 - NamedType 331638123" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All parameter are required</source>
+          <target state="needs-translation">Tous les paramètres sont obligatoires</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Method OnPreReport - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - Method 1544076788 - NamedType 750120336" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to suggest Sales provisions on %1?</source>
+          <target state="needs-translation">Voulez-vous proposer les provisions ventes au % ?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Method OnPreReport - NamedType ConfirmQst</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - Method 1544076788 - NamedType 1240717133" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Warning : This process should not be posted twice at the same posting date for the same selection!</source>
+          <target state="needs-translation">Attention : Ce traitement ne doit pas être renouvellé à la même date pour la même sélection !</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Method OnPreReport - NamedType WarningMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - Method 562636515 - NamedType 3785045816" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal must be empty</source>
+          <target state="needs-translation">La feuille de saisie doit être vide</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Method SetGenJournalLine - NamedType JournalMustBeEmpty</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - ReportDataItem 291051572 - Method 72583909 - NamedType 3647225985" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ToCM</source>
+          <target state="needs-translation">AAE</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - ReportDataItem ReturnReceiptLine - Method OnPreDataItem - NamedType ProvisionDocumentNo</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - ReportDataItem 291051572 - Method 72583909 - NamedType 3322125993" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To CM %1 %2</source>
+          <target state="needs-translation">AAE %1 %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - ReportDataItem ReturnReceiptLine - Method OnPreDataItem - NamedType ProvisionDescription</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - ReportDataItem 3333755618 - Method 72583909 - NamedType 3117834186" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ToInv</source>
+          <target state="needs-translation">FAE</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - ReportDataItem SalesShipmentLine - Method OnPreDataItem - NamedType DocumentNo</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - ReportDataItem 3333755618 - Method 72583909 - NamedType 3322125993" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ToInv. %1 %2</source>
+          <target state="needs-translation">FAE %1 %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - ReportDataItem SalesShipmentLine - Method OnPreDataItem - NamedType ProvisionDescription</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <target state="needs-translation">Date comptabilisation</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control PostingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - Control 3685571563 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account root 38 on a french chart of account.</source>
+          <target state="needs-adaptation">Compte de racine 418 au plan comptable français.</target>
+          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionAccountNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - Control 3685571563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Provision Account No. (permanent inventory)</source>
+          <target state="needs-adaptation">Compte factures à établir</target>
+          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionAccountNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - Control 592568410 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account root 418 on a french chart of account.</source>
+          <target state="needs-translation">Compte de racine 418 au plan comptable français.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionBalAccountNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - Control 592568410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Provision Bal. Account No.</source>
+          <target state="needs-translation">Compte factures à établir</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionBalAccountNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - Control 1162293398 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account root 44587 on a french chart of account.</source>
+          <target state="needs-adaptation">Compte de racine 44587 au plan comptable français.</target>
+          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionVATAccountNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 3099164818 - Control 1162293398 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Provision VAT Account No.</source>
+          <target state="needs-translation">Compte TVA sur factures à établir</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionVATAccountNo - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3346869136 - Action 2134149939 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1351594800">
           <source>Set Next No. Series Line</source>
           <target>Définir Ligne souche de N° suivante</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan No. Series - Action wanSetNextNoSeriesLine - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1087746450 - Action 2471501848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3301928242">
-          <source>Suggest Rcpt. not Invoiced</source>
-          <target>Proposer factures non parvenues</target>
+        <trans-unit id="PageExtension 1087746450 - Action 3846930858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3301928242">
+          <source>Suggest Purchase Provisions</source>
+          <target state="needs-translation">Proposer provisions achats</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Recurring General Journal - Action wanSuggest - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Recurring General Journal - Action wanSuggestProvisions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1087746450 - Action 1849577930 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3301928242">
+          <source>Suggest Sales Provisions</source>
+          <target state="needs-translation">Proposer provisions ventes</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Recurring General Journal - Action wanSuggestSalesProvisions - Property Caption</note>
         </trans-unit>
       </group>
     </body>
