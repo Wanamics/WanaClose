@@ -6,7 +6,7 @@ report 87200 "wan Set Next No. Series Line"
     {
         dataitem("No. Series Line"; "No. Series Line")
         {
-            DataItemTableView = where("Starting No." = filter('*__*'), "Starting Date" = const());
+            DataItemTableView = where("Starting No." = filter('*%1*'), "Starting Date" = const());
             trigger OnPreDataItem()
             var
                 ReplaceByIsRequiredErr: Label 'ReplaceBy is required';
@@ -20,16 +20,16 @@ report 87200 "wan Set Next No. Series Line"
 
             trigger OnAfterGetRecord()
             var
-                StringNo: Text;
+                //StringNo: Text;
                 NoSeriesLine: Record "No. Series Line";
             begin
                 SetNoSeriesLine(NoSeriesLine, "No. Series Line", StartingDate);
-                StringNo := "Starting No.";
+                //StringNo := "Starting No.";
                 if NoSeriesLine."Starting No." = '' then
-                    NoSeriesLine.Validate("Starting No.", StringNo.Replace('__', ReplaceBy));
-                StringNo := "Ending No.";
+                    NoSeriesLine.Validate("Starting No.", StrSubstNo("Starting No.", ReplaceBy)); //StringNo.Replace('%1', ReplaceBy));
+                //StringNo := "Ending No.";
                 if NoSeriesLine."Ending No." = '' then
-                    NoSeriesLine.Validate("Ending No.", StringNo.Replace('__', ReplaceBy));
+                    NoSeriesLine.Validate("Ending No.", StrSubstNo("Ending No.", ReplaceBy)); //StringNo.Replace('%1', ReplaceBy));
                 NoSeriesLine.Modify(true);
                 SetNoSeriesLine(NoSeriesLine, "No. Series Line", NextStartingDate);
                 CountProcessed += 1;
@@ -60,7 +60,7 @@ report 87200 "wan Set Next No. Series Line"
                     }
                     field(ReplaceBy; ReplaceBy)
                     {
-                        Caption = 'Replace __ by';
+                        Caption = 'Replace %1 by';
                         ApplicationArea = All;
                         trigger OnValidate()
                         var
