@@ -33,15 +33,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - Control NextStartingDate - Method OnValidate - NamedType MustBeGTStaringDateErr</note>
         </trans-unit>
-        <trans-unit id="Report 1964510777 - Control 4283488849 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Replace __ by</source>
+        <trans-unit id="Report 1964510777 - Control 3971477682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Replace %1 by</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - Control ReplaceBy - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - Control Replace1By - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 1964510777 - Control 4283488849 - Method 2126772001 - NamedType 885262502" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Must be 2 character long</source>
+        <trans-unit id="Report 1964510777 - Control 2123698663 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Replace %2 by</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - Control ReplaceBy - Method OnValidate - NamedType LenErr</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - Control Replace2By - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1964510777 - Control 543275552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Starting Date</source>

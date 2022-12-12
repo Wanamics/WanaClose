@@ -13,15 +13,19 @@
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "15.0.0.0",
+  "application": "21.0.0.0",
   "idRanges": [
     {
       "from": 87200,
       "to": 87299
     }
   ],
-  "showMyCode": true,
-  "runtime": "7.2",
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "10.0",
   "features": [
     "NoImplicitWith",
     "TranslationFile", 

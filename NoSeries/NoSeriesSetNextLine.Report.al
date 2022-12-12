@@ -12,24 +12,24 @@ report 87200 "wan Set Next No. Series Line"
                 ReplaceByIsRequiredErr: Label 'ReplaceBy is required';
                 ConfirmMsg: Label 'Do you want to set next line for %1 "%2"?';
             begin
-                if ReplaceBy = '' then
-                    Error(ReplaceByIsRequiredErr);
+                //if Replace1By = '' then
+                //    Error(ReplaceByIsRequiredErr);
                 if not confirm(ConfirmMsg, false, Count, TableCaption()) then
                     CurrReport.Quit();
             end;
 
             trigger OnAfterGetRecord()
             var
-                //StringNo: Text;
+                StringNo: Text;
                 NoSeriesLine: Record "No. Series Line";
             begin
                 SetNoSeriesLine(NoSeriesLine, "No. Series Line", StartingDate);
-                //StringNo := "Starting No.";
+                StringNo := StrSubstNo("Starting No.", Replace1By, Replace2By);
                 if NoSeriesLine."Starting No." = '' then
-                    NoSeriesLine.Validate("Starting No.", StrSubstNo("Starting No.", ReplaceBy)); //StringNo.Replace('%1', ReplaceBy));
-                //StringNo := "Ending No.";
+                    NoSeriesLine.Validate("Starting No.", StringNo.Replace('%', ''));
+                StringNo := StrSubstNo("Ending No.", Replace1By, Replace2By);
                 if NoSeriesLine."Ending No." = '' then
-                    NoSeriesLine.Validate("Ending No.", StrSubstNo("Ending No.", ReplaceBy)); //StringNo.Replace('%1', ReplaceBy));
+                    NoSeriesLine.Validate("Ending No.", StringNo.Replace('%', ''));
                 NoSeriesLine.Modify(true);
                 SetNoSeriesLine(NoSeriesLine, "No. Series Line", NextStartingDate);
                 CountProcessed += 1;
@@ -58,10 +58,11 @@ report 87200 "wan Set Next No. Series Line"
                         Caption = 'Starting Date';
                         ApplicationArea = All;
                     }
-                    field(ReplaceBy; ReplaceBy)
+                    field(Replace1By; Replace1By)
                     {
                         Caption = 'Replace %1 by';
                         ApplicationArea = All;
+                        /*
                         trigger OnValidate()
                         var
                             LenErr: Label 'Must be 2 character long';
@@ -69,6 +70,12 @@ report 87200 "wan Set Next No. Series Line"
                             if StrLen(ReplaceBy) <> 2 then
                                 Error(LenErr);
                         end;
+                        */
+                    }
+                    field(Replace2By; Replace2By)
+                    {
+                        Caption = 'Replace %2 by';
+                        ApplicationArea = All;
                     }
                     field(NextStartingDate; NextStartingDate)
                     {
@@ -89,7 +96,8 @@ report 87200 "wan Set Next No. Series Line"
     var
         StartingDate: Date;
         NextStartingDate: Date;
-        ReplaceBy: Code[2];
+        Replace1By: Text;
+        Replace2By: Text;
         CountProcessed: Integer;
 
     local procedure SetNoSeriesLine(var pToNoSerieLine: Record "No. Series Line"; pFromNoSeriesLine: Record "No. Series Line"; pStartingDate: Date)
