@@ -2,7 +2,7 @@ pageextension 87210 "wan Recurring General Journal" extends "Recurring General J
 {
     actions
     {
-        addlast("F&unctions")
+        addlast(processing)
         {
             action(wanSuggestProvisions)
             {
