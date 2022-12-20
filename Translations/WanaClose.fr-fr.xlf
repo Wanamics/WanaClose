@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="fr-fr" original="WanaClose.g.xlf">
+  <file datatype="xml" source-language="en-US" target-language="fr-fr" original="WanaClose">
     <body>
       <group id="body">
         <trans-unit id="Table 1329717998 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -458,6 +458,30 @@
           <target>Définir Ligne souche de N° suivante</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan No. Series - Action wanSetNextNoSeriesLine - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1233981702 - Action 3174959760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3580867622">
+          <source>TEMP</source>
+          <target state="needs-translation"></target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purchase Journal - Action TEMP - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1233981702 - Action 3326204137 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3580867622">
+          <source>Suggest Prepaid Exp. &amp; Deferred Rev.</source>
+          <target state="needs-translation">Proposer CCA &amp; PCA</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purchase Journal - Action wanSuggestPrepaid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1233981702 - Control 458406397 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3580867622">
+          <source>Specifies the value of the Ending Date field.</source>
+          <target state="needs-translation">Spécifie la valeur de la date de fin.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purchase Journal - Control Ending Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1233981702 - Control 460889064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3580867622">
+          <source>Specifies the value of the Starting Date field.</source>
+          <target state="needs-translation">Spécifie la valeur de la date de début.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purchase Journal - Control Starting Date - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1087746450 - Action 3846930858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3301928242">
           <source>Suggest Purchase Provisions</source>
