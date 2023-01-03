@@ -13,16 +13,26 @@ report 87220 "wan Suggest Prepaid Entries"
                 where("Gen. Posting Type" = filter(Purchase | Sale));
             trigger OnAfterGetRecord()
             var
+                //ClosingAmount: Decimal;
                 GLEntry: Record "G/L Entry";
-                ClosingAmount: Decimal;
             begin
                 if ("Gen. Posting Type" <> xPrepaidLedgerEntry."Gen. Posting Type") or
                     ("IC Partner Code" <> xPrepaidLedgerEntry."IC Partner Code") then
                     InsertBalance(xPrepaidLedgerEntry."Gen. Posting Type", BalanceAmount);
-                ClosingAmount := AccruedAmount(PrepaidLedgerEntry, TempGenJournalLine."Posting Date");
-                if ClosingAmount <> 0 then
-                    InsertGenJournalLine(PrepaidLedgerEntry."G/L Entry No.", ClosingAmount);
-                BalanceAmount -= ClosingAmount;
+                /*
+                ClosingAmount := TargetAmount(PrepaidLedgerEntry, TempGenJournalLine."Posting Date") - PrepaidLedgerEntry.OutstandingAmount(TempGenJournalLine."Posting Date");
+                if ClosingAmount <> 0 then begin
+                    GLEntry.Get(PrepaidLedgerEntry."G/L Entry No.");
+                    if GLEntry.Reversed then //?????????????
+                        InsertGenJournalLine(GLEntry, -PrepaidLedgerEntry.OutstandingAmount(TempGenJournalLine."Posting Date"))
+                    else
+                        InsertGenJournalLine(GLEntry, ClosingAmount);
+                */
+                GLEntry.Get(PrepaidLedgerEntry."G/L Entry No.");
+                if GLEntry.Reversed then
+                    InsertGenJournalLine(GLEntry, -PrepaidLedgerEntry.OutstandingAmount(TempGenJournalLine."Posting Date"))
+                else
+                    InsertGenJournalLine(GLEntry, TargetAmount(PrepaidLedgerEntry, TempGenJournalLine."Posting Date") - PrepaidLedgerEntry.OutstandingAmount(TempGenJournalLine."Posting Date"));
                 xPrepaidLedgerEntry := PrepaidLedgerEntry;
             end;
 
@@ -80,7 +90,6 @@ report 87220 "wan Suggest Prepaid Entries"
     trigger OnPreReport()
     var
         ErrorMsg: Label 'All parameter are required';
-        ConfirmQst: Label 'Do you want to suggest prepaid expenses and Deferred Revenue to %1?';
         AccountingPeriod: Record "Accounting Period";
         AccountingPeriodErr: Label 'Posting Date must match the end of an accounting period';
     begin
@@ -90,8 +99,6 @@ report 87220 "wan Suggest Prepaid Entries"
         AccountingPeriod.SetRange("Starting Date", PostingDate + 1);
         if AccountingPeriod.IsEmpty then
             Error(AccountingPeriodErr);
-        if not Confirm(ConfirmQst, false, PostingDate) then
-            CurrReport.Quit();
         TempGenJournalLine.Validate("Posting Date", PostingDate);
         TempGenJournalLine.Validate("Document No.");
     end;
@@ -114,29 +121,40 @@ report 87220 "wan Suggest Prepaid Entries"
         TempGenJournalLine.SetUpNewLine(pGenJournalLine, 0, true);
     end;
 
-    local procedure InsertGenJournalLine(pGLEntryNo: Integer; pClosingAmount: Decimal)
+    local procedure InsertGenJournalLine(pGLEntry: Record "G/L Entry"; pAmount: Decimal)
     var
-        GLEntry: Record "G/L Entry";
+        //pGLEntry: Record "G/L Entry";
         GenJournalLine: Record "Gen. Journal Line";
-        PrepaidExpensesDescription: Label 'PE %1';
-        DeferredRevenueDescription: Label 'DR %1';
+        PrepaidExpensesDescription: Label 'PE %1 %2';
+        DeferredRevenueDescription: Label 'DR %1 %2';
     begin
-        GLEntry.Get(pGLEntryNo);
+        //GLEntry.Get(pGLEntryNo);
+        if pAmount = 0 then
+            exit;
         TempGenJournalLine."Line No." += 10000;
         GenJournalLine.TransferFields(TempGenJournalLine, true);
-        GenJournalLine.Validate("Account No.", GLEntry."G/L Account No.");
-        GenJournalLine.Validate(Amount, pClosingAmount);
-        case GLEntry."Gen. Posting Type" of
-            GLEntry."Gen. Posting Type"::Purchase:
-                GenJournalLine.Description := CopyStr(Strsubstno(PrepaidExpensesDescription, GLEntry.Description), 1, maxstrlen(GenJournalLine.Description));
-            GLEntry."Gen. Posting Type"::Sale:
-                GenJournalLine.Description := CopyStr(Strsubstno(DeferredRevenueDescription, GLEntry.Description), 1, maxstrlen(GenJournalLine.Description));
+        GenJournalLine.Validate("Account No.", pGLEntry."G/L Account No.");
+        GenJournalLine.Validate(Amount, pAmount);
+        case pGLEntry."Gen. Posting Type" of
+            pGLEntry."Gen. Posting Type"::Purchase:
+                GenJournalLine.Description := CopyStr(Strsubstno(PrepaidExpensesDescription, pGLEntry."Document No.", pGLEntry.Description), 1, maxstrlen(GenJournalLine.Description));
+            pGLEntry."Gen. Posting Type"::Sale:
+                GenJournalLine.Description := CopyStr(Strsubstno(DeferredRevenueDescription, pGLEntry."Document No.", pGLEntry.Description), 1, maxstrlen(GenJournalLine.Description));
         end;
-        GenJournalLine."Shortcut Dimension 1 Code" := GLEntry."Global Dimension 1 Code";
-        GenJournalLine."Shortcut Dimension 2 Code" := GLEntry."Global Dimension 2 Code";
-        GenJournalLine."Dimension Set ID" := GLEntry."Dimension Set ID";
-        GenJournalLine.Validate("IC Partner Code", GLEntry."IC Partner Code");
-        GenJournalLine."wan Prepaid Entry No." := GLEntry."Entry No.";
+        GenJournalLine."Shortcut Dimension 1 Code" := pGLEntry."Global Dimension 1 Code";
+        GenJournalLine."Shortcut Dimension 2 Code" := pGLEntry."Global Dimension 2 Code";
+        GenJournalLine."Dimension Set ID" := pGLEntry."Dimension Set ID";
+        GenJournalLine.Validate("IC Partner Code", pGLEntry."IC Partner Code");
+        GenJournalLine."wan Prepaid Entry No." := pGLEntry."Entry No.";
+        if pGLEntry."IC Partner Code" = '' then
+            BalanceAmount -= pAmount
+        else begin
+            GenJournalLine.Validate("IC Partner Code", pGLEntry."IC Partner Code");
+            if pGLEntry."Gen. Posting Type" = pGLEntry."Gen. Posting Type"::Purchase then
+                GenJournalLine.Validate("Bal. Account No.", PrepaidExpensesAccountNo)
+            else
+                GenJournalLine.Validate("Bal. Account No.", DeferredRevenueAccountNo);
+        end;
         GenJournalLine.Insert(true);
     end;
 
@@ -159,21 +177,41 @@ report 87220 "wan Suggest Prepaid Entries"
         pBalanceAmount := 0;
     end;
 
-
-    local procedure AccruedAmount(pPrepaidLedgerEntry: Record "wan Prepaid Ledger Entry"; pPostingDate: Date): Decimal
+    local procedure TargetAmount(pPrepaidLedgerEntry: Record "wan Prepaid Ledger Entry"; pPostingDate: Date): Decimal
     var
+        Month: Record Date;
+        FirstMonthAmount: Decimal;
+        PerMonthAmount: Decimal;
     begin
-        if (pPrepaidLedgerEntry."Starting Date" > pPostingDate) or
-            (pPrepaidLedgerEntry."Ending Date" <= pPostingDate) then
-            exit(PrepaidLedgerEntry.Amount - pPrepaidLedgerEntry.OutstandingAmount());
-        // TODO Fixed Amount per period
-        exit(
-            Round(
-                pPrepaidLedgerEntry.Amount /
-                (pPrepaidLedgerEntry."Ending Date" - pPrepaidLedgerEntry."Starting Date" + 1) *
-                (pPostingDate - pPrepaidLedgerEntry."Starting Date" + 1)
-                )
-            - PrepaidLedgerEntry.Amount
-            );
+        if pPostingDate < pPrepaidLedgerEntry."Starting Date" then
+            exit(0);
+        if pPostingDate < pPrepaidLedgerEntry."Posting Date" then
+            exit(0);
+        if pPrepaidLedgerEntry."Ending Date" <= pPostingDate then
+            exit(pPrepaidLedgerEntry.Amount);
+
+        Month.SetRange("Period Type", Month."Period Type"::Month);
+        Month.SetRange("Period Start", pPrepaidLedgerEntry."Starting Date", pPrepaidLedgerEntry."Ending Date");
+        Month.FindFirst();
+        if pPostingDate < Month."Period Start" then
+            exit(ProrataTemporis(pPrepaidLedgerEntry, pPostingDate));
+        if pPrepaidLedgerEntry."Starting Date" <> Month."Period Start" then
+            FirstMonthAmount := ProrataTemporis(pPrepaidLedgerEntry, Month."Period Start" - 1);
+        if (Date2DMY(pPrepaidLedgerEntry."Ending Date", 1) = Date2DMY(pPrepaidLedgerEntry."Starting Date", 1) - 1) or
+            (pPrepaidLedgerEntry."Starting Date" = CalcDate('<-CM>', pPrepaidLedgerEntry."Starting Date")) and
+                (pPrepaidLedgerEntry."Ending Date" = CalcDate('<+CM>', pPrepaidLedgerEntry."Ending Date")) then
+            PerMonthAmount := Round(pPrepaidLedgerEntry.Amount / Month.Count)
+        else
+            PerMonthAmount := Round(pPrepaidLedgerEntry.Amount / (pPrepaidLedgerEntry."Ending Date" - pPrepaidLedgerEntry."Starting Date" + 1) * 30);
+        Month.SetRange("Period Start", pPrepaidLedgerEntry."Starting Date", pPostingDate);
+        exit(FirstMonthAmount + PerMonthAmount * Month.Count);
+    end;
+
+    local procedure ProrataTemporis(pPrepaidLedgerEntry: Record "wan Prepaid Ledger Entry"; pDate: Date): Decimal
+    begin
+        exit(Round(
+            PrepaidLedgerEntry.Amount /
+            (PrepaidLedgerEntry."Ending Date" - pPrepaidLedgerEntry."Starting Date" + 1) *
+            (pDate - pPrepaidLedgerEntry."Starting Date" + 1)));
     end;
 }

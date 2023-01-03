@@ -18,6 +18,7 @@ report 87211 "wan Suggest Sales Provisions"
                 SumProvisionAmount := 0;
                 SumVATAmount := 0;
                 TempGenJournalLine."Document No." := DocumentNo;
+                TempGenJournalLine.Validate("Account No.", ProvisionBalAccountNo);
                 TempGenJournalLine.Description := ProvisionDescription;
                 SetLoadFields("Order No.", "Order Line No.", "Posting Date", "Qty. Shipped Not Invoiced");
                 SetRange("Posting Date", 0D, TempGenJournalLine."Posting Date");
@@ -82,6 +83,7 @@ report 87211 "wan Suggest Sales Provisions"
                 SumProvisionAmount := 0;
                 SumVATAmount := 0;
                 TempGenJournalLine."Document No." := ProvisionDocumentNo;
+                TempGenJournalLine.Validate("Account No.", ProvisionDebitBalAccountNo);
                 TempGenJournalLine."Description" := ProvisionDescription;
                 SetLoadFields("Return Order No.", "Return Order Line No.", "Posting Date", "Return Qty. Rcd. Not Invd.");
                 SetRange("Posting Date", 0D, TempGenJournalLine."Posting Date");
@@ -156,6 +158,13 @@ report 87211 "wan Suggest Sales Provisions"
                         TableRelation = "G/L Account" where("Direct Posting" = const(true));
                         ToolTip = 'Account root 418 on a french chart of account.';
                     }
+                    field(ProvisionDebitBalAccountNo; ProvisionDebitBalAccountNo)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Provision Bal. Account No.';
+                        TableRelation = "G/L Account" where("Direct Posting" = const(true));
+                        ToolTip = 'Account root 418 on a french chart of account.';
+                    }
                     field(ProvisionVATAccountNo; ProvisionVATAccountNo)
                     {
                         ApplicationArea = All;
@@ -181,6 +190,7 @@ report 87211 "wan Suggest Sales Provisions"
         TempGenJournalLine: Record "Gen. Journal Line" temporary;
         PostingDate: Date;
         ProvisionBalAccountNo: Code[20];
+        ProvisionDebitBalAccountNo: Code[20];
         ProvisionVATAccountNo: Code[20];
         //ProvisionAccountNo: Code[20];
         GenJournalLine: Record "Gen. Journal Line";
@@ -246,7 +256,6 @@ end;
     begin
         TempGenJournalLine.Validate("Posting Date", PostingDate);
         TempGenJournalLine.Validate("Expiration Date", PostingDate);
-        TempGenJournalLine.Validate("Account No.", ProvisionBalAccountNo);
 
         GenJnlAllocation."Journal Template Name" := TempGenJournalLine."Journal Template Name";
         GenJnlAllocation."Journal Batch Name" := TempGenJournalLine."Journal Batch Name";
@@ -314,7 +323,7 @@ end;
             GenJnlAllocation.Validate("Account No.", ProvisionAccountNo)
         else begin
             */
-        if (pGenProdPostingGroup <> GeneralPostingSetup."Gen. Bus. Posting Group") or
+        if(pGenProdPostingGroup <> GeneralPostingSetup."Gen. Bus. Posting Group") or
                (pGenBusPostingGroup <> GeneralPostingSetup."Gen. Prod. Posting Group") then begin
             GeneralPostingSetup.Get(pGenProdPostingGroup, pGenBusPostingGroup);
             if GeneralPostingSetup."Purch. Account" <> GLAccount."No." then begin

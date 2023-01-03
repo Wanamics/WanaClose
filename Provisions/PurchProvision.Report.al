@@ -18,6 +18,7 @@ report 87210 "wan Suggest Purch. Provisions"
                 SumProvisionAmount := 0;
                 SumVATAmount := 0;
                 TempGenJournalLine."Document No." := DocumentNo;
+                TempGenJournalLine.Validate("Account No.", ProvisionBalAccountNo);
                 TempGenJournalLine.Description := ProvisionDescription;
                 SetLoadFields("Order No.", "Order Line No.", "Posting Date", "Qty. Rcd. Not Invoiced");
                 SetRange("Posting Date", 0D, TempGenJournalLine."Posting Date");
@@ -82,6 +83,7 @@ report 87210 "wan Suggest Purch. Provisions"
                 SumProvisionAmount := 0;
                 SumVATAmount := 0;
                 TempGenJournalLine."Document No." := ProvisionDocumentNo;
+                TempGenJournalLine.Validate("Account No.", ProvisionDebitBalAccountNo);
                 TempGenJournalLine."Description" := ProvisionDescription;
                 SetLoadFields("Return Order No.", "Return Order Line No.", "Posting Date", "Return Qty. Shipped Not Invd.");
                 SetRange("Posting Date", 0D, TempGenJournalLine."Posting Date");
@@ -149,12 +151,19 @@ report 87210 "wan Suggest Purch. Provisions"
                         ApplicationArea = All;
                         Caption = 'Posting Date';
                     }
-                    field(ProvisionAccountNo; ProvisionBalAccountNo)
+                    field(ProvisionBalAccountNo; ProvisionBalAccountNo)
                     {
                         ApplicationArea = All;
                         Caption = 'Provision Bal. Account No.';
                         TableRelation = "G/L Account" where("Direct Posting" = const(true));
                         ToolTip = 'Account root 408 on a french chart of account.';
+                    }
+                    field(ProvisionDebitBalAccountNo; ProvisionDebitBalAccountNo)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Provision Debit Bal. Account No.';
+                        TableRelation = "G/L Account" where("Direct Posting" = const(true));
+                        ToolTip = 'Account root 409 on a french chart of account.';
                     }
                     field(ProvisionVATAccountNo; ProvisionVATAccountNo)
                     {
@@ -167,7 +176,7 @@ report 87210 "wan Suggest Purch. Provisions"
                     {
                         ApplicationArea = All;
                         Caption = 'Permanent Inventory Account No.';
-                        ToolTip = 'Account root 38 on a french chart of account.';
+                        ToolTip = 'Account root 378 on a french chart of account.';
                         TableRelation = "G/L Account" where("Direct Posting" = const(true));
                         Visible = not ExpectedCostPostingToGL;
                     }
@@ -179,6 +188,7 @@ report 87210 "wan Suggest Purch. Provisions"
         TempGenJournalLine: Record "Gen. Journal Line" temporary;
         PostingDate: Date;
         ProvisionBalAccountNo: Code[20];
+        ProvisionDebitBalAccountNo: Code[20];
         ProvisionVATAccountNo: Code[20];
         PermanentInventoryAccountNo: Code[20];
         GenJournalLine: Record "Gen. Journal Line";
@@ -241,7 +251,6 @@ report 87210 "wan Suggest Purch. Provisions"
     begin
         TempGenJournalLine.Validate("Posting Date", PostingDate);
         TempGenJournalLine.Validate("Expiration Date", PostingDate);
-        TempGenJournalLine.Validate("Account No.", ProvisionBalAccountNo);
 
         GenJnlAllocation."Journal Template Name" := TempGenJournalLine."Journal Template Name";
         GenJnlAllocation."Journal Batch Name" := TempGenJournalLine."Journal Batch Name";

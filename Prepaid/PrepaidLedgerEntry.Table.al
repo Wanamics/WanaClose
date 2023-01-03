@@ -34,11 +34,21 @@ table 87220 "wan Prepaid Ledger Entry"
         {
             Caption = 'Starting Date';
             DataClassification = ToBeClassified;
+            NotBlank = true;
+            trigger OnValidate()
+            begin
+                CheckPrepaidDates()
+            end;
         }
         field(89222; "Ending Date"; Date)
         {
             Caption = 'End Date';
             DataClassification = ToBeClassified;
+            NotBlank = true;
+            trigger OnValidate()
+            begin
+                CheckPrepaidDates()
+            end;
         }
         field(89223; Amount; Decimal)
         {
@@ -62,15 +72,25 @@ table 87220 "wan Prepaid Ledger Entry"
 
         }
     }
-    procedure OutstandingAmount() ReturnValue: Decimal
+    procedure OutstandingAmount(pPostingDate: Date) ReturnValue: Decimal
     var
         lRec: Record "wan Prepaid Ledger Entry";
     begin
         lRec.SetAutoCalcFields(Amount);
         lRec.SetRange("Prepaid G/L Entry No.", "G/L Entry No.");
+        lRec.SetRange("Posting Date", 0D, pPostingDate);
         if lRec.FindSet() then
             repeat
                 ReturnValue += lRec.Amount;
             until lRec.Next() = 0;
+    end;
+
+    local procedure CheckPrepaidDates();
+    var
+        PrepaidDatesErr: label '%1 must be before %2';
+    begin
+        Rec.TestField("Gen. Posting Type");
+        if ("Starting Date" > "Ending Date") and ("Ending Date" <> 0D) then
+            Error(PrepaidDatesErr, FieldCaption("Starting Date"), FieldCaption("Ending Date"));
     end;
 }
