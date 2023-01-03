@@ -148,6 +148,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - NamedType OutstandingAmountCaption</note>
         </trans-unit>
+        <trans-unit id="Report 1230906592 - NamedType 894566561" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period: %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - NamedType PeriodLbl</note>
+        </trans-unit>
         <trans-unit id="Report 1230906592 - NamedType 2235188920" size-unit="char" translate="yes" xml:space="preserve">
           <source>Source Name</source>
           <note from="Developer" annotates="general" priority="2"></note>

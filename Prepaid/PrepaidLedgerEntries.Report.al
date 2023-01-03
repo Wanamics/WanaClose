@@ -13,6 +13,9 @@ report 87221 "wan Prepaid Ledger Entries"
             DataItemTableView = sorting("Gen. Posting Type", "Posting Date");
             RequestFilterFields = "Gen. Posting Type", "IC Partner Code";
             CalcFields = Amount;
+            column(ReportCaption; CopyStr(CurrReport.ObjectId(true), 7)) { }
+            column(PeriodText; StrSubstNo(PeriodLbl, PostingDate)) { }
+            column(CompanyName; CompanyProperty.DisplayName()) { }
             column(GenPostingType; "Gen. Posting Type") { IncludeCaption = true; }
             column(PostingDate; "Posting Date") { IncludeCaption = true; }
             column(GLEntryNo; "G/L Entry No.") { IncludeCaption = true; }
@@ -67,6 +70,7 @@ report 87221 "wan Prepaid Ledger Entries"
         GLEntry: Record "G/L Entry";
         SourceAccount: Record Vendor;
         OutstandingAmountCaption: Label 'Outstanding Amount';
+        PeriodLbl: Label 'Period: %1';
         SourceNoCaption: Label 'Source No.';
         SourceNameCaption: Label 'Source Name';
         AccountNoCaption: Label 'Account No.';

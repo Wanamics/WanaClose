@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="fr-fr" original="WanaClose.g.xlf">
+  <file datatype="xml" source-language="en-US" target-language="fr-fr" original="WanaClose">
     <body>
       <group id="body">
         <trans-unit id="Table 1329717998 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -157,51 +157,50 @@
         </trans-unit>
         <trans-unit id="Report 1230906592 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Prepaid Entries</source>
-          <target>[NAB: SUGGESTION]Ecritures CCA &amp; PCA</target>
+          <target>Ecritures CCA &amp; PCA</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1230906592 - NamedType 1687486058" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account No.</source>
-          <target>[NAB: SUGGESTION]N° compte</target>
+          <target>N° compte</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - NamedType AccountNoCaption</note>
         </trans-unit>
         <trans-unit id="Report 1230906592 - NamedType 70267132" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target>[NAB: SUGGESTION]Description</target>
+          <target>Description</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - NamedType DescriptionCaption</note>
         </trans-unit>
         <trans-unit id="Report 1230906592 - NamedType 1147073148" size-unit="char" translate="yes" xml:space="preserve">
           <source>Outstanding Amount</source>
-          <target>[NAB: SUGGESTION]Montant restant</target>
+          <target>Montant restant</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - NamedType OutstandingAmountCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 1230906592 - NamedType 894566561" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period: %1</source>
+          <target state="needs-translation">Au : %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - NamedType PeriodLbl</note>
         </trans-unit>
         <trans-unit id="Report 1230906592 - NamedType 2235188920" size-unit="char" translate="yes" xml:space="preserve">
           <source>Source Name</source>
-          <target>[NAB: SUGGESTION]Nom origine</target>
+          <target>Nom origine</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - NamedType SourceNameCaption</note>
         </trans-unit>
         <trans-unit id="Report 1230906592 - NamedType 411389942" size-unit="char" translate="yes" xml:space="preserve">
           <source>Source No.</source>
-          <target>[NAB: SUGGESTION]N° origine</target>
+          <target>N° origine</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - NamedType SourceNoCaption</note>
         </trans-unit>
         <trans-unit id="Report 1230906592 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Date</source>
-          <target>[NAB: SUGGESTION]Date comptabilisation</target>
+          <target>Date comptabilisation</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - Control PostingDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1964510777 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
