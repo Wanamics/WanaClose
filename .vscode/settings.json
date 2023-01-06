@@ -1,3 +1,5 @@
 {
-    "xliffSync.baseFile": "WanaClose.g.xlf"
+    "xliffSync.baseFile": "WanaClose.g.xlf",
+    "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectType>.al",
+    "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectType>.al"
 }

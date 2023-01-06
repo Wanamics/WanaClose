@@ -1,4 +1,4 @@
-pageextension 87223 "wan General Ledger Entries" extends "General Ledger Entries"
+pageextension 87224 "wan General Ledger Entries" extends "General Ledger Entries"
 {
     layout
     {

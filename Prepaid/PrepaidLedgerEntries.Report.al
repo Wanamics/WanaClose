@@ -10,7 +10,9 @@ report 87221 "wan Prepaid Ledger Entries"
     {
         dataitem(wanPrepaidLedgerEntry; "wan Prepaid Ledger Entry")
         {
-            DataItemTableView = sorting("Gen. Posting Type", "Posting Date");
+            DataItemTableView =
+                sorting("Gen. Posting Type", "Posting Date")
+                where("Gen. Posting Type" = filter('Sale|Purchase'));
             RequestFilterFields = "Gen. Posting Type", "IC Partner Code";
             CalcFields = Amount;
             column(ReportCaption; CopyStr(CurrReport.ObjectId(true), 7)) { }
@@ -19,18 +21,20 @@ report 87221 "wan Prepaid Ledger Entries"
             column(GenPostingType; "Gen. Posting Type") { IncludeCaption = true; }
             column(PostingDate; "Posting Date") { IncludeCaption = true; }
             column(GLEntryNo; "G/L Entry No.") { IncludeCaption = true; }
+            column(DocumentNo; GLEntry."Document No.") { }
+            column(DocumentNoCaption; GLEntry.FieldCaption("Document No.")) { }
             column(SourceNo; SourceAccount."No.") { }
-            column(SourceNoCaption; SourceNoCaption) { }
+            column(SourceNoCaption; SourceAccount.FieldCaption("No.")) { }
             column(SourceName; SourceAccount."Name") { }
-            column(SourceNameCaption; SourceNameCaption) { }
-            column(AccountNo; GLENtry."G/L Account No.") { }
-            column(AccountNoCaption; AccountNoCaption) { }
+            column(SourceNameCaption; SourceAccount.FieldCaption("Name")) { }
+            column(AccountNo; GLEntry."G/L Account No.") { }
+            column(AccountNoCaption; GLEntry.FieldCaption("G/L Account No.")) { }
             column(Description; GLEntry.Description) { }
-            column(DescriptionCaption; DescriptionCaption) { }
+            column(DescriptionCaption; GLEntry.FieldCaption(Description)) { }
             column(Amount; Amount) { IncludeCaption = true; }
             column(StartingDate; "Starting Date") { IncludeCaption = true; }
             column(EndingDate; "Ending Date") { IncludeCaption = true; }
-            column(OutstandingAmount; OutstandingAmount(PostingDate)) { }
+            column(OutstandingAmount; GLEntry.Amount - OutstandingAmount(PostingDate)) { }
             column(OutstandingAmountCaption; OutstandingAmountCaption) { }
             column(ICPartnerCode; "IC Partner Code") { IncludeCaption = true; }
             trigger OnPreDataItem()
@@ -40,7 +44,7 @@ report 87221 "wan Prepaid Ledger Entries"
 
             trigger OnAfterGetRecord()
             begin
-                if OutstandingAmount(PostingDate) = 0 then
+                if Amount - OutstandingAmount(PostingDate) = 0 then
                     CurrReport.Skip();
                 GLEntry.Get("G/L Entry No.");
                 SourceAccount := GetSourceAccount(GLEntry);
@@ -71,10 +75,6 @@ report 87221 "wan Prepaid Ledger Entries"
         SourceAccount: Record Vendor;
         OutstandingAmountCaption: Label 'Outstanding Amount';
         PeriodLbl: Label 'Period: %1';
-        SourceNoCaption: Label 'Source No.';
-        SourceNameCaption: Label 'Source Name';
-        AccountNoCaption: Label 'Account No.';
-        DescriptionCaption: Label 'Description';
 
     local procedure GetSourceAccount(pGLEntry: Record "G/L Entry") ReturnValue: Record Vendor
     var
@@ -86,8 +86,10 @@ report 87221 "wan Prepaid Ledger Entries"
             pGLEntry."Source Type"::Vendor:
                 ReturnValue.Get(pGLEntry."Source No.");
             pGLEntry."Source Type"::Customer:
-                if Customer.Get(pGLEntry."Source No.") then
-                    ReturnValue.TransferFields(Customer);
+                if Customer.Get(pGLEntry."Source No.") then begin
+                    ReturnValue."No." := Customer."No.";
+                    ReturnValue.Name := Customer.Name;
+                end;
             else
                 Clear(ReturnValue);
         end;

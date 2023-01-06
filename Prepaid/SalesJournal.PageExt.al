@@ -1,4 +1,4 @@
-pageextension 87221 "wan Sales Journal" extends "Sales Journal"
+pageextension 87222 "wan Purchase Journal" extends "Purchase Journal"
 {
     layout
     {

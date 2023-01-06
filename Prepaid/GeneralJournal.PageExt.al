@@ -1,4 +1,4 @@
-pageextension 87221 "wan General Journal" extends "General Journal"
+pageextension 87223 "wan General Journal" extends "General Journal"
 {
     layout
     {
@@ -15,6 +15,21 @@ pageextension 87221 "wan General Journal" extends "General Journal"
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the Ending Date field.';
                 Visible = false;
+            }
+            field("IC Partner Code"; Rec."IC Partner Code")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the value of the IC Partner Code field.';
+                Visible = false;
+                Editable = true;
+                trigger OnValidate()
+                begin
+                    if Rec."IC Partner Code" = xRec."IC Partner Code" then
+                        exit;
+                    Rec.TestField("Account Type", Rec."Account Type"::"G/L Account");
+                    Rec.TestField("Bal. Account Type", Rec."Bal. Account Type"::"G/L Account");
+                    Rec.TestField("wan Prepaid Entry No.", 0);
+                end;
             }
         }
     }

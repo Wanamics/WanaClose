@@ -4,7 +4,6 @@ page 87220 "wan Prepaid Ledger Entries"
     Caption = 'Prepaid Entries';
     PageType = List;
     SourceTable = "wan Prepaid Ledger Entry";
-    UsageCategory = Administration;
     InsertAllowed = false;
     DeleteAllowed = false;
 

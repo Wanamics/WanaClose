@@ -133,16 +133,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 1230906592 - NamedType 1687486058" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - NamedType AccountNoCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 1230906592 - NamedType 70267132" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - NamedType DescriptionCaption</note>
-        </trans-unit>
         <trans-unit id="Report 1230906592 - NamedType 1147073148" size-unit="char" translate="yes" xml:space="preserve">
           <source>Outstanding Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -152,16 +142,6 @@
           <source>Period: %1</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - NamedType PeriodLbl</note>
-        </trans-unit>
-        <trans-unit id="Report 1230906592 - NamedType 2235188920" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Source Name</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - NamedType SourceNameCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 1230906592 - NamedType 411389942" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Source No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Prepaid Ledger Entries - NamedType SourceNoCaption</note>
         </trans-unit>
         <trans-unit id="Report 1230906592 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Date</source>
@@ -458,6 +438,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan General Journal - Control Ending Date - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2513521001 - Control 1329258699 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
+          <source>Specifies the value of the IC Partner Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan General Journal - Control IC Partner Code - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2513521001 - Control 460889064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
           <source>Specifies the value of the Starting Date field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -507,6 +492,16 @@
           <source>Suggest Sales Provisions</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Recurring General Journal - Action wanSuggestSalesProvisions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 161412155 - Control 458406397 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1727838235">
+          <source>Specifies the value of the Ending Date field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Journal - Control Ending Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 161412155 - Control 460889064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1727838235">
+          <source>Specifies the value of the Starting Date field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Journal - Control Starting Date - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="TableExtension 3171585911 - Method 146797694 - NamedType 4261682475" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 3171585911">
           <source>%1 must be before %2</source>
