@@ -1,14 +1,14 @@
-report 87221 "wan Prepaid Ledger Entries"
+report 87221 "wan Deferral Ledger Entries"
 {
     ApplicationArea = All;
-    Caption = 'Prepaid Entries';
+    Caption = 'Deferral Entries';
     UsageCategory = ReportsAndAnalysis;
     DefaultLayout = RDLC;
-    ExcelLayout = './Prepaid/PrepaidLedgerEntries.xlsx';
-    RDLCLayout = './Prepaid/PrepaidLedgerEntries.rdl';
+    ExcelLayout = './Deferral/DeferralLedgerEntries.xlsx';
+    RDLCLayout = './Deferral/DeferralLedgerEntries.rdl';
     dataset
     {
-        dataitem(wanPrepaidLedgerEntry; "wan Prepaid Ledger Entry")
+        dataitem(wanDeferralLedgerEntry; "wan Deferral Ledger Entry")
         {
             DataItemTableView =
                 sorting("Gen. Posting Type", "Posting Date")

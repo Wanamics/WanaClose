@@ -1,15 +1,15 @@
-pageextension 87221 "wan Sales Journal" extends "Sales Journal"
+pageextension 87222 "wan Purchase Journal" extends "Purchase Journal"
 {
     layout
     {
         addbefore("Bal. Account Type")
         {
-            field("Starting Date"; Rec."wan Starting Date")
+            field("Starting Date"; Rec."wan Deferral Start Date")
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the Starting Date field.';
             }
-            field("Ending Date"; Rec."wan Ending Date")
+            field("Ending Date"; Rec."wan Deferral End Date")
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the Ending Date field.';

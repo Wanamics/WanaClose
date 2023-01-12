@@ -4,13 +4,13 @@ pageextension 87223 "wan General Journal" extends "General Journal"
     {
         addbefore("Bal. Account Type")
         {
-            field("Starting Date"; Rec."wan Starting Date")
+            field("Starting Date"; Rec."wan Deferral Start Date")
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the Starting Date field.';
                 Visible = false;
             }
-            field("Ending Date"; Rec."wan Ending Date")
+            field("Ending Date"; Rec."wan Deferral End Date")
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the Ending Date field.';
@@ -28,7 +28,7 @@ pageextension 87223 "wan General Journal" extends "General Journal"
                         exit;
                     Rec.TestField("Account Type", Rec."Account Type"::"G/L Account");
                     Rec.TestField("Bal. Account Type", Rec."Bal. Account Type"::"G/L Account");
-                    Rec.TestField("wan Prepaid Entry No.", 0);
+                    Rec.TestField("wan Deferral Entry No.", 0);
                 end;
             }
         }
@@ -37,9 +37,9 @@ pageextension 87223 "wan General Journal" extends "General Journal"
     {
         addlast(processing)
         {
-            action(wanSuggestPrepaid)
+            action(wanSuggestDeferral)
             {
-                Caption = 'Suggest Prepaid Exp. & Deferred Rev.';
+                Caption = 'Suggest Deferral Exp. & Deferred Rev.';
                 Image = PeriodEntries;
                 //Promoted = true;
                 //PromotedIsBig = true;
@@ -47,10 +47,10 @@ pageextension 87223 "wan General Journal" extends "General Journal"
                 ApplicationArea = All;
                 trigger OnAction()
                 var
-                    SuggestPrepaidEntries: Report "wan Suggest Prepaid Entries";
+                    SuggestDeferralEntries: Report "wan Suggest Deferral Entries";
                 begin
-                    SuggestPrepaidEntries.SetGenJournalLine(Rec);
-                    SuggestPrepaidEntries.RunModal();
+                    SuggestDeferralEntries.SetGenJournalLine(Rec);
+                    SuggestDeferralEntries.RunModal();
                     if Rec.FindFirst() then
                         CurrPage.Update(false);
                 end;
@@ -58,17 +58,17 @@ pageextension 87223 "wan General Journal" extends "General Journal"
         }
         addlast(navigation)
         {
-            action(wanPrepaidEntries)
+            action(wanDeferralEntries)
             {
-                Caption = 'Prepaid Entries';
+                Caption = 'Deferral Entries';
                 //Promoted = true;
                 //PromotedIsBig = true;
                 //PromotedCategory = Process;
                 ApplicationArea = All;
                 Image = PeriodEntries;
-                RunObject = page "wan Prepaid Ledger Entries";
-                RunPageLink = "Prepaid G/L Entry No." = field("wan Prepaid Entry No.");
-                Enabled = Rec."wan Prepaid Entry No." <> 0;
+                RunObject = page "wan Deferral Ledger Entries";
+                RunPageLink = "Deferral G/L Entry No." = field("wan Deferral Entry No.");
+                Enabled = Rec."wan Deferral Entry No." <> 0;
             }
         }
     }

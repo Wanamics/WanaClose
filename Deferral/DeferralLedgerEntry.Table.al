@@ -1,6 +1,6 @@
-table 87220 "wan Prepaid Ledger Entry"
+table 87220 "wan Deferral Ledger Entry"
 {
-    Caption = 'Prepaid Ledger Entry';
+    Caption = 'Deferral Ledger Entry';
     DataClassification = ToBeClassified;
 
     fields
@@ -24,9 +24,9 @@ table 87220 "wan Prepaid Ledger Entry"
             Caption = 'IC Partner Code';
             TableRelation = "IC Partner";
         }
-        field(89220; "Prepaid G/L Entry No."; Integer)
+        field(89220; "Deferral G/L Entry No."; Integer)
         {
-            Caption = 'Prepaid G/L Entry No.';
+            Caption = 'Deferral G/L Entry No.';
             DataClassification = ToBeClassified;
             TableRelation = "G/L Entry";
         }
@@ -37,7 +37,7 @@ table 87220 "wan Prepaid Ledger Entry"
             NotBlank = true;
             trigger OnValidate()
             begin
-                CheckPrepaidDates()
+                CheckDeferralDates()
             end;
         }
         field(89222; "Ending Date"; Date)
@@ -47,7 +47,7 @@ table 87220 "wan Prepaid Ledger Entry"
             NotBlank = true;
             trigger OnValidate()
             begin
-                CheckPrepaidDates()
+                CheckDeferralDates()
             end;
         }
         field(89223; Amount; Decimal)
@@ -64,7 +64,7 @@ table 87220 "wan Prepaid Ledger Entry"
         {
             Clustered = true;
         }
-        key(Key2; "Prepaid G/L Entry No.")
+        key(Key2; "Deferral G/L Entry No.")
         {
         }
         key(Key3; "Gen. Posting Type", "Posting Date", "IC Partner Code")
@@ -74,10 +74,10 @@ table 87220 "wan Prepaid Ledger Entry"
     }
     procedure OutstandingAmount(pPostingDate: Date) ReturnValue: Decimal
     var
-        lRec: Record "wan Prepaid Ledger Entry";
+        lRec: Record "wan Deferral Ledger Entry";
     begin
         lRec.SetAutoCalcFields(Amount);
-        lRec.SetRange("Prepaid G/L Entry No.", "G/L Entry No.");
+        lRec.SetRange("Deferral G/L Entry No.", "G/L Entry No.");
         lRec.SetRange("Posting Date", 0D, pPostingDate);
         if lRec.FindSet() then
             repeat
@@ -85,12 +85,12 @@ table 87220 "wan Prepaid Ledger Entry"
             until lRec.Next() = 0;
     end;
 
-    local procedure CheckPrepaidDates();
+    local procedure CheckDeferralDates();
     var
-        PrepaidDatesErr: label '%1 must be before %2';
+        DeferralDatesErr: label '%1 must be before %2';
     begin
         Rec.TestField("Gen. Posting Type");
         if ("Starting Date" > "Ending Date") and ("Ending Date" <> 0D) then
-            Error(PrepaidDatesErr, FieldCaption("Starting Date"), FieldCaption("Ending Date"));
+            Error(DeferralDatesErr, FieldCaption("Starting Date"), FieldCaption("Ending Date"));
     end;
 }

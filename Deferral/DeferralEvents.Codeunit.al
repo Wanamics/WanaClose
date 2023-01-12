@@ -1,4 +1,4 @@
-codeunit 87220 "wan Prepaid Events"
+codeunit 87220 "wan Deferral Events"
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Check Line", 'OnAfterCheckGenJnlLine', '', false, false)]
     local procedure OnAfterCheckGenJnlLine(var GenJournalLine: Record "Gen. Journal Line"; var ErrorMessageMgt: Codeunit "Error Message Management")
@@ -13,50 +13,50 @@ codeunit 87220 "wan Prepaid Events"
             exit;
         if GenJournalLine."Deferral Code" <> '' then
             if DeferralTemplate.Get(GenJournalLine."Deferral Code") and (DeferralTemplate."No. of Periods" = 0) then begin
-                GenJournalLine.TestField("wan Starting Date");
-                GenJournalLine.TestField("wan Ending Date");
+                GenJournalLine.TestField("wan Deferral Start Date");
+                GenJournalLine.TestField("wan Deferral End Date");
             end else begin
-                GenJournalLine.TestField("wan Starting Date", 0D);
-                GenJournalLine.TestField("wan Ending Date", 0D);
+                GenJournalLine.TestField("wan Deferral Start Date", 0D);
+                GenJournalLine.TestField("wan Deferral End Date", 0D);
             end;
-        if (GenJournalLine."wan Starting Date" = 0D) and (GenJournalLine."wan Ending Date" <> 0D) then
-            GenJournalLine.FieldError("wan Ending Date", StrSubstNo(InseparableErr, GenJournalLine.FieldCaption("wan Starting Date")));
-        if (GenJournalLine."wan Starting Date" <> 0D) and (GenJournalLine."wan Ending Date" = 0D) then
-            GenJournalLine.FieldError("wan Starting Date", StrSubstNo(InseparableErr, GenJournalLine.FieldCaption("wan Ending Date")));
+        if (GenJournalLine."wan Deferral Start Date" = 0D) and (GenJournalLine."wan Deferral End Date" <> 0D) then
+            GenJournalLine.FieldError("wan Deferral End Date", StrSubstNo(InseparableErr, GenJournalLine.FieldCaption("wan Deferral Start Date")));
+        if (GenJournalLine."wan Deferral Start Date" <> 0D) and (GenJournalLine."wan Deferral End Date" = 0D) then
+            GenJournalLine.FieldError("wan Deferral Start Date", StrSubstNo(InseparableErr, GenJournalLine.FieldCaption("wan Deferral End Date")));
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertGLEntry', '', false, false)]
     local procedure OnAfterInsertGLEntry(GLEntry: Record "G/L Entry"; GenJnlLine: Record "Gen. Journal Line"; TempGLEntryBuf: Record "G/L Entry" temporary; CalcAddCurrResiduals: Boolean)
     var
-        PrepaidLedgerEntry: Record "wan Prepaid Ledger Entry";
+        DeferralLedgerEntry: Record "wan Deferral Ledger Entry";
     begin
-        if GenJnlLine."wan Prepaid Entry No." <> 0 then begin
-            PrepaidLedgerEntry.TransferFields(GLEntry, true);
-            PrepaidLedgerEntry."Prepaid G/L Entry No." := GenJnlLine."wan Prepaid Entry No.";
-            PrepaidLedgerEntry.Amount *= -1;
-            PrepaidLedgerEntry.Insert(true);
+        if GenJnlLine."wan Deferral Entry No." <> 0 then begin
+            DeferralLedgerEntry.TransferFields(GLEntry, true);
+            DeferralLedgerEntry."Deferral G/L Entry No." := GenJnlLine."wan Deferral Entry No.";
+            DeferralLedgerEntry.Amount *= -1;
+            DeferralLedgerEntry.Insert(true);
         end else
             if GLEntry."Reversed Entry No." <> 0 then begin
-                if PrepaidLedgerEntry.Get(GLEntry."Reversed Entry No.") then begin
-                    PrepaidLedgerEntry."G/L Entry No." := GLEntry."Entry No.";
-                    PrepaidLedgerEntry."Gen. Posting Type" := PrepaidLedgerEntry."Gen. Posting Type"::" ";
-                    PrepaidLedgerEntry.Insert(true);
+                if DeferralLedgerEntry.Get(GLEntry."Reversed Entry No.") then begin
+                    DeferralLedgerEntry."G/L Entry No." := GLEntry."Entry No.";
+                    DeferralLedgerEntry."Gen. Posting Type" := DeferralLedgerEntry."Gen. Posting Type"::" ";
+                    DeferralLedgerEntry.Insert(true);
                 end
             end else
                 if (GLEntry."Gen. Posting Type" in [GLEntry."Gen. Posting Type"::Purchase, GLEntry."Gen. Posting Type"::Sale]) and
-                    (GenJnlLine."wan Ending Date" <> 0D) then begin
-                    PrepaidLedgerEntry.TransferFields(GLEntry, true);
-                    PrepaidLedgerEntry."Prepaid G/L Entry No." := GLEntry."Entry No.";
-                    PrepaidLedgerEntry."Starting Date" := GenJnlLine."wan Starting Date";
-                    PrepaidLedgerEntry."Ending Date" := GenJnlLine."wan Ending Date";
-                    PrepaidLedgerEntry.Insert(true);
+                    (GenJnlLine."wan Deferral End Date" <> 0D) then begin
+                    DeferralLedgerEntry.TransferFields(GLEntry, true);
+                    DeferralLedgerEntry."Deferral G/L Entry No." := GLEntry."Entry No.";
+                    DeferralLedgerEntry."Starting Date" := GenJnlLine."wan Deferral Start Date";
+                    DeferralLedgerEntry."Ending Date" := GenJnlLine."wan Deferral End Date";
+                    DeferralLedgerEntry.Insert(true);
                 end;
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"G/L Entry", 'OnBeforeDeleteEvent', '', true, true)]
     local procedure OnBeforeDeleteGLEntry(Rec: Record "G/L Entry")
     var
-        PrepaidLedgerEntry: Record "wan Prepaid Ledger Entry";
+        DeferralLedgerEntry: Record "wan Deferral Ledger Entry";
         IsNotNullErr: Label 'prepaid outstanding amount is not null';
     begin
         /* Warning
@@ -66,20 +66,20 @@ codeunit 87220 "wan Prepaid Events"
                 Can't be skipped if IsTemporary
         if Rec.IsTemporary then
             exit;
-        if not PrepaidLedgerEntry.Get(Rec."Entry No.") then
+        if not DeferralLedgerEntry.Get(Rec."Entry No.") then
             exit;
-        if PrepaidLedgerEntry."Prepaid G/L Entry No." <> PrepaidLedgerEntry."G/L Entry No." then
-            PrepaidLedgerEntry.FieldError("Prepaid G/L Entry No.", IsNotNullErr)
+        if DeferralLedgerEntry."Deferral G/L Entry No." <> DeferralLedgerEntry."G/L Entry No." then
+            DeferralLedgerEntry.FieldError("Deferral G/L Entry No.", IsNotNullErr)
         else
-            if PrepaidLedgerEntry.OutstandingAmount() <> 0 then
-                PrepaidLedgerEntry.FieldError(Amount, IsNotNullErr);
+            if DeferralLedgerEntry.OutstandingAmount() <> 0 then
+                DeferralLedgerEntry.FieldError(Amount, IsNotNullErr);
         */
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"G/L Entry", 'OnAfterDeleteEvent', '', true, true)]
     local procedure OnAfterDeleteGLEntry(Rec: Record "G/L Entry")
     var
-        PrepaidLedgerEntry: Record "wan Prepaid Ledger Entry";
+        DeferralLedgerEntry: Record "wan Deferral Ledger Entry";
     begin
         /* Warning
             Call stack : 
@@ -88,9 +88,9 @@ codeunit 87220 "wan Prepaid Events"
                 Can't be skipped if IsTemporary
         if Rec.IsTemporary then
             exit;
-        PrepaidLedgerEntry.SetCurrentKey("Prepaid G/L Entry No.");
-        PrepaidLedgerEntry.SetRange("Prepaid G/L Entry No.", Rec."Entry No.");
-        PrepaidLedgerEntry.DeleteAll(true);
+        DeferralLedgerEntry.SetCurrentKey("Deferral G/L Entry No.");
+        DeferralLedgerEntry.SetRange("Deferral G/L Entry No.", Rec."Entry No.");
+        DeferralLedgerEntry.DeleteAll(true);
         */
     end;
 

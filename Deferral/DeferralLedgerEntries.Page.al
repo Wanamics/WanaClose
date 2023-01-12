@@ -1,9 +1,9 @@
-page 87220 "wan Prepaid Ledger Entries"
+page 87220 "wan Deferral Ledger Entries"
 {
     ApplicationArea = All;
-    Caption = 'Prepaid Entries';
+    Caption = 'Deferral Entries';
     PageType = List;
-    SourceTable = "wan Prepaid Ledger Entry";
+    SourceTable = "wan Deferral Ledger Entry";
     InsertAllowed = false;
     DeleteAllowed = false;
 
@@ -47,9 +47,9 @@ page 87220 "wan Prepaid Ledger Entries"
                 {
                     ToolTip = 'Specifies the value of the End Date field.';
                 }
-                field("Prepaid G/L Entry No."; Rec."Prepaid G/L Entry No.")
+                field("Deferral G/L Entry No."; Rec."Deferral G/L Entry No.")
                 {
-                    ToolTip = 'Specifies the value of the Prepaid G/L Entry No. field.';
+                    ToolTip = 'Specifies the value of the Deferral G/L Entry No. field.';
                     Visible = false;
                     Editable = false;
                 }
