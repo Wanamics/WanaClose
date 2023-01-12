@@ -59,7 +59,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Events - Method OnAfterCheckGenJnlLine - NamedType InseparableErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 173217276 - Method 3062612034 - NamedType 446445083" size-unit="char" translate="yes" xml:space="preserve">
-          <source>prepaid outstanding amount is not null</source>
+          <source>Deferral outstanding amount is not null</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Events - Method OnBeforeDeleteGLEntry - NamedType IsNotNullErr</note>
         </trans-unit>
@@ -508,20 +508,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Method CheckDeferralDates - NamedType DeferralDatesErr</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3171585911 - Field 2059733152 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+        <trans-unit id="TableExtension 3171585911 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Ending Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Field wan Deferral End Date - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Field wan Deferral Ending Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3171585911 - Field 1016338992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Deferral Entry No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Field wan Deferral Entry No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3171585911 - Field 1178676813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+        <trans-unit id="TableExtension 3171585911 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Starting Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Field wan Deferral Start Date - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Field wan Deferral Starting Date - Property Caption</note>
         </trans-unit>
       </group>
     </body>

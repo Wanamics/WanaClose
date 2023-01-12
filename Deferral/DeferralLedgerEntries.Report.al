@@ -4,7 +4,7 @@ report 87221 "wan Deferral Ledger Entries"
     Caption = 'Deferral Entries';
     UsageCategory = ReportsAndAnalysis;
     DefaultLayout = RDLC;
-    ExcelLayout = './Deferral/DeferralLedgerEntries.xlsx';
+    //ExcelLayout = './Deferral/DeferralLedgerEntries.xlsx';
     RDLCLayout = './Deferral/DeferralLedgerEntries.rdl';
     dataset
     {

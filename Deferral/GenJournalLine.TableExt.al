@@ -2,7 +2,7 @@ tableextension 87220 "wan Gen. Journal Line" extends "Gen. Journal Line"
 {
     fields
     {
-        field(87200; "wan Deferral Start Date"; Date)
+        field(87200; "wan Deferral Starting Date"; Date)
         {
             Caption = 'Starting Date';
             DataClassification = ToBeClassified;
@@ -12,7 +12,7 @@ tableextension 87220 "wan Gen. Journal Line" extends "Gen. Journal Line"
                 CheckDeferralDates();
             end;
         }
-        field(87201; "wan Deferral End Date"; Date)
+        field(87201; "wan Deferral Ending Date"; Date)
         {
             Caption = 'Ending Date';
             trigger OnValidate()
@@ -30,7 +30,7 @@ tableextension 87220 "wan Gen. Journal Line" extends "Gen. Journal Line"
     var
         DeferralDatesErr: label '%1 must be before %2';
     begin
-        if ("wan Deferral Start Date" > "wan Deferral End Date") and ("wan Deferral End Date" <> 0D) then
-            Error(DeferralDatesErr, FieldCaption("wan Deferral Start Date"), FieldCaption("wan Deferral End Date"));
+        if ("wan Deferral Starting Date" > "wan Deferral Ending Date") and ("wan Deferral Ending Date" <> 0D) then
+            Error(DeferralDatesErr, FieldCaption("wan Deferral Starting Date"), FieldCaption("wan Deferral Ending Date"));
     end;
 }

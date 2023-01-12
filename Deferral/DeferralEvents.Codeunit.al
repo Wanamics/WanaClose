@@ -13,16 +13,16 @@ codeunit 87220 "wan Deferral Events"
             exit;
         if GenJournalLine."Deferral Code" <> '' then
             if DeferralTemplate.Get(GenJournalLine."Deferral Code") and (DeferralTemplate."No. of Periods" = 0) then begin
-                GenJournalLine.TestField("wan Deferral Start Date");
-                GenJournalLine.TestField("wan Deferral End Date");
+                GenJournalLine.TestField("wan Deferral Starting Date");
+                GenJournalLine.TestField("wan Deferral Ending Date");
             end else begin
-                GenJournalLine.TestField("wan Deferral Start Date", 0D);
-                GenJournalLine.TestField("wan Deferral End Date", 0D);
+                GenJournalLine.TestField("wan Deferral Starting Date", 0D);
+                GenJournalLine.TestField("wan Deferral Ending Date", 0D);
             end;
-        if (GenJournalLine."wan Deferral Start Date" = 0D) and (GenJournalLine."wan Deferral End Date" <> 0D) then
-            GenJournalLine.FieldError("wan Deferral End Date", StrSubstNo(InseparableErr, GenJournalLine.FieldCaption("wan Deferral Start Date")));
-        if (GenJournalLine."wan Deferral Start Date" <> 0D) and (GenJournalLine."wan Deferral End Date" = 0D) then
-            GenJournalLine.FieldError("wan Deferral Start Date", StrSubstNo(InseparableErr, GenJournalLine.FieldCaption("wan Deferral End Date")));
+        if (GenJournalLine."wan Deferral Starting Date" = 0D) and (GenJournalLine."wan Deferral Ending Date" <> 0D) then
+            GenJournalLine.FieldError("wan Deferral Ending Date", StrSubstNo(InseparableErr, GenJournalLine.FieldCaption("wan Deferral Starting Date")));
+        if (GenJournalLine."wan Deferral Starting Date" <> 0D) and (GenJournalLine."wan Deferral Ending Date" = 0D) then
+            GenJournalLine.FieldError("wan Deferral Starting Date", StrSubstNo(InseparableErr, GenJournalLine.FieldCaption("wan Deferral Ending Date")));
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertGLEntry', '', false, false)]
@@ -44,11 +44,11 @@ codeunit 87220 "wan Deferral Events"
                 end
             end else
                 if (GLEntry."Gen. Posting Type" in [GLEntry."Gen. Posting Type"::Purchase, GLEntry."Gen. Posting Type"::Sale]) and
-                    (GenJnlLine."wan Deferral End Date" <> 0D) then begin
+                    (GenJnlLine."wan Deferral Ending Date" <> 0D) then begin
                     DeferralLedgerEntry.TransferFields(GLEntry, true);
                     DeferralLedgerEntry."Deferral G/L Entry No." := GLEntry."Entry No.";
-                    DeferralLedgerEntry."Starting Date" := GenJnlLine."wan Deferral Start Date";
-                    DeferralLedgerEntry."Ending Date" := GenJnlLine."wan Deferral End Date";
+                    DeferralLedgerEntry."Starting Date" := GenJnlLine."wan Deferral Starting Date";
+                    DeferralLedgerEntry."Ending Date" := GenJnlLine."wan Deferral Ending Date";
                     DeferralLedgerEntry.Insert(true);
                 end;
     end;
@@ -57,7 +57,7 @@ codeunit 87220 "wan Deferral Events"
     local procedure OnBeforeDeleteGLEntry(Rec: Record "G/L Entry")
     var
         DeferralLedgerEntry: Record "wan Deferral Ledger Entry";
-        IsNotNullErr: Label 'prepaid outstanding amount is not null';
+        IsNotNullErr: Label 'Deferral outstanding amount is not null';
     begin
         /* Warning
             Call stack : 

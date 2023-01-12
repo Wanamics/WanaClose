@@ -70,7 +70,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Events - Method OnAfterCheckGenJnlLine - NamedType InseparableErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 2063746256 - Method 3062612034 - NamedType 446445083" size-unit="char" translate="yes" xml:space="preserve">
-          <source>prepaid outstanding amount is not null</source>
+          <source>Deferral outstanding amount is not null</source>
           <target>montant CCA/PCA restant n'est pas nul</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Events - Method OnBeforeDeleteGLEntry - NamedType IsNotNullErr</note>
