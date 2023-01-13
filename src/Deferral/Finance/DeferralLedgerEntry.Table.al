@@ -1,4 +1,4 @@
-table 87220 "wan Deferral Ledger Entry"
+table 87250 "wan Deferral Ledger Entry"
 {
     Caption = 'Deferral Ledger Entry';
     DataClassification = ToBeClassified;
@@ -24,13 +24,13 @@ table 87220 "wan Deferral Ledger Entry"
             Caption = 'IC Partner Code';
             TableRelation = "IC Partner";
         }
-        field(89220; "Deferral G/L Entry No."; Integer)
+        field(89250; "Deferral G/L Entry No."; Integer)
         {
             Caption = 'Deferral G/L Entry No.';
             DataClassification = ToBeClassified;
             TableRelation = "G/L Entry";
         }
-        field(89221; "Starting Date"; Date)
+        field(89251; "Starting Date"; Date)
         {
             Caption = 'Starting Date';
             DataClassification = ToBeClassified;
@@ -40,7 +40,7 @@ table 87220 "wan Deferral Ledger Entry"
                 CheckDeferralDates()
             end;
         }
-        field(89222; "Ending Date"; Date)
+        field(89252; "Ending Date"; Date)
         {
             Caption = 'End Date';
             DataClassification = ToBeClassified;
@@ -50,7 +50,7 @@ table 87220 "wan Deferral Ledger Entry"
                 CheckDeferralDates()
             end;
         }
-        field(89223; Amount; Decimal)
+        field(89253; Amount; Decimal)
         {
             Caption = 'Amount';
             FieldClass = FlowField;

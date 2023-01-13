@@ -53,6 +53,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Field Starting Date - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4242647264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Global Dimension Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4242647264 - Method 1164095015 - NamedType 4185596797" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to define %1 dim. as mandatory for each 'Income' G/L account?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Global Dimension Setup - Method SetIncomeGLAccGlobDim - NamedType ConfirmEnable</note>
+        </trans-unit>
+        <trans-unit id="Table 4242647264 - Method 1164095015 - NamedType 3089505866" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do-you want to disable value posting of dimension %1 for Income G/L Accounts?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Global Dimension Setup - Method SetIncomeGLAccGlobDim - NamedType ConfirmDisable</note>
+        </trans-unit>
+        <trans-unit id="Table 4242647264 - Field 3877364928 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Income Glob. Dim. 1 Mandatory</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Global Dimension Setup - Field Income Glob. Dim. 1 Mand. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4242647264 - Field 2217404009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Income Glob. Dim. 2 Mandatory</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Global Dimension Setup - Field Income Glob. Dim. 2 Mand. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4242647264 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Global Dimension Setup - Field Primary Key - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 173217276 - Method 2347187875 - NamedType 3532006279" size-unit="char" translate="yes" xml:space="preserve">
           <source>and %1 are unseparable</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -62,6 +92,21 @@
           <source>Deferral outstanding amount is not null</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Events - Method OnBeforeDeleteGLEntry - NamedType IsNotNullErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 631506269 - Method 2331545609 - NamedType 3532006279" size-unit="char" translate="yes" xml:space="preserve">
+          <source>and %1 are unseparable</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Purchase Events - Method OnAfterReleasePurchaseDoc - NamedType InseparableErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1876266660 - Method 2954419672 - NamedType 3532006279" size-unit="char" translate="yes" xml:space="preserve">
+          <source>and %1 are unseparable</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Sales Events - Method OnAfterReleaseSalesDoc - NamedType InseparableErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3673123032 - Method 832324968 - NamedType 2282161910" size-unit="char" translate="yes" xml:space="preserve">
+          <source>must be Customer or Vendor for unrealized VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan VAT Events - Method OnBeforeInsertVAT - NamedType tMustBeCustomerOrVendorForUnrealizedVAT</note>
         </trans-unit>
         <trans-unit id="Page 3489411308 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deferral Entries</source>
@@ -127,6 +172,21 @@
           <source>Specifies the value of the Starting Date field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control Starting Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 907989121 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remaining VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Remaining VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 907989121 - Method 36190024 - NamedType 1417930510" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do-you want to create an Excel book for %1 %2(s)?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Remaining VAT - Method Export - NamedType ltConfirm</note>
+        </trans-unit>
+        <trans-unit id="Report 907989121 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Remaining VAT - Control PostingDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3489411308 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deferral Entries</source>
@@ -503,6 +563,56 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Journal - Control Starting Date - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="TableExtension 577818309 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
+          <source>Ending Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr. Memo Line - Field wan Deferral Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 577818309 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
+          <source>Starting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr. Memo Line - Field wan Deferral Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2079186865 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Ending Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Line - Field wan Deferral Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2079186865 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Starting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Line - Field wan Deferral Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3849893869 - Method 744292554 - NamedType 3503005407" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 3849893869">
+          <source>%1 must be before %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Purchase Line - Method wanCheckDeferralDates - NamedType DeferralDatesErr</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3849893869 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Ending Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Purchase Line - Field wan Deferral Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3849893869 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Starting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Purchase Line - Field wan Deferral Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3028566908 - Method 744292554 - NamedType 3503005407" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 3028566908">
+          <source>%1 must be before %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Sales Line - Method wanCheckDeferralDates - NamedType DeferralDatesErr</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3028566908 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Ending Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Sales Line - Field wan Deferral Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3028566908 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Starting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Sales Line - Field wan Deferral Starting Date - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3171585911 - Method 3614206850 - NamedType 3503005407" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 3171585911">
           <source>%1 must be before %2</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -522,6 +632,26 @@
           <source>Starting Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Field wan Deferral Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1674304755 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 518488723">
+          <source>Ending Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purch. Cr. Memo Line - Field wan Deferral Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1674304755 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 518488723">
+          <source>Starting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purch. Cr. Memo Line - Field wan Deferral Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2400887085 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2575310733">
+          <source>Ending Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purch. Inv. Line - Field wan Deferral Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2400887085 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2575310733">
+          <source>Starting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purch. Inv. Line - Field wan Deferral Starting Date - Property Caption</note>
         </trans-unit>
       </group>
     </body>

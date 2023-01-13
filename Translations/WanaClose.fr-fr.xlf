@@ -1,185 +1,263 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="fr-fr" original="WanaClose">
+  <file datatype="xml" source-language="en-US" target-language="fr-fr" original="WanaClose.g.xlf">
     <body>
       <group id="body">
-        <trans-unit id="Table 1329717998 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2858013906 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deferral Ledger Entry</source>
           <target>Ecriture CCA &amp; PCA</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1329717998 - Method 146797694 - NamedType 4261682475" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2858013906 - Method 3614206850 - NamedType 3503005407" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 must be before %2</source>
           <target>%1 doit être antérieure à %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Method CheckDeferralDates - NamedType DeferralDatesErr</note>
         </trans-unit>
-        <trans-unit id="Table 1329717998 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2858013906 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
           <target>Montant</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Field Amount - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1329717998 - Field 458406397 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>End Date</source>
-          <target>Date fin</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Field Ending Date - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1329717998 - Field 1411740825 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>G/L Entry No.</source>
-          <target>N° séquence écriture comptable</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Field G/L Entry No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1329717998 - Field 59113118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Gen. Posting Type</source>
-          <target>Type compta</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Field Gen. Posting Type - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1329717998 - Field 1329258699 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>IC Partner Code</source>
-          <target>Code partenaire IC</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Field IC Partner Code - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1329717998 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posting Date</source>
-          <target>Date comptabilisation</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Field Posting Date - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1329717998 - Field 2991723152 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2858013906 - Field 140141276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deferral G/L Entry No.</source>
           <target>N° séquence écriture CCA &amp; PCA</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Field Deferral G/L Entry No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1329717998 - Field 460889064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2858013906 - Field 458406397 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>End Date</source>
+          <target>Date fin</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Field Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2858013906 - Field 1411740825 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Entry No.</source>
+          <target>N° séquence écriture comptable</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Field G/L Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2858013906 - Field 59113118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Posting Type</source>
+          <target>Type compta</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Field Gen. Posting Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2858013906 - Field 1329258699 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IC Partner Code</source>
+          <target>Code partenaire IC</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Field IC Partner Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2858013906 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <target>Date comptabilisation</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Field Posting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2858013906 - Field 460889064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Starting Date</source>
           <target>Date début</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table wan Deferral Ledger Entry - Field Starting Date - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Codeunit 2063746256 - Method 2347187875 - NamedType 3532006279" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 4242647264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global Dimension Setup</source>
+          <target>Paramètres axes principaux</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Global Dimension Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4242647264 - Method 1164095015 - NamedType 4185596797" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to define %1 dim. as mandatory for each 'Income' G/L account?</source>
+          <target>Voulez-vous définir %1 comme obligatoire pour chaque compte de gestion ?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Global Dimension Setup - Method SetIncomeGLAccGlobDim - NamedType ConfirmEnable</note>
+        </trans-unit>
+        <trans-unit id="Table 4242647264 - Method 1164095015 - NamedType 3089505866" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do-you want to disable value posting of dimension %1 for Income G/L Accounts?</source>
+          <target>Voulez-vous désactiver le contôle validation de l'axe %1 pour les comptes de gestion ?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Global Dimension Setup - Method SetIncomeGLAccGlobDim - NamedType ConfirmDisable</note>
+        </trans-unit>
+        <trans-unit id="Table 4242647264 - Field 3877364928 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Income Glob. Dim. 1 Mandatory</source>
+          <target>Axe 1 oblig. / comptes de gestion</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Global Dimension Setup - Field Income Glob. Dim. 1 Mand. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4242647264 - Field 2217404009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Income Glob. Dim. 2 Mandatory</source>
+          <target>Axe 2 oblig. / comptes de gestion</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Global Dimension Setup - Field Income Glob. Dim. 2 Mand. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4242647264 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <target>Clé primaire</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table wan Global Dimension Setup - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 173217276 - Method 2347187875 - NamedType 3532006279" size-unit="char" translate="yes" xml:space="preserve">
           <source>and %1 are unseparable</source>
           <target>et %1 sont indissociables</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Events - Method OnAfterCheckGenJnlLine - NamedType InseparableErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 2063746256 - Method 3062612034 - NamedType 446445083" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 173217276 - Method 3062612034 - NamedType 446445083" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deferral outstanding amount is not null</source>
           <target>montant CCA/PCA restant n'est pas nul</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Events - Method OnBeforeDeleteGLEntry - NamedType IsNotNullErr</note>
         </trans-unit>
-        <trans-unit id="Page 1230906592 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 631506269 - Method 2331545609 - NamedType 3532006279" size-unit="char" translate="yes" xml:space="preserve">
+          <source>and %1 are unseparable</source>
+          <target>et %1 sont indissociables</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Purchase Events - Method OnAfterReleasePurchaseDoc - NamedType InseparableErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 631506269 - Method 3961188439 - NamedType 3532006279" size-unit="char" translate="yes" xml:space="preserve">
+          <source>and %1 are unseparable</source>
+          <target>et %1 sont indissociables</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Purchase Events - Method OnAfterReopenPurchaseDoc - NamedType InseparableErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1876266660 - Method 2954419672 - NamedType 3532006279" size-unit="char" translate="yes" xml:space="preserve">
+          <source>and %1 are unseparable</source>
+          <target>et %1 sont indissociables</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Sales Events - Method OnAfterReleaseSalesDoc - NamedType InseparableErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1876266660 - Method 3961188439 - NamedType 3532006279" size-unit="char" translate="yes" xml:space="preserve">
+          <source>and %1 are unseparable</source>
+          <target>et %1 sont indissociables</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Sales Events - Method OnAfterReopenPurchaseDoc - NamedType InseparableErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3673123032 - Method 832324968 - NamedType 2282161910" size-unit="char" translate="yes" xml:space="preserve">
+          <source>must be Customer or Vendor for unrealized VAT</source>
+          <target>doit être Client ou Fournisseur pour la TVA sur encaissements</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan VAT Events - Method OnBeforeInsertVAT - NamedType tMustBeCustomerOrVendorForUnrealizedVAT</note>
+        </trans-unit>
+        <trans-unit id="Page 3489411308 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deferral Entries</source>
           <target>Ecritures CCA &amp; PCA</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1230906592 - Control 636392376 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3489411308 - Control 636392376 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Amount field.</source>
           <target>Spécifie le montant</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control Amount - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1230906592 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
-          <target>Description</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control Description - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1230906592 - Control 3117834186 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Document No.</source>
-          <target>N° document</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control DocumentNo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1230906592 - Control 458406397 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the End Date field.</source>
-          <target>Spéficie la date de fin</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control Ending Date - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1230906592 - Control 2881437613 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>External Document No.</source>
-          <target>N° doc. externe
-</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control ExternalDocumentNo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 1230906592 - Control 1411740825 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the G/L Entry No. field.</source>
-          <target>Spécifie le N° écriture</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control G/L Entry No. - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1230906592 - Control 59113118 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Gen. Posting Type field.</source>
-          <target>Spéficie de Type compta. TVA</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control Gen. Posting Type - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1230906592 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Posting Date field.</source>
-          <target>Spéficie la Date comptabilisation</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control Posting Date - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 1230906592 - Control 2991723152 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3489411308 - Control 140141276 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Deferral G/L Entry No. field.</source>
           <target>Spécifie le compte CCA &amp; PCA
 </target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control Deferral G/L Entry No. - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1230906592 - Control 34717358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3489411308 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Description</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3489411308 - Control 3117834186 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <target>N° document</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control DocumentNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3489411308 - Control 458406397 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the End Date field.</source>
+          <target>Spéficie la date de fin</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control Ending Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3489411308 - Control 2881437613 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Document No.</source>
+          <target>N° doc. externe
+</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control ExternalDocumentNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3489411308 - Control 1411740825 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the G/L Entry No. field.</source>
+          <target>Spécifie le N° écriture</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control G/L Entry No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3489411308 - Control 59113118 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Gen. Posting Type field.</source>
+          <target>Spéficie de Type compta. TVA</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control Gen. Posting Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3489411308 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Posting Date field.</source>
+          <target>Spéficie la Date comptabilisation</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control Posting Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3489411308 - Control 34717358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Source Name</source>
           <target>Nom origine</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control SourceName - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1230906592 - Control 1900957152 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3489411308 - Control 1900957152 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Source No.</source>
           <target>N° origine</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control SourceNo - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1230906592 - Control 460889064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3489411308 - Control 460889064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Starting Date field.</source>
           <target>Spécifie la date de début</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page wan Deferral Ledger Entries - Control Starting Date - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Report 1230906592 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 907989121 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remaining VAT</source>
+          <target>TVA en attente</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Remaining VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 907989121 - Method 36190024 - NamedType 1417930510" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do-you want to create an Excel book for %1 %2(s)?</source>
+          <target>Voulez-vous créer un classeur Excel pour %1 "%2" ?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Remaining VAT - Method Export - NamedType ltConfirm</note>
+        </trans-unit>
+        <trans-unit id="Report 907989121 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <target>Date comptabilisation</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Remaining VAT - Control PostingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3489411308 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deferral Entries</source>
           <target>Ecritures CCA &amp; PCA</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Deferral Ledger Entries - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 1230906592 - NamedType 1147073148" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3489411308 - NamedType 1147073148" size-unit="char" translate="yes" xml:space="preserve">
           <source>Outstanding Amount</source>
           <target>Montant constaté d'avance</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Deferral Ledger Entries - NamedType OutstandingAmountCaption</note>
         </trans-unit>
-        <trans-unit id="Report 1230906592 - NamedType 894566561" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3489411308 - NamedType 894566561" size-unit="char" translate="yes" xml:space="preserve">
           <source>Period: %1</source>
-          <target state="needs-translation">Au : %1</target>
+          <target>Au : %1</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Deferral Ledger Entries - NamedType PeriodLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1230906592 - NamedType 411389942" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Source No.</source>
-          <target>N° origine</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Deferral Ledger Entries - NamedType SourceNoCaption</note>
-        </trans-unit>
-        <trans-unit id="Report 1230906592 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3489411308 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Date</source>
           <target>Date comptabilisation</target>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -239,77 +317,77 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Set Next No. Series Line - Control StartingDate - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 919454511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 4209501611 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Deferral Expenses &amp; Deferred Revenue</source>
           <target>Proposer CCA &amp; PCA</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 919454511 - Method 737175832 - NamedType 718343698" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 4209501611 - Method 737175832 - NamedType 3593387982" size-unit="char" translate="yes" xml:space="preserve">
           <source>PE %1 %2</source>
           <target>CCA %1 %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Method InsertGenJournalLine - NamedType DeferralExpensesDescription</note>
         </trans-unit>
-        <trans-unit id="Report 919454511 - Method 737175832 - NamedType 1211890609" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 4209501611 - Method 737175832 - NamedType 1211890609" size-unit="char" translate="yes" xml:space="preserve">
           <source>DR %1 %2</source>
           <target>PCA %1 %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Method InsertGenJournalLine - NamedType DeferredRevenueDescription</note>
         </trans-unit>
-        <trans-unit id="Report 919454511 - Method 1544076788 - NamedType 331638123" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 4209501611 - Method 1544076788 - NamedType 331638123" size-unit="char" translate="yes" xml:space="preserve">
           <source>All parameter are required</source>
           <target>Tous les paramètres sont obligatoires</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Method OnPreReport - NamedType ErrorMsg</note>
         </trans-unit>
-        <trans-unit id="Report 919454511 - Method 1544076788 - NamedType 2925920819" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 4209501611 - Method 1544076788 - NamedType 2925920819" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Date must match the end of an accounting period</source>
           <target>La date comptabilisation doit correspondre à la fin d'une période comptable.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Method OnPreReport - NamedType AccountingPeriodErr</note>
         </trans-unit>
-        <trans-unit id="Report 919454511 - Method 562636515 - NamedType 3785045816" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 4209501611 - Method 562636515 - NamedType 3785045816" size-unit="char" translate="yes" xml:space="preserve">
           <source>Journal must be empty</source>
           <target>La feuille de saisie doit être vide.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Method SetGenJournalLine - NamedType JournalMustBeEmpty</note>
         </trans-unit>
-        <trans-unit id="Report 919454511 - Control 1929622419 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account root 487 on a french chart of account.</source>
-          <target>Compte de racine 487 au plan comptable français.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Control DeferredRevenueAccountNo - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 919454511 - Control 1929622419 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Deferred Revenue Account No.</source>
-          <target>N° compte produits constatés d'avance</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Control DeferredRevenueAccountNo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 919454511 - Control 3117834186 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Document No.</source>
-          <target>N° document</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Control DocumentNo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 919454511 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posting Date</source>
-          <target>Date comptabilisation</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Control PostingDate - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 919454511 - Control 1966840148 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 4209501611 - Control 2618533736 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account root 486 on a french chart of account.</source>
           <target>Compte de racine 486 au plan comptable français.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Control DeferralExpensesAccountNo - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Report 919454511 - Control 1966840148 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 4209501611 - Control 2618533736 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deferral Expenses Account No.</source>
           <target>N° compte charges constatées d'avance</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Control DeferralExpensesAccountNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4209501611 - Control 1929622419 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account root 487 on a french chart of account.</source>
+          <target>Compte de racine 487 au plan comptable français.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Control DeferredRevenueAccountNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 4209501611 - Control 1929622419 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deferred Revenue Account No.</source>
+          <target>N° compte produits constatés d'avance</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Control DeferredRevenueAccountNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4209501611 - Control 3117834186 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <target>N° document</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Control DocumentNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 4209501611 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <target>Date comptabilisation</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Control PostingDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 185042496 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Purchase Provisions</source>
@@ -355,13 +433,13 @@
         </trans-unit>
         <trans-unit id="Report 185042496 - ReportDataItem 2864501128 - Method 72583909 - NamedType 3647225985" size-unit="char" translate="yes" xml:space="preserve">
           <source>ExpCM</source>
-          <target>AAR</target>
+          <target>AàR</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - ReportDataItem ReturnShipmentLine - Method OnPreDataItem - NamedType ProvisionDocumentNo</note>
         </trans-unit>
         <trans-unit id="Report 185042496 - ReportDataItem 2864501128 - Method 72583909 - NamedType 3322125993" size-unit="char" translate="yes" xml:space="preserve">
           <source>Exp.CM %1 %2</source>
-          <target>AAR %1 %2</target>
+          <target>AàR %1 %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - ReportDataItem ReturnShipmentLine - Method OnPreDataItem - NamedType ProvisionDescription</note>
         </trans-unit>
@@ -451,25 +529,25 @@
         </trans-unit>
         <trans-unit id="Report 3099164818 - ReportDataItem 291051572 - Method 72583909 - NamedType 3647225985" size-unit="char" translate="yes" xml:space="preserve">
           <source>ToCM</source>
-          <target>AAE</target>
+          <target>AàE</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - ReportDataItem ReturnReceiptLine - Method OnPreDataItem - NamedType ProvisionDocumentNo</note>
         </trans-unit>
         <trans-unit id="Report 3099164818 - ReportDataItem 291051572 - Method 72583909 - NamedType 3322125993" size-unit="char" translate="yes" xml:space="preserve">
           <source>To CM %1 %2</source>
-          <target>AAE %1 %2</target>
+          <target>AàE %1 %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - ReportDataItem ReturnReceiptLine - Method OnPreDataItem - NamedType ProvisionDescription</note>
         </trans-unit>
         <trans-unit id="Report 3099164818 - ReportDataItem 3333755618 - Method 72583909 - NamedType 3117834186" size-unit="char" translate="yes" xml:space="preserve">
           <source>ToInv</source>
-          <target>FAE</target>
+          <target>FàE</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - ReportDataItem SalesShipmentLine - Method OnPreDataItem - NamedType DocumentNo</note>
         </trans-unit>
         <trans-unit id="Report 3099164818 - ReportDataItem 3333755618 - Method 72583909 - NamedType 3322125993" size-unit="char" translate="yes" xml:space="preserve">
           <source>ToInv. %1 %2</source>
-          <target>FAE %1 %2</target>
+          <target>FàE %1 %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - ReportDataItem SalesShipmentLine - Method OnPreDataItem - NamedType ProvisionDescription</note>
         </trans-unit>
@@ -515,13 +593,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionVATAccountNo - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 2513521001 - Action 3326204137 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
+        <trans-unit id="PageExtension 2513521001 - Action 2161648165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
           <source>Suggest Deferral Exp. &amp; Deferred Rev.</source>
           <target>Proposer CCA &amp; PCA</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan General Journal - Action wanSuggestDeferral - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 2513521001 - Action 3303840627 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
+        <trans-unit id="PageExtension 2513521001 - Action 2698729543 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
           <source>Deferral Entries</source>
           <target>Ecritures CCA &amp; PCA</target>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -535,7 +613,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 2513521001 - Control 1329258699 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
           <source>Specifies the value of the IC Partner Code field.</source>
-          <target state="needs-translation"></target>
+          <target>Spécifie la valeur du code partenaire.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan General Journal - Control IC Partner Code - Property ToolTip</note>
         </trans-unit>
@@ -545,13 +623,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan General Journal - Control Starting Date - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 2803858443 - Method 1637560550 - NamedType 4261682475" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 2803858443">
+        <trans-unit id="PageExtension 2803858443 - Method 1137542634 - NamedType 3503005407" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 2803858443">
           <source>%1 must be before %2</source>
           <target>%1 doit être antérieure à %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan General Ledger Entries - Method wanValidateDeferralDates - NamedType DeferralDatesErr</note>
         </trans-unit>
-        <trans-unit id="PageExtension 2803858443 - Action 3303840627 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
+        <trans-unit id="PageExtension 2803858443 - Action 2698729543 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1887905131">
           <source>Deferral Entries</source>
           <target>Ecritures CCA &amp; PCA</target>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -599,29 +677,140 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Recurring General Journal - Action wanSuggestSalesProvisions - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3171585911 - Method 146797694 - NamedType 4261682475" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 3171585911">
+        <trans-unit id="PageExtension 161412155 - Control 458406397 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1727838235">
+          <source>Specifies the value of the Ending Date field.</source>
+          <target>Spécifie la valeur de la date de fin.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Journal - Control Ending Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 161412155 - Control 460889064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1727838235">
+          <source>Specifies the value of the Starting Date field.</source>
+          <target>Spécifie la date de début</target>
+          <target>[NAB: SUGGESTION]Spécifie la valeur de la date de début.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Journal - Control Starting Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 577818309 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
+          <source>Ending Date</source>
+          <target>Date fin</target>
+          <target>[NAB: SUGGESTION]Date de fin</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr. Memo Line - Field wan Deferral Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 577818309 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
+          <source>Starting Date</source>
+          <target>Date début</target>
+          <target>[NAB: SUGGESTION]Date de début</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr. Memo Line - Field wan Deferral Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2079186865 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Ending Date</source>
+          <target>Date fin</target>
+          <target>[NAB: SUGGESTION]Date de fin</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Line - Field wan Deferral Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2079186865 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Starting Date</source>
+          <target>Date début</target>
+          <target>[NAB: SUGGESTION]Date de début</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Line - Field wan Deferral Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3849893869 - Method 744292554 - NamedType 3503005407" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 3849893869">
+          <source>%1 must be before %2</source>
+          <target>%1 doit être antérieure à %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Purchase Line - Method wanCheckDeferralDates - NamedType DeferralDatesErr</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3849893869 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Ending Date</source>
+          <target>Date fin</target>
+          <target>[NAB: SUGGESTION]Date de fin</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Purchase Line - Field wan Deferral Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3849893869 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
+          <source>Starting Date</source>
+          <target>Date début</target>
+          <target>[NAB: SUGGESTION]Date de début</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Purchase Line - Field wan Deferral Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3028566908 - Method 744292554 - NamedType 3503005407" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 3028566908">
+          <source>%1 must be before %2</source>
+          <target>%1 doit être antérieure à %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Sales Line - Method wanCheckDeferralDates - NamedType DeferralDatesErr</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3028566908 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Ending Date</source>
+          <target>Date fin</target>
+          <target>[NAB: SUGGESTION]Date de fin</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Sales Line - Field wan Deferral Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3028566908 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Starting Date</source>
+          <target>Date début</target>
+          <target>[NAB: SUGGESTION]Date de début</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Sales Line - Field wan Deferral Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3171585911 - Method 3614206850 - NamedType 3503005407" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 3171585911">
           <source>%1 must be before %2</source>
           <target>%1 doit être antérieure à %2</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Method CheckDeferralDates - NamedType DeferralDatesErr</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3171585911 - Field 1326309149 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+        <trans-unit id="TableExtension 3171585911 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Ending Date</source>
           <target>Date fin</target>
+          <target>[NAB: SUGGESTION]Date de fin</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Field wan Ending Date - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Field wan Deferral Ending Date - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3171585911 - Field 109292268 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+        <trans-unit id="TableExtension 3171585911 - Field 1016338992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Deferral Entry No.</source>
           <target>N° écriture CCA/PCA</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Field wan Deferral Entry No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3171585911 - Field 2961647368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
+        <trans-unit id="TableExtension 3171585911 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Starting Date</source>
           <target>Date début</target>
+          <target>[NAB: SUGGESTION]Date de début</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Field wan Starting Date - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Field wan Deferral Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1674304755 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 518488723">
+          <source>Ending Date</source>
+          <target>Date fin</target>
+          <target>[NAB: SUGGESTION]Date de fin</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purch. Cr. Memo Line - Field wan Deferral Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1674304755 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 518488723">
+          <source>Starting Date</source>
+          <target>Date début</target>
+          <target>[NAB: SUGGESTION]Date de début</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purch. Cr. Memo Line - Field wan Deferral Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2400887085 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2575310733">
+          <source>Ending Date</source>
+          <target>Date fin</target>
+          <target>[NAB: SUGGESTION]Date de fin</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purch. Inv. Line - Field wan Deferral Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2400887085 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2575310733">
+          <source>Starting Date</source>
+          <target>Date début</target>
+          <target>[NAB: SUGGESTION]Date de début</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purch. Inv. Line - Field wan Deferral Starting Date - Property Caption</note>
         </trans-unit>
       </group>
     </body>

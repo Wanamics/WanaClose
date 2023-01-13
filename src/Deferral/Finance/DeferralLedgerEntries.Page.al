@@ -1,4 +1,4 @@
-page 87220 "wan Deferral Ledger Entries"
+page 87250 "wan Deferral Ledger Entries"
 {
     ApplicationArea = All;
     Caption = 'Deferral Entries';

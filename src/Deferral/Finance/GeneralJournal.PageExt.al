@@ -1,4 +1,4 @@
-pageextension 87223 "wan General Journal" extends "General Journal"
+pageextension 87253 "wan General Journal" extends "General Journal"
 {
     layout
     {
@@ -41,9 +41,6 @@ pageextension 87223 "wan General Journal" extends "General Journal"
             {
                 Caption = 'Suggest Deferral Exp. & Deferred Rev.';
                 Image = PeriodEntries;
-                //Promoted = true;
-                //PromotedIsBig = true;
-                //PromotedCategory = Process;
                 ApplicationArea = All;
                 trigger OnAction()
                 var
@@ -61,9 +58,6 @@ pageextension 87223 "wan General Journal" extends "General Journal"
             action(wanDeferralEntries)
             {
                 Caption = 'Deferral Entries';
-                //Promoted = true;
-                //PromotedIsBig = true;
-                //PromotedCategory = Process;
                 ApplicationArea = All;
                 Image = PeriodEntries;
                 RunObject = page "wan Deferral Ledger Entries";

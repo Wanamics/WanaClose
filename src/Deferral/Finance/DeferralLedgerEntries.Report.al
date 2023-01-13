@@ -1,4 +1,4 @@
-report 87221 "wan Deferral Ledger Entries"
+report 87251 "wan Deferral Ledger Entries"
 {
     ApplicationArea = All;
     Caption = 'Deferral Entries';

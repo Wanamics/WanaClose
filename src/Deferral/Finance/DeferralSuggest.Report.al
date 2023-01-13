@@ -1,4 +1,4 @@
-report 87220 "wan Suggest Deferral Entries"
+report 87250 "wan Suggest Deferral Entries"
 {
     Caption = 'Suggest Deferral Expenses & Deferred Revenue';
     ProcessingOnly = true;

@@ -1,35 +1,31 @@
-tableextension 87220 "wan Gen. Journal Line" extends "Gen. Journal Line"
+tableextension 87260 "wan Close Sales Line" extends "Sales Line"
 {
     fields
     {
-        field(87200; "wan Deferral Starting Date"; Date)
+        field(87251; "wan Deferral Starting Date"; Date)
         {
             Caption = 'Starting Date';
             DataClassification = ToBeClassified;
-
             trigger OnValidate()
             begin
-                CheckDeferralDates();
+                wanCheckDeferralDates();
             end;
         }
-        field(87201; "wan Deferral Ending Date"; Date)
+        field(87252; "wan Deferral Ending Date"; Date)
         {
             Caption = 'Ending Date';
+            DataClassification = ToBeClassified;
             trigger OnValidate()
             begin
-                CheckDeferralDates();
+                wanCheckDeferralDates();
             end;
         }
-        field(87202; "wan Deferral Entry No."; Integer)
-        {
-            Caption = 'Deferral Entry No.';
-            TableRelation = "G/L Entry";
-        }
     }
-    local procedure CheckDeferralDates();
+    local procedure wanCheckDeferralDates();
     var
         DeferralDatesErr: label '%1 must be before %2';
     begin
+        Rec.TestField(Type, Rec.Type::"G/L Account");
         if ("wan Deferral Starting Date" > "wan Deferral Ending Date") and ("wan Deferral Ending Date" <> 0D) then
             Error(DeferralDatesErr, FieldCaption("wan Deferral Starting Date"), FieldCaption("wan Deferral Ending Date"));
     end;

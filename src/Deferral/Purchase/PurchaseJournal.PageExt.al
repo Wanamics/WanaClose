@@ -1,4 +1,4 @@
-pageextension 87222 "wan Purchase Journal" extends "Purchase Journal"
+pageextension 87280 "wan Purchase Journal" extends "Purchase Journal"
 {
     layout
     {
@@ -8,11 +8,13 @@ pageextension 87222 "wan Purchase Journal" extends "Purchase Journal"
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the Starting Date field.';
+                Width = 9;
             }
             field("Ending Date"; Rec."wan Deferral Ending Date")
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the Ending Date field.';
+                Width = 9;
             }
         }
     }
