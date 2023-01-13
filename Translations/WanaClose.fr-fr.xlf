@@ -117,23 +117,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Purchase Events - Method OnAfterReleasePurchaseDoc - NamedType InseparableErr</note>
         </trans-unit>
-        <trans-unit id="Codeunit 631506269 - Method 3961188439 - NamedType 3532006279" size-unit="char" translate="yes" xml:space="preserve">
-          <source>and %1 are unseparable</source>
-          <target>et %1 sont indissociables</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Purchase Events - Method OnAfterReopenPurchaseDoc - NamedType InseparableErr</note>
-        </trans-unit>
         <trans-unit id="Codeunit 1876266660 - Method 2954419672 - NamedType 3532006279" size-unit="char" translate="yes" xml:space="preserve">
           <source>and %1 are unseparable</source>
           <target>et %1 sont indissociables</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Sales Events - Method OnAfterReleaseSalesDoc - NamedType InseparableErr</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1876266660 - Method 3961188439 - NamedType 3532006279" size-unit="char" translate="yes" xml:space="preserve">
-          <source>and %1 are unseparable</source>
-          <target>et %1 sont indissociables</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit wan Deferral Sales Events - Method OnAfterReopenPurchaseDoc - NamedType InseparableErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3673123032 - Method 832324968 - NamedType 2282161910" size-unit="char" translate="yes" xml:space="preserve">
           <source>must be Customer or Vendor for unrealized VAT</source>
@@ -565,7 +553,7 @@
         </trans-unit>
         <trans-unit id="Report 3099164818 - Control 592568410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Provision Bal. Account No.</source>
-          <target>Compte factures non parvenues</target>
+          <target>N° compte factures non parvenues</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionBalAccountNo - Property Caption</note>
         </trans-unit>
@@ -619,7 +607,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 2513521001 - Control 460889064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
           <source>Specifies the value of the Starting Date field.</source>
-          <target>Spécifie la valeur de la date de début.</target>
+          <target>Spécifie la date de début</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan General Journal - Control Starting Date - Property ToolTip</note>
         </trans-unit>
@@ -646,6 +634,18 @@
           <target>Date début</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan General Ledger Entries - Control wanStartingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 345082808 - Control 409105504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4050813720">
+          <source>Income Glob. Dim. 1 Mandatory</source>
+          <target>Axe 1 oblig. / comptes de gestion</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan General Ledger Setup - Control wan Income Glob. Dim. 1 Mand. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 345082808 - Control 993772425 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4050813720">
+          <source>Income Glob. Dim. 2 Mandatory</source>
+          <target>Axe 2 oblig. / comptes de gestion</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan General Ledger Setup - Control wan Income Glob. Dim. 2 Mand. - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3346869136 - Action 2134149939 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1351594800">
           <source>Set Next No. Series Line</source>
@@ -686,35 +686,30 @@
         <trans-unit id="PageExtension 161412155 - Control 460889064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1727838235">
           <source>Specifies the value of the Starting Date field.</source>
           <target>Spécifie la date de début</target>
-          <target>[NAB: SUGGESTION]Spécifie la valeur de la date de début.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Sales Journal - Control Starting Date - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="TableExtension 577818309 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
           <source>Ending Date</source>
           <target>Date fin</target>
-          <target>[NAB: SUGGESTION]Date de fin</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr. Memo Line - Field wan Deferral Ending Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 577818309 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3059602325">
           <source>Starting Date</source>
           <target>Date début</target>
-          <target>[NAB: SUGGESTION]Date de début</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Cr. Memo Line - Field wan Deferral Starting Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2079186865 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Ending Date</source>
           <target>Date fin</target>
-          <target>[NAB: SUGGESTION]Date de fin</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Line - Field wan Deferral Ending Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2079186865 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Starting Date</source>
           <target>Date début</target>
-          <target>[NAB: SUGGESTION]Date de début</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Sales Invoice Line - Field wan Deferral Starting Date - Property Caption</note>
         </trans-unit>
@@ -727,14 +722,12 @@
         <trans-unit id="TableExtension 3849893869 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>Ending Date</source>
           <target>Date fin</target>
-          <target>[NAB: SUGGESTION]Date de fin</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Purchase Line - Field wan Deferral Ending Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3849893869 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>Starting Date</source>
           <target>Date début</target>
-          <target>[NAB: SUGGESTION]Date de début</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Purchase Line - Field wan Deferral Starting Date - Property Caption</note>
         </trans-unit>
@@ -747,14 +740,12 @@
         <trans-unit id="TableExtension 3028566908 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Ending Date</source>
           <target>Date fin</target>
-          <target>[NAB: SUGGESTION]Date de fin</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Sales Line - Field wan Deferral Ending Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3028566908 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Starting Date</source>
           <target>Date début</target>
-          <target>[NAB: SUGGESTION]Date de début</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Close Sales Line - Field wan Deferral Starting Date - Property Caption</note>
         </trans-unit>
@@ -767,7 +758,6 @@
         <trans-unit id="TableExtension 3171585911 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Ending Date</source>
           <target>Date fin</target>
-          <target>[NAB: SUGGESTION]Date de fin</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Field wan Deferral Ending Date - Property Caption</note>
         </trans-unit>
@@ -780,35 +770,30 @@
         <trans-unit id="TableExtension 3171585911 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>Starting Date</source>
           <target>Date début</target>
-          <target>[NAB: SUGGESTION]Date de début</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Gen. Journal Line - Field wan Deferral Starting Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1674304755 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 518488723">
           <source>Ending Date</source>
           <target>Date fin</target>
-          <target>[NAB: SUGGESTION]Date de fin</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purch. Cr. Memo Line - Field wan Deferral Ending Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1674304755 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 518488723">
           <source>Starting Date</source>
           <target>Date début</target>
-          <target>[NAB: SUGGESTION]Date de début</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purch. Cr. Memo Line - Field wan Deferral Starting Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2400887085 - Field 246128504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2575310733">
           <source>Ending Date</source>
           <target>Date fin</target>
-          <target>[NAB: SUGGESTION]Date de fin</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purch. Inv. Line - Field wan Deferral Ending Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2400887085 - Field 648602221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2575310733">
           <source>Starting Date</source>
           <target>Date début</target>
-          <target>[NAB: SUGGESTION]Date de début</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purch. Inv. Line - Field wan Deferral Starting Date - Property Caption</note>
         </trans-unit>

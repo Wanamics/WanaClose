@@ -6,6 +6,7 @@ pageextension 87240 "wan General Ledger Setup" extends "General Ledger Setup"
         {
             field("wan Income Glob. Dim. 1 Mand."; GlobDimSetup."Income Glob. Dim. 1 Mand.")
             {
+                Caption = 'Income Glob. Dim. 1 Mandatory';
                 ApplicationArea = All;
                 trigger OnValidate()
                 begin
@@ -18,6 +19,7 @@ pageextension 87240 "wan General Ledger Setup" extends "General Ledger Setup"
         {
             field("wan Income Glob. Dim. 2 Mand."; GlobDimSetup."Income Glob. Dim. 2 Mand.")
             {
+                Caption = 'Income Glob. Dim. 2 Mandatory';
                 ApplicationArea = All;
                 trigger OnValidate()
                 begin
