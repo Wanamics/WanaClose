@@ -2,7 +2,7 @@
   "id": "86735892-de5c-4ac7-afa5-d22064c81f75",
   "name": "WanaClose",
   "publisher": "Wanamics",
-  "version": "21.0.0.8",
+  "version": "21.0.0.9",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -14,6 +14,7 @@
   "screenshots": [],
   "platform": "1.0.0.0",
   "application": "21.0.0.0",
+  "contextSensitiveHelpUrl": "https://www.wanamics.fr/WanaClose/",
   "idRanges": [
     {
       "from": 87200,

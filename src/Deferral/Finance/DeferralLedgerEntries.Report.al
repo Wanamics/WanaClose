@@ -5,7 +5,7 @@ report 87251 "wan Deferral Ledger Entries"
     UsageCategory = ReportsAndAnalysis;
     DefaultLayout = RDLC;
     //ExcelLayout = './Deferral/DeferralLedgerEntries.xlsx';
-    RDLCLayout = './Layouts/DeferralLedgerEntries.rdl';
+    RDLCLayout = './src/Deferral/Finance/DeferralLedgerEntries.rdl';
     dataset
     {
         dataitem(wanDeferralLedgerEntry; "wan Deferral Ledger Entry")
