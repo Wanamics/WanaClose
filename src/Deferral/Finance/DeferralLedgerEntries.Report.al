@@ -44,7 +44,8 @@ report 87251 "wan Deferral Ledger Entries"
 
             trigger OnAfterGetRecord()
             begin
-                if Amount - OutstandingAmount(PostingDate) = 0 then
+                //if Amount - OutstandingAmount(PostingDate) = 0 then
+                if OutstandingAmount(PostingDate) = 0 then
                     CurrReport.Skip();
                 GLEntry.Get("G/L Entry No.");
                 SourceAccount := GetSourceAccount(GLEntry);

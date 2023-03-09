@@ -13,21 +13,11 @@ report 87250 "wan Suggest Deferral Entries"
                 where("Gen. Posting Type" = filter(Purchase | Sale));
             trigger OnAfterGetRecord()
             var
-                //ClosingAmount: Decimal;
                 GLEntry: Record "G/L Entry";
             begin
                 if ("Gen. Posting Type" <> xDeferralLedgerEntry."Gen. Posting Type") or
                     ("IC Partner Code" <> xDeferralLedgerEntry."IC Partner Code") then
                     InsertBalance(xDeferralLedgerEntry."Gen. Posting Type", BalanceAmount);
-                /*
-                ClosingAmount := TargetAmount(DeferralLedgerEntry, TempGenJournalLine."Posting Date") - DeferralLedgerEntry.OutstandingAmount(TempGenJournalLine."Posting Date");
-                if ClosingAmount <> 0 then begin
-                    GLEntry.Get(DeferralLedgerEntry."G/L Entry No.");
-                    if GLEntry.Reversed then //?????????????
-                        InsertGenJournalLine(GLEntry, -DeferralLedgerEntry.OutstandingAmount(TempGenJournalLine."Posting Date"))
-                    else
-                        InsertGenJournalLine(GLEntry, ClosingAmount);
-                */
                 GLEntry.Get(DeferralLedgerEntry."G/L Entry No.");
                 if GLEntry.Reversed then
                     InsertGenJournalLine(GLEntry, -DeferralLedgerEntry.OutstandingAmount(TempGenJournalLine."Posting Date"))
@@ -123,19 +113,17 @@ report 87250 "wan Suggest Deferral Entries"
 
     local procedure InsertGenJournalLine(pGLEntry: Record "G/L Entry"; pAmount: Decimal)
     var
-        //pGLEntry: Record "G/L Entry";
         GenJournalLine: Record "Gen. Journal Line";
         DeferralExpensesDescription: Label 'PE %1 %2';
         DeferredRevenueDescription: Label 'DR %1 %2';
     begin
-        //GLEntry.Get(pGLEntryNo);
         if pAmount = 0 then
             exit;
         TempGenJournalLine."Line No." += 10000;
         GenJournalLine.TransferFields(TempGenJournalLine, true);
         GenJournalLine.Validate("Account No.", pGLEntry."G/L Account No.");
         GenJournalLine.Validate(Amount, pAmount);
-        case pGLEntry."Gen. Posting Type" of
+        case DeferralLedgerEntry."Gen. Posting Type" of
             pGLEntry."Gen. Posting Type"::Purchase:
                 GenJournalLine.Description := CopyStr(Strsubstno(DeferralExpensesDescription, pGLEntry."Document No.", pGLEntry.Description), 1, maxstrlen(GenJournalLine.Description));
             pGLEntry."Gen. Posting Type"::Sale:
