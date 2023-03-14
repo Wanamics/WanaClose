@@ -553,6 +553,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension wan Purch. Inv. Line - Field wan Deferral Starting Date - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PermissionSet 1250332529 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>WanaClose</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet WanaClose - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>

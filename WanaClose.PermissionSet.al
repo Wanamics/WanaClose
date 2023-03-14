@@ -1,8 +1,8 @@
-permissionset 87250 "wan WanaClose"
+permissionset 87250 "WanaClose"
 {
     Access = Internal;
     Assignable = true;
-    Caption = 'WanaClose', Locked = true;
+    Caption = 'WanaClose';
 
     Permissions =
          codeunit "wan Deferral Events" = X,
