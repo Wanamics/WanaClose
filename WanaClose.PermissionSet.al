@@ -11,8 +11,8 @@ permissionset 87250 "WanaClose"
          page "wan Deferral Ledger Entries" = X,
          report "wan Deferral Ledger Entries" = X,
          report "wan Suggest Deferral Entries" = X,
-         report "wan Suggest Purch. Provisions" = X,
-         report "wan Suggest Sales Provisions" = X,
+         report "wan Suggest Payable Outstd." = X,
+         report "wan Suggest Outstd. Receivable" = X,
          table "wan Deferral Ledger Entry" = X,
          tabledata "wan Deferral Ledger Entry" = RIMD;
 }

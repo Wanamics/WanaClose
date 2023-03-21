@@ -218,175 +218,175 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Deferral Entries - Control PostingDate - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 185042496 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Suggest Purchase Provisions</source>
+        <trans-unit id="Report 3832362581 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suggest Outstanding Receivable</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 185042496 - Method 1544076788 - NamedType 331638123" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3832362581 - Method 1544076788 - NamedType 331638123" size-unit="char" translate="yes" xml:space="preserve">
           <source>All parameter are required</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Method OnPreReport - NamedType ErrorMsg</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - Method OnPreReport - NamedType ErrorMsg</note>
         </trans-unit>
-        <trans-unit id="Report 185042496 - Method 1544076788 - NamedType 750120336" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Do you want to suggest purchase provisions on %1?</source>
+        <trans-unit id="Report 3832362581 - Method 1544076788 - NamedType 750120336" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to suggest outstanding receivable on %1?</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Method OnPreReport - NamedType ConfirmQst</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - Method OnPreReport - NamedType ConfirmQst</note>
         </trans-unit>
-        <trans-unit id="Report 185042496 - Method 1544076788 - NamedType 1240717133" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3832362581 - Method 1544076788 - NamedType 1240717133" size-unit="char" translate="yes" xml:space="preserve">
           <source>Warning : This process should not be posted twice at the same posting date for the same selection!</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Method OnPreReport - NamedType WarningMsg</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - Method OnPreReport - NamedType WarningMsg</note>
         </trans-unit>
-        <trans-unit id="Report 185042496 - Method 562636515 - NamedType 3785045816" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3832362581 - Method 562636515 - NamedType 3785045816" size-unit="char" translate="yes" xml:space="preserve">
           <source>Journal must be empty</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Method SetGenJournalLine - NamedType JournalMustBeEmpty</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - Method SetGenJournalLine - NamedType JournalMustBeEmpty</note>
         </trans-unit>
-        <trans-unit id="Report 185042496 - ReportDataItem 3338551105 - Method 72583909 - NamedType 3117834186" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ExpInv</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - ReportDataItem PurchRcptLine - Method OnPreDataItem - NamedType DocumentNo</note>
-        </trans-unit>
-        <trans-unit id="Report 185042496 - ReportDataItem 3338551105 - Method 72583909 - NamedType 3322125993" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Exp.Inv. %1 %2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - ReportDataItem PurchRcptLine - Method OnPreDataItem - NamedType ProvisionDescription</note>
-        </trans-unit>
-        <trans-unit id="Report 185042496 - ReportDataItem 2864501128 - Method 72583909 - NamedType 3647225985" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ExpCM</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - ReportDataItem ReturnShipmentLine - Method OnPreDataItem - NamedType ProvisionDocumentNo</note>
-        </trans-unit>
-        <trans-unit id="Report 185042496 - ReportDataItem 2864501128 - Method 72583909 - NamedType 3322125993" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Exp.CM %1 %2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - ReportDataItem ReturnShipmentLine - Method OnPreDataItem - NamedType ProvisionDescription</note>
-        </trans-unit>
-        <trans-unit id="Report 185042496 - Control 1831623764 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account root 378 on a french chart of account.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control PermanentInventoryAccountNo - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 185042496 - Control 1831623764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Permanent Inventory Account No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control PermanentInventoryAccountNo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 185042496 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posting Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control PostingDate - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 185042496 - Control 592568410 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account root 408 on a french chart of account.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control ProvisionBalAccountNo - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 185042496 - Control 592568410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Provision Bal. Account No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control ProvisionBalAccountNo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 185042496 - Control 3224440404 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account root 409 on a french chart of account.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control ProvisionDebitBalAccountNo - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 185042496 - Control 3224440404 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Provision Debit Bal. Account No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control ProvisionDebitBalAccountNo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 185042496 - Control 1162293398 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account root 44586 on a french chart of account.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control ProvisionVATAccountNo - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Report 185042496 - Control 1162293398 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Provision VAT Account No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Purch. Provisions - Control ProvisionVATAccountNo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 3099164818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Suggest Sales Provisions</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 3099164818 - Method 1544076788 - NamedType 331638123" size-unit="char" translate="yes" xml:space="preserve">
-          <source>All parameter are required</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Method OnPreReport - NamedType ErrorMsg</note>
-        </trans-unit>
-        <trans-unit id="Report 3099164818 - Method 1544076788 - NamedType 750120336" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Do you want to suggest Sales provisions on %1?</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Method OnPreReport - NamedType ConfirmQst</note>
-        </trans-unit>
-        <trans-unit id="Report 3099164818 - Method 1544076788 - NamedType 1240717133" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Warning : This process should not be posted twice at the same posting date for the same selection!</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Method OnPreReport - NamedType WarningMsg</note>
-        </trans-unit>
-        <trans-unit id="Report 3099164818 - Method 562636515 - NamedType 3785045816" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Journal must be empty</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Method SetGenJournalLine - NamedType JournalMustBeEmpty</note>
-        </trans-unit>
-        <trans-unit id="Report 3099164818 - ReportDataItem 291051572 - Method 72583909 - NamedType 3647225985" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3832362581 - ReportDataItem 291051572 - Method 72583909 - NamedType 3117834186" size-unit="char" translate="yes" xml:space="preserve">
           <source>ToCM</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - ReportDataItem ReturnReceiptLine - Method OnPreDataItem - NamedType ProvisionDocumentNo</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - ReportDataItem ReturnReceiptLine - Method OnPreDataItem - NamedType DocumentNo</note>
         </trans-unit>
-        <trans-unit id="Report 3099164818 - ReportDataItem 291051572 - Method 72583909 - NamedType 3322125993" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3832362581 - ReportDataItem 291051572 - Method 72583909 - NamedType 3461834954" size-unit="char" translate="yes" xml:space="preserve">
           <source>To CM %1 %2</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - ReportDataItem ReturnReceiptLine - Method OnPreDataItem - NamedType ProvisionDescription</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - ReportDataItem ReturnReceiptLine - Method OnPreDataItem - NamedType Description</note>
         </trans-unit>
-        <trans-unit id="Report 3099164818 - ReportDataItem 3333755618 - Method 72583909 - NamedType 3117834186" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3832362581 - ReportDataItem 3333755618 - Method 72583909 - NamedType 3117834186" size-unit="char" translate="yes" xml:space="preserve">
           <source>ToInv</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - ReportDataItem SalesShipmentLine - Method OnPreDataItem - NamedType DocumentNo</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - ReportDataItem SalesShipmentLine - Method OnPreDataItem - NamedType DocumentNo</note>
         </trans-unit>
-        <trans-unit id="Report 3099164818 - ReportDataItem 3333755618 - Method 72583909 - NamedType 3322125993" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3832362581 - ReportDataItem 3333755618 - Method 72583909 - NamedType 3461834954" size-unit="char" translate="yes" xml:space="preserve">
           <source>ToInv. %1 %2</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - ReportDataItem SalesShipmentLine - Method OnPreDataItem - NamedType ProvisionDescription</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - ReportDataItem SalesShipmentLine - Method OnPreDataItem - NamedType Description</note>
         </trans-unit>
-        <trans-unit id="Report 3099164818 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Posting Date</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control PostingDate - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 3099164818 - Control 592568410 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3832362581 - Control 3502563256 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account root 418 on a french chart of account.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionBalAccountNo - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - Control OutstdInvAccountNo - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Report 3099164818 - Control 592568410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Provision Bal. Account No.</source>
+        <trans-unit id="Report 3832362581 - Control 3502563256 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstd. Receivable Inv. Account No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionBalAccountNo - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - Control OutstdInvAccountNo - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 3099164818 - Control 3224440404 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account root 418 on a french chart of account.</source>
+        <trans-unit id="Report 3832362581 - Control 1033240018 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account root 419 on a french chart of account.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionDebitBalAccountNo - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - Control OutstdSalesCrMemoAccountNo - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Report 3099164818 - Control 3224440404 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Provision Bal. Account No.</source>
+        <trans-unit id="Report 3832362581 - Control 1033240018 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstd. Receivable Cr. Memo Account No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionDebitBalAccountNo - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - Control OutstdSalesCrMemoAccountNo - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 3099164818 - Control 1162293398 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 3832362581 - Control 2724098234 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account root 44587 on a french chart of account.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionVATAccountNo - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - Control OutstdSalesVATAccountNo - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Report 3099164818 - Control 1162293398 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Provision VAT Account No.</source>
+        <trans-unit id="Report 3832362581 - Control 2724098234 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstd. Receivable VAT Account No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Sales Provisions - Control ProvisionVATAccountNo - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - Control OutstdSalesVATAccountNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3832362581 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Outstd. Receivable - Control PostingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suggest Payable Outstanding</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - Method 1544076788 - NamedType 331638123" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All parameter are required</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Method OnPreReport - NamedType ErrorMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - Method 1544076788 - NamedType 750120336" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to suggest payable outstanding on %1?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Method OnPreReport - NamedType ConfirmQst</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - Method 1544076788 - NamedType 1240717133" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Warning : This process should not be posted twice at the same posting date for the same selection!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Method OnPreReport - NamedType WarningMsg</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - Method 562636515 - NamedType 3785045816" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal must be empty</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Method SetGenJournalLine - NamedType JournalMustBeEmpty</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - ReportDataItem 3338551105 - Method 72583909 - NamedType 3117834186" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ExpInv</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - ReportDataItem PurchRcptLine - Method OnPreDataItem - NamedType DocumentNo</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - ReportDataItem 3338551105 - Method 72583909 - NamedType 3461834954" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exp.Inv. %1 %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - ReportDataItem PurchRcptLine - Method OnPreDataItem - NamedType Description</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - ReportDataItem 2864501128 - Method 72583909 - NamedType 3117834186" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ExpCM</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - ReportDataItem ReturnShipmentLine - Method OnPreDataItem - NamedType DocumentNo</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - ReportDataItem 2864501128 - Method 72583909 - NamedType 3461834954" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exp.CM %1 %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - ReportDataItem ReturnShipmentLine - Method OnPreDataItem - NamedType Description</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - Control 4156776614 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account root 409 on a french chart of account.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Control OutstdPurchCrMemoAccountNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - Control 4156776614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstd. Purch. Cr. Memo Account No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Control OutstdPurchCrMemoAccountNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - Control 3040984420 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account root 408 on a french chart of account.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Control OutstdPurchInvAccountNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - Control 3040984420 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstd. Purch. Inv. Account No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Control OutstdPurchInvAccountNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - Control 2467097474 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account root 44586 on a french chart of account.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Control OutstdPurchPurchVATAccountNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - Control 2467097474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Outstd. Purch. VAT Account No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Control OutstdPurchPurchVATAccountNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - Control 1831623764 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account root 378 on a french chart of account.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Control PermanentInventoryAccountNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - Control 1831623764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Permanent Inventory Account No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Control PermanentInventoryAccountNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 131084823 - Control 3037438984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Control PostingDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2513521001 - Action 2161648165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
           <source>Suggest Deferral Exp. &amp; Deferred Rev.</source>
@@ -443,15 +443,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Purchase Journal - Control Starting Date - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1087746450 - Action 3846930858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3301928242">
-          <source>Suggest Purchase Provisions</source>
+        <trans-unit id="PageExtension 1087746450 - Action 4226489584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3301928242">
+          <source>Suggest Payable Outstanding</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Recurring General Journal - Action wanSuggestProvisions - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Recurring General Journal - Action wanSuggestPayableOutstanding - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1087746450 - Action 1849577930 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3301928242">
-          <source>Suggest Sales Provisions</source>
+        <trans-unit id="PageExtension 1087746450 - Action 2586284950 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3301928242">
+          <source>Suggest Receivable Outstanding</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Recurring General Journal - Action wanSuggestSalesProvisions - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension wan Recurring General Journal - Action wanSuggestReceivableOutstanding - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 161412155 - Control 458406397 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1727838235">
           <source>Specifies the value of the Ending Date field.</source>

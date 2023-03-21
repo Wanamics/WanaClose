@@ -4,9 +4,9 @@ pageextension 87210 "wan Recurring General Journal" extends "Recurring General J
     {
         addlast(processing)
         {
-            action(wanSuggestProvisions)
+            action(wanSuggestPayableOutstanding)
             {
-                Caption = 'Suggest Purchase Provisions';
+                Caption = 'Suggest Payable Outstanding';
                 Image = ReceiptLines;
                 Promoted = true;
                 PromotedIsBig = true;
@@ -14,17 +14,17 @@ pageextension 87210 "wan Recurring General Journal" extends "Recurring General J
                 ApplicationArea = All;
                 trigger OnAction()
                 var
-                    SuggestProvisions: Report "wan Suggest Purch. Provisions";
+                    SuggestPayableOutstd: Report "wan Suggest Payable Outstd.";
                 begin
-                    SuggestProvisions.SetGenJournalLine(Rec);
-                    SuggestProvisions.RunModal();
+                    SuggestPayableOutstd.SetGenJournalLine(Rec);
+                    SuggestPayableOutstd.RunModal();
                     if Rec.FindFirst() then
                         CurrPage.Update(false);
                 end;
             }
-            action(wanSuggestSalesProvisions)
+            action(wanSuggestReceivableOutstanding)
             {
-                Caption = 'Suggest Sales Provisions';
+                Caption = 'Suggest Receivable Outstanding';
                 Image = ReceiptLines;
                 Promoted = true;
                 PromotedIsBig = true;
@@ -32,10 +32,10 @@ pageextension 87210 "wan Recurring General Journal" extends "Recurring General J
                 ApplicationArea = All;
                 trigger OnAction()
                 var
-                    SuggestProvisions: Report "wan Suggest Sales Provisions";
+                    SuggestReceivableOutstd: Report "wan Suggest Outstd. Receivable";
                 begin
-                    SuggestProvisions.SetGenJournalLine(Rec);
-                    SuggestProvisions.RunModal();
+                    SuggestReceivableOutstd.SetGenJournalLine(Rec);
+                    SuggestReceivableOutstd.RunModal();
                     if Rec.FindFirst() then
                         CurrPage.Update(false);
                 end;

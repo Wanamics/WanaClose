@@ -1,6 +1,6 @@
-report 87211 "wan Suggest Sales Provisions"
+report 87211 "wan Suggest Outstd. Receivable"
 {
-    Caption = 'Suggest Sales Provisions';
+    Caption = 'Suggest Outstanding Receivable';
     ProcessingOnly = true;
     dataset
     {
@@ -13,13 +13,13 @@ report 87211 "wan Suggest Sales Provisions"
             trigger OnPreDataItem()
             var
                 DocumentNo: Label 'ToInv';
-                ProvisionDescription: Label 'ToInv. %1 %2';
+                Description: Label 'ToInv. %1 %2';
             begin
-                SumProvisionAmount := 0;
+                SumOutstandingAmount := 0;
                 SumVATAmount := 0;
                 TempGenJournalLine."Document No." := DocumentNo;
-                TempGenJournalLine.Validate("Account No.", ProvisionBalAccountNo);
-                TempGenJournalLine.Description := ProvisionDescription;
+                TempGenJournalLine.Validate("Account No.", OutstdReceivableInvAccountNo);
+                TempGenJournalLine.Description := Description;
                 SetLoadFields("Order No.", "Order Line No.", "Posting Date", "Qty. Shipped Not Invoiced");
                 SetRange("Posting Date", 0D, TempGenJournalLine."Posting Date");
                 SalesLine.SetLoadFields(
@@ -29,12 +29,12 @@ report 87211 "wan Suggest Sales Provisions"
 
             trigger OnAfterGetRecord()
             var
-                ProvisionAmount: Decimal;
+                OutstandingAmount: Decimal;
             begin
                 //if ("Posting Group" = '') or (Type <> Type::Item) /*or not ExpectedCostPostingToGL*/ then begin
                 if xSSL."Document No." = '' then
                     xSSL := SalesShipmentLine;
-                if (OrderChange() or PurchRcptLineAllocationChange()) and (SumProvisionAmount <> 0) then begin
+                if (OrderChange() or PurchRcptLineAllocationChange()) and (SumOutstandingAmount <> 0) then begin
                     if xSSL."Order No." <> GenJournalLine."External Document No." then begin
                         UpdateGenJournalLineAmount();
                         InsertGenJournalLine(xSSL."Sell-to Customer No.", xSSL."Order No.");
@@ -46,9 +46,9 @@ report 87211 "wan Suggest Sales Provisions"
                 end;
                 if ("Order No." <> SalesLine."Document No.") or ("Order Line No." <> SalesLine."Line No.") then
                     SalesLine.Get(SalesLine."Document Type"::Order, "Order No.", "Order Line No.");
-                ProvisionAmount := -Round("Qty. Shipped Not Invoiced" * SalesLine."Unit Price" * SalesHeader."Currency Factor");
-                SumProvisionAmount += ProvisionAmount;
-                SumVATAmount += Round(ProvisionAmount * SalesShipmentLine."VAT %" / 100);
+                OutstandingAmount := -Round("Qty. Shipped Not Invoiced" * SalesLine."Unit Price" * SalesHeader."Currency Factor");
+                SumOutstandingAmount += OutstandingAmount;
+                SumVATAmount += Round(OutstandingAmount * SalesShipmentLine."VAT %" / 100);
                 if "Posting Date" < TempGenJournalLine."Document Date" then
                     TempGenJournalLine."Document Date" := "Posting Date";
                 xSSL := SalesShipmentLine;
@@ -57,7 +57,7 @@ report 87211 "wan Suggest Sales Provisions"
 
             trigger OnPostDataItem()
             begin
-                if SumProvisionAmount <> 0 then begin
+                if SumOutstandingAmount <> 0 then begin
                     UpdateGenJournalLineAmount();
                     InsertGenJournalLine(xSSL."Sell-to Customer No.", xSSL."Order No.");
                     TempGenJournalLine."Document Date" := 0D;
@@ -77,14 +77,18 @@ report 87211 "wan Suggest Sales Provisions"
                 where("Return Qty. Rcd. Not Invd." = filter('<>0'));
             trigger OnPreDataItem()
             var
-                ProvisionDocumentNo: Label 'ToCM';
-                ProvisionDescription: Label 'To CM %1 %2';
+                DocumentNo: Label 'ToCM';
+                Description: Label 'To CM %1 %2';
+                HoldLineNo: Integer;
             begin
-                SumProvisionAmount := 0;
+                SumOutstandingAmount := 0;
                 SumVATAmount := 0;
-                TempGenJournalLine."Document No." := ProvisionDocumentNo;
-                TempGenJournalLine.Validate("Account No.", ProvisionDebitBalAccountNo);
-                TempGenJournalLine."Description" := ProvisionDescription;
+                TempGenJournalLine."Document No." := DocumentNo;
+                HoldLineNo := TempGenJournalLine."Line No.";
+                TempGenJournalLine."Line No." := 0;
+                TempGenJournalLine.Validate("Account No.", OutstdReceivableCrMemoAccountNo);
+                TempGenJournalLine."Line No." := HoldLineNo;
+                TempGenJournalLine."Description" := Description;
                 SetLoadFields("Return Order No.", "Return Order Line No.", "Posting Date", "Return Qty. Rcd. Not Invd.");
                 SetRange("Posting Date", 0D, TempGenJournalLine."Posting Date");
                 SalesLine.SetLoadFields(
@@ -94,12 +98,12 @@ report 87211 "wan Suggest Sales Provisions"
 
             trigger OnAfterGetRecord()
             var
-                ProvisionAmount: Decimal;
+                OutstandingAmount: Decimal;
             begin
                 //if ("Posting Group" = '') or (Type <> Type::Item) /*or not ExpectedCostPostingToGL */then begin
                 if xRRL."Document No." = '' then
                     xRRL := ReturnReceiptLine;
-                if (ReturnOrderChange() or ReturnShipmentLineAllocationChange()) and (SumProvisionAmount <> 0) then begin
+                if (ReturnOrderChange() or ReturnShipmentLineAllocationChange()) and (SumOutstandingAmount <> 0) then begin
                     if xRRL."Return Order No." <> GenJournalLine."External Document No." then begin
                         UpdateGenJournalLineAmount();
                         InsertGenJournalLine(xRRL."Sell-to Customer No.", xRRL."Return Order No.");
@@ -111,9 +115,9 @@ report 87211 "wan Suggest Sales Provisions"
                 end;
                 if ("Return Order No." <> SalesLine."Document No.") or ("Return Order Line No." <> SalesLine."Line No.") then
                     SalesLine.Get(SalesLine."Document Type"::"Return Order", "Return Order No.", "Return Order Line No.");
-                ProvisionAmount := Round("Return Qty. Rcd. Not Invd." * SalesLine."Unit Cost (LCY)" * SalesHeader."Currency Factor");
-                SumProvisionAmount += ProvisionAmount;
-                SumVATAmount += Round(ProvisionAmount * ReturnReceiptLine."VAT %" / 100);
+                OutstandingAmount := Round("Return Qty. Rcd. Not Invd." * SalesLine."Unit Cost (LCY)" * SalesHeader."Currency Factor");
+                SumOutstandingAmount += OutstandingAmount;
+                SumVATAmount += Round(OutstandingAmount * ReturnReceiptLine."VAT %" / 100);
                 if "Posting Date" < TempGenJournalLine."Document Date" then
                     TempGenJournalLine."Document Date" := "Posting Date";
                 xRRL := ReturnReceiptLine;
@@ -124,7 +128,7 @@ report 87211 "wan Suggest Sales Provisions"
             var
                 GLAccount: Record "G/L Account";
             begin
-                if SumProvisionAmount <> 0 then begin
+                if SumOutstandingAmount <> 0 then begin
                     UpdateGenJournalLineAmount();
                     InsertGenJournalLine(xRRL."Sell-to Customer No.", xRRL."Return Order No.");
                     TempGenJournalLine."Document Date" := 0D;
@@ -151,32 +155,32 @@ report 87211 "wan Suggest Sales Provisions"
                         ApplicationArea = All;
                         Caption = 'Posting Date';
                     }
-                    field(ProvisionBalAccountNo; ProvisionBalAccountNo)
+                    field(OutstdInvAccountNo; OutstdReceivableInvAccountNo)
                     {
                         ApplicationArea = All;
-                        Caption = 'Provision Bal. Account No.';
+                        Caption = 'Outstd. Receivable Inv. Account No.';
                         TableRelation = "G/L Account" where("Direct Posting" = const(true));
                         ToolTip = 'Account root 418 on a french chart of account.';
                     }
-                    field(ProvisionDebitBalAccountNo; ProvisionDebitBalAccountNo)
+                    field(OutstdSalesCrMemoAccountNo; OutstdReceivableCrMemoAccountNo)
                     {
                         ApplicationArea = All;
-                        Caption = 'Provision Bal. Account No.';
+                        Caption = 'Outstd. Receivable Cr. Memo Account No.';
                         TableRelation = "G/L Account" where("Direct Posting" = const(true));
-                        ToolTip = 'Account root 418 on a french chart of account.';
+                        ToolTip = 'Account root 419 on a french chart of account.';
                     }
-                    field(ProvisionVATAccountNo; ProvisionVATAccountNo)
+                    field(OutstdSalesVATAccountNo; OutstdReceivableVATAccountNo)
                     {
                         ApplicationArea = All;
-                        Caption = 'Provision VAT Account No.';
+                        Caption = 'Outstd. Receivable VAT Account No.';
                         ToolTip = 'Account root 44587 on a french chart of account.';
                         TableRelation = "G/L Account" where("Direct Posting" = const(true));
                     }
                     /*
-                    field(ProvisionAccountNo; ProvisionAccountNo)
+                    field(ExpectedCostAccountNo; ExpectedCostAccountNo)
                     {
                         ApplicationArea = All;
-                        Caption = 'Provision Account No. (permanent inventory)';
+                        Caption = 'Expected Inventory Account No. (permanent inventory)';
                         ToolTip = 'Account root 38 on a french chart of account.';
                         TableRelation = "G/L Account" where("Direct Posting" = const(true));
                         Visible = not ExpectedCostPostingToGL;
@@ -189,10 +193,10 @@ report 87211 "wan Suggest Sales Provisions"
     var
         TempGenJournalLine: Record "Gen. Journal Line" temporary;
         PostingDate: Date;
-        ProvisionBalAccountNo: Code[20];
-        ProvisionDebitBalAccountNo: Code[20];
-        ProvisionVATAccountNo: Code[20];
-        //ProvisionAccountNo: Code[20];
+        OutstdReceivableInvAccountNo: Code[20];
+        OutstdReceivableCrMemoAccountNo: Code[20];
+        OutstdReceivableVATAccountNo: Code[20];
+        //ExpectedCostAccountNo: Code[20];
         GenJournalLine: Record "Gen. Journal Line";
         xSSL: Record "Sales Shipment Line";
         xRRL: Record "Return Receipt Line";
@@ -201,7 +205,7 @@ report 87211 "wan Suggest Sales Provisions"
         GenJnlAllocation: Record "Gen. Jnl. Allocation";
         Customer: Record Customer;
         GeneralPostingSetup: Record "General Posting Setup";
-        SumProvisionAmount: Decimal;
+        SumOutstandingAmount: Decimal;
         SumVATAmount: Decimal;
         GLAccount: Record "G/L Account";
     /*
@@ -220,11 +224,11 @@ end;
     trigger OnPreReport()
     var
         ErrorMsg: Label 'All parameter are required';
-        ConfirmQst: Label 'Do you want to suggest Sales provisions on %1?';
+        ConfirmQst: Label 'Do you want to suggest outstanding receivable on %1?';
         WarningMsg: Label 'Warning : This process should not be posted twice at the same posting date for the same selection!';
     begin
-        if (PostingDate = 0D) or (ProvisionBalAccountNo = '') or (ProvisionVATAccountNo = '') /*or
-            (ProvisionAccountNo = '') and not ExpectedCostPostingToGL */then
+        if (PostingDate = 0D) or (OutstdReceivableInvAccountNo = '') or (OutstdReceivableVATAccountNo = '') /*or
+            (ExpectedCostAccountNo = '') and not ExpectedCostPostingToGL */then
             Error(ErrorMsg);
         if not Confirm(ConfirmQst + '\\' + WarningMsg, false, PostingDate) then
             CurrReport.Quit();
@@ -313,17 +317,17 @@ end;
 
     local procedure InsertGenJnlAllocation(pType: Enum "Sales Line Type"; pGenProdPostingGroup: Code[20]; pGenBusPostingGroup: Code[20]; pShortcutDimension1Code: Code[20]; pShortcutDimension2Code: Code[20]; pDimensionSetID: Integer)
     begin
-        if SumProvisionAmount = 0 then
+        if SumOutstandingAmount = 0 then
             exit;
         GenJnlAllocation.Init();
         GenJnlAllocation."Journal Line No." := GenJournalLine."Line No.";
         GenJnlAllocation."Line No." += 10000;
         /*
         if pType = pType::Item then
-            GenJnlAllocation.Validate("Account No.", ProvisionAccountNo)
+            GenJnlAllocation.Validate("Account No.", ExpectedCostAccountNo)
         else begin
-            */
-        if(pGenProdPostingGroup <> GeneralPostingSetup."Gen. Bus. Posting Group") or
+        */
+        if (pGenProdPostingGroup <> GeneralPostingSetup."Gen. Bus. Posting Group") or
                (pGenBusPostingGroup <> GeneralPostingSetup."Gen. Prod. Posting Group") then begin
             GeneralPostingSetup.Get(pGenProdPostingGroup, pGenBusPostingGroup);
             if GeneralPostingSetup."Purch. Account" <> GLAccount."No." then begin
@@ -343,11 +347,11 @@ end;
         end;
         */
         GenJnlAllocation.Insert(true);
-        GenJnlAllocation.Validate(Amount, SumProvisionAmount);
+        GenJnlAllocation.Validate(Amount, SumOutstandingAmount);
         GenJnlAllocation.Modify(true);
 
-        GenJournalLine.Amount -= SumProvisionAmount;
-        SumProvisionAmount := 0;
+        GenJournalLine.Amount -= SumOutstandingAmount;
+        SumOutstandingAmount := 0;
     end;
 
     local procedure UpdateGenJournalLineAmount()
@@ -366,7 +370,7 @@ end;
             exit;
         TempGenJournalLine."Line No." += 10000;
         GenJournalLine.TransferFields(TempGenJournalLine, true);
-        GLAccount.Get(ProvisionVATAccountNo);
+        GLAccount.Get(OutstdReceivableVATAccountNo);
         GenJournalLine.Description := GLAccount.Name;
         GenJournalLine.Validate(Amount, pVATAmount);
         GenJournalLine.Insert(true);
@@ -375,7 +379,7 @@ end;
         GenJnlAllocation."Journal Line No." := GenJournalLine."Line No.";
         GenJnlAllocation."Line No." := 10000;
         GenJnlAllocation.Insert(true);
-        GenJnlAllocation.Validate("Account No.", ProvisionVATAccountNo);
+        GenJnlAllocation.Validate("Account No.", OutstdReceivableVATAccountNo);
         GenJnlAllocation.Validate(Amount, -GenJournalLine.Amount);
         GenJnlAllocation.Modify(true);
     end;

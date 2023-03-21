@@ -1,6 +1,6 @@
-report 87210 "wan Suggest Purch. Provisions"
+report 87210 "wan Suggest Payable Outstd."
 {
-    Caption = 'Suggest Purchase Provisions';
+    Caption = 'Suggest Payable Outstanding';
     ProcessingOnly = true;
     dataset
     {
@@ -13,13 +13,13 @@ report 87210 "wan Suggest Purch. Provisions"
             trigger OnPreDataItem()
             var
                 DocumentNo: Label 'ExpInv';
-                ProvisionDescription: Label 'Exp.Inv. %1 %2';
+                Description: Label 'Exp.Inv. %1 %2';
             begin
-                SumProvisionAmount := 0;
+                SumOutstandingAmount := 0;
                 SumVATAmount := 0;
                 TempGenJournalLine."Document No." := DocumentNo;
-                TempGenJournalLine.Validate("Account No.", ProvisionBalAccountNo);
-                TempGenJournalLine.Description := ProvisionDescription;
+                TempGenJournalLine.Validate("Account No.", OutstdPurchInvAccountNo);
+                TempGenJournalLine.Description := Description;
                 SetLoadFields("Order No.", "Order Line No.", "Posting Date", "Qty. Rcd. Not Invoiced");
                 SetRange("Posting Date", 0D, TempGenJournalLine."Posting Date");
                 PurchaseLine.SetLoadFields(
@@ -29,12 +29,12 @@ report 87210 "wan Suggest Purch. Provisions"
 
             trigger OnAfterGetRecord()
             var
-                ProvisionAmount: Decimal;
+                OutstandingAmount: Decimal;
             begin
                 if ("Posting Group" = '') or (Type <> Type::Item) or not ExpectedCostPostingToGL then begin
                     if xPRL."Document No." = '' then
                         xPRL := PurchRcptLine;
-                    if (OrderChange() or PurchRcptLineAllocationChange()) and (SumProvisionAmount <> 0) then begin
+                    if (OrderChange() or PurchRcptLineAllocationChange()) and (SumOutstandingAmount <> 0) then begin
                         if xPRL."Order No." <> GenJournalLine."External Document No." then begin
                             UpdateGenJournalLineAmount();
                             InsertGenJournalLine(xPRL."Buy-from Vendor No.", xPRL."Order No.");
@@ -46,9 +46,9 @@ report 87210 "wan Suggest Purch. Provisions"
                     end;
                     if ("Order No." <> PurchaseLine."Document No.") or ("Order Line No." <> PurchaseLine."Line No.") then
                         PurchaseLine.Get(PurchaseLine."Document Type"::Order, "Order No.", "Order Line No.");
-                    ProvisionAmount := Round("Qty. Rcd. Not Invoiced" * PurchaseLine."Unit Cost (LCY)");
-                    SumProvisionAmount += ProvisionAmount;
-                    SumVATAmount += Round(ProvisionAmount * PurchRcptLine."VAT %" / 100);
+                    OutstandingAmount := Round("Qty. Rcd. Not Invoiced" * PurchaseLine."Unit Cost (LCY)");
+                    SumOutstandingAmount += OutstandingAmount;
+                    SumVATAmount += Round(OutstandingAmount * PurchRcptLine."VAT %" / 100);
                     if "Posting Date" < TempGenJournalLine."Document Date" then
                         TempGenJournalLine."Document Date" := "Posting Date";
                     xPRL := PurchRcptLine;
@@ -57,7 +57,7 @@ report 87210 "wan Suggest Purch. Provisions"
 
             trigger OnPostDataItem()
             begin
-                if SumProvisionAmount <> 0 then begin
+                if SumOutstandingAmount <> 0 then begin
                     UpdateGenJournalLineAmount();
                     InsertGenJournalLine(xPRL."Buy-from Vendor No.", xPRL."Order No.");
                     TempGenJournalLine."Document Date" := 0D;
@@ -77,14 +77,18 @@ report 87210 "wan Suggest Purch. Provisions"
                 where("Return Qty. Shipped Not Invd." = filter('<>0'));
             trigger OnPreDataItem()
             var
-                ProvisionDocumentNo: Label 'ExpCM';
-                ProvisionDescription: Label 'Exp.CM %1 %2';
+                DocumentNo: Label 'ExpCM';
+                Description: Label 'Exp.CM %1 %2';
+                HoldLineNo: Integer;
             begin
-                SumProvisionAmount := 0;
+                SumOutstandingAmount := 0;
                 SumVATAmount := 0;
-                TempGenJournalLine."Document No." := ProvisionDocumentNo;
-                TempGenJournalLine.Validate("Account No.", ProvisionDebitBalAccountNo);
-                TempGenJournalLine."Description" := ProvisionDescription;
+                TempGenJournalLine."Document No." := DocumentNo;
+                HoldLineNo := TempGenJournalLine."Line No.";
+                TempGenJournalLine."Line No." := 0;
+                TempGenJournalLine.Validate("Account No.", OutstdPurchCrMemoAccountNo);
+                TempGenJournalLine."Line No." := HoldLineNo;
+                TempGenJournalLine."Description" := Description;
                 SetLoadFields("Return Order No.", "Return Order Line No.", "Posting Date", "Return Qty. Shipped Not Invd.");
                 SetRange("Posting Date", 0D, TempGenJournalLine."Posting Date");
                 PurchaseLine.SetLoadFields(
@@ -94,12 +98,12 @@ report 87210 "wan Suggest Purch. Provisions"
 
             trigger OnAfterGetRecord()
             var
-                ProvisionAmount: Decimal;
+                OutstandingAmount: Decimal;
             begin
                 if ("Posting Group" = '') or (Type <> Type::Item) or not ExpectedCostPostingToGL then begin
                     if xRSL."Document No." = '' then
                         xRSL := ReturnShipmentLine;
-                    if (ReturnOrderChange() or ReturnShipmentLineAllocationChange()) and (SumProvisionAmount <> 0) then begin
+                    if (ReturnOrderChange() or ReturnShipmentLineAllocationChange()) and (SumOutstandingAmount <> 0) then begin
                         if xRSL."Return Order No." <> GenJournalLine."External Document No." then begin
                             UpdateGenJournalLineAmount();
                             InsertGenJournalLine(xRSL."Buy-from Vendor No.", xRSL."Return Order No.");
@@ -111,9 +115,9 @@ report 87210 "wan Suggest Purch. Provisions"
                     end;
                     if ("Return Order No." <> PurchaseLine."Document No.") or ("Return Order Line No." <> PurchaseLine."Line No.") then
                         PurchaseLine.Get(PurchaseLine."Document Type"::"Return Order", "Return Order No.", "Return Order Line No.");
-                    ProvisionAmount := Round("Return Qty. Shipped Not Invd." * PurchaseLine."Unit Cost (LCY)");
-                    SumProvisionAmount += ProvisionAmount;
-                    SumVATAmount += Round(ProvisionAmount * ReturnShipmentLine."VAT %" / 100);
+                    OutstandingAmount := Round("Return Qty. Shipped Not Invd." * PurchaseLine."Unit Cost (LCY)");
+                    SumOutstandingAmount += OutstandingAmount;
+                    SumVATAmount += Round(OutstandingAmount * ReturnShipmentLine."VAT %" / 100);
                     if "Posting Date" < TempGenJournalLine."Document Date" then
                         TempGenJournalLine."Document Date" := "Posting Date";
                     xRSL := ReturnShipmentLine;
@@ -124,7 +128,7 @@ report 87210 "wan Suggest Purch. Provisions"
             var
                 GLAccount: Record "G/L Account";
             begin
-                if SumProvisionAmount <> 0 then begin
+                if SumOutstandingAmount <> 0 then begin
                     UpdateGenJournalLineAmount();
                     InsertGenJournalLine(xRSL."Buy-from Vendor No.", xRSL."Return Order No.");
                     TempGenJournalLine."Document Date" := 0D;
@@ -151,24 +155,24 @@ report 87210 "wan Suggest Purch. Provisions"
                         ApplicationArea = All;
                         Caption = 'Posting Date';
                     }
-                    field(ProvisionBalAccountNo; ProvisionBalAccountNo)
+                    field(OutstdPurchInvAccountNo; OutstdPurchInvAccountNo)
                     {
                         ApplicationArea = All;
-                        Caption = 'Provision Bal. Account No.';
+                        Caption = 'Outstd. Purch. Inv. Account No.';
                         TableRelation = "G/L Account" where("Direct Posting" = const(true));
                         ToolTip = 'Account root 408 on a french chart of account.';
                     }
-                    field(ProvisionDebitBalAccountNo; ProvisionDebitBalAccountNo)
+                    field(OutstdPurchCrMemoAccountNo; OutstdPurchCrMemoAccountNo)
                     {
                         ApplicationArea = All;
-                        Caption = 'Provision Debit Bal. Account No.';
+                        Caption = 'Outstd. Purch. Cr. Memo Account No.';
                         TableRelation = "G/L Account" where("Direct Posting" = const(true));
                         ToolTip = 'Account root 409 on a french chart of account.';
                     }
-                    field(ProvisionVATAccountNo; ProvisionVATAccountNo)
+                    field(OutstdPurchPurchVATAccountNo; OutstdPurchPurchVATAccountNo)
                     {
                         ApplicationArea = All;
-                        Caption = 'Provision VAT Account No.';
+                        Caption = 'Outstd. Purch. VAT Account No.';
                         ToolTip = 'Account root 44586 on a french chart of account.';
                         TableRelation = "G/L Account" where("Direct Posting" = const(true));
                     }
@@ -187,9 +191,9 @@ report 87210 "wan Suggest Purch. Provisions"
     var
         TempGenJournalLine: Record "Gen. Journal Line" temporary;
         PostingDate: Date;
-        ProvisionBalAccountNo: Code[20];
-        ProvisionDebitBalAccountNo: Code[20];
-        ProvisionVATAccountNo: Code[20];
+        OutstdPurchInvAccountNo: Code[20];
+        OutstdPurchCrMemoAccountNo: Code[20];
+        OutstdPurchPurchVATAccountNo: Code[20];
         PermanentInventoryAccountNo: Code[20];
         GenJournalLine: Record "Gen. Journal Line";
         xPRL: Record "Purch. Rcpt. Line";
@@ -198,7 +202,7 @@ report 87210 "wan Suggest Purch. Provisions"
         GenJnlAllocation: Record "Gen. Jnl. Allocation";
         Vendor: Record Vendor;
         GeneralPostingSetup: Record "General Posting Setup";
-        SumProvisionAmount: Decimal;
+        SumOutstandingAmount: Decimal;
         SumVATAmount: Decimal;
         GLAccount: Record "G/L Account";
         ExpectedCostPostingToGL: Boolean;
@@ -215,10 +219,10 @@ report 87210 "wan Suggest Purch. Provisions"
     trigger OnPreReport()
     var
         ErrorMsg: Label 'All parameter are required';
-        ConfirmQst: Label 'Do you want to suggest purchase provisions on %1?';
+        ConfirmQst: Label 'Do you want to suggest payable outstanding on %1?';
         WarningMsg: Label 'Warning : This process should not be posted twice at the same posting date for the same selection!';
     begin
-        if (PostingDate = 0D) or (ProvisionBalAccountNo = '') or (ProvisionVATAccountNo = '') or
+        if (PostingDate = 0D) or (OutstdPurchInvAccountNo = '') or (OutstdPurchPurchVATAccountNo = '') or
             (PermanentInventoryAccountNo = '') and not ExpectedCostPostingToGL then
             Error(ErrorMsg);
         if not Confirm(ConfirmQst + '\\' + WarningMsg, false, PostingDate) then
@@ -298,7 +302,7 @@ report 87210 "wan Suggest Purch. Provisions"
 
     local procedure InsertGenJnlAllocation(pType: Enum "Purchase Line Type"; pGenProdPostingGroup: Code[20]; pGenBusPostingGroup: Code[20]; pShortcutDimension1Code: Code[20]; pShortcutDimension2Code: Code[20]; pDimensionSetID: Integer)
     begin
-        if SumProvisionAmount = 0 then
+        if SumOutstandingAmount = 0 then
             exit;
         GenJnlAllocation.Init();
         GenJnlAllocation."Journal Line No." := GenJournalLine."Line No.";
@@ -322,11 +326,11 @@ report 87210 "wan Suggest Purch. Provisions"
             GenJnlAllocation."Dimension Set ID" := pDimensionSetID;
         end;
         GenJnlAllocation.Insert(true);
-        GenJnlAllocation.Validate(Amount, SumProvisionAmount);
+        GenJnlAllocation.Validate(Amount, SumOutstandingAmount);
         GenJnlAllocation.Modify(true);
 
-        GenJournalLine.Amount -= SumProvisionAmount;
-        SumProvisionAmount := 0;
+        GenJournalLine.Amount -= SumOutstandingAmount;
+        SumOutstandingAmount := 0;
     end;
 
     local procedure UpdateGenJournalLineAmount()
@@ -345,7 +349,7 @@ report 87210 "wan Suggest Purch. Provisions"
             exit;
         TempGenJournalLine."Line No." += 10000;
         GenJournalLine.TransferFields(TempGenJournalLine, true);
-        GLAccount.Get(ProvisionVATAccountNo);
+        GLAccount.Get(OutstdPurchPurchVATAccountNo);
         GenJournalLine.Description := GLAccount.Name;
         GenJournalLine.Validate(Amount, pVATAmount);
         GenJournalLine.Insert(true);
@@ -354,7 +358,7 @@ report 87210 "wan Suggest Purch. Provisions"
         GenJnlAllocation."Journal Line No." := GenJournalLine."Line No.";
         GenJnlAllocation."Line No." := 10000;
         GenJnlAllocation.Insert(true);
-        GenJnlAllocation.Validate("Account No.", ProvisionVATAccountNo);
+        GenJnlAllocation.Validate("Account No.", OutstdPurchPurchVATAccountNo);
         GenJnlAllocation.Validate(Amount, -GenJournalLine.Amount);
         GenJnlAllocation.Modify(true);
     end;
