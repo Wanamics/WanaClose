@@ -129,10 +129,10 @@ report 87250 "wan Suggest Deferral Entries"
             pGLEntry."Gen. Posting Type"::Sale:
                 GenJournalLine.Description := CopyStr(Strsubstno(DeferredRevenueDescription, pGLEntry."Document No.", pGLEntry.Description), 1, maxstrlen(GenJournalLine.Description));
         end;
-        GenJournalLine."Shortcut Dimension 1 Code" := pGLEntry."Global Dimension 1 Code";
-        GenJournalLine."Shortcut Dimension 2 Code" := pGLEntry."Global Dimension 2 Code";
-        GenJournalLine."Dimension Set ID" := pGLEntry."Dimension Set ID";
-        GenJournalLine.Validate("IC Partner Code", pGLEntry."IC Partner Code");
+        // GenJournalLine."Shortcut Dimension 1 Code" := pGLEntry."Global Dimension 1 Code";
+        // GenJournalLine."Shortcut Dimension 2 Code" := pGLEntry."Global Dimension 2 Code";
+        // GenJournalLine."Dimension Set ID" := pGLEntry."Dimension Set ID";
+        // GenJournalLine.Validate("IC Partner Code", pGLEntry."IC Partner Code");
         GenJournalLine."wan Deferral Entry No." := pGLEntry."Entry No.";
         if pGLEntry."IC Partner Code" = '' then
             BalanceAmount -= pAmount
@@ -143,6 +143,9 @@ report 87250 "wan Suggest Deferral Entries"
             else
                 GenJournalLine.Validate("Bal. Account No.", DeferredRevenueAccountNo);
         end;
+        GenJournalLine."Shortcut Dimension 1 Code" := pGLEntry."Global Dimension 1 Code";
+        GenJournalLine."Shortcut Dimension 2 Code" := pGLEntry."Global Dimension 2 Code";
+        GenJournalLine."Dimension Set ID" := pGLEntry."Dimension Set ID";
         GenJournalLine.Insert(true);
     end;
 

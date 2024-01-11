@@ -1,6 +1,6 @@
 codeunit 87250 "wan Deferral Events"
 {
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Check Line", 'OnAfterCheckGenJnlLine', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Check Line", OnAfterCheckGenJnlLine, '', false, false)]
     local procedure OnAfterCheckGenJnlLine(var GenJournalLine: Record "Gen. Journal Line"; var ErrorMessageMgt: Codeunit "Error Message Management")
     var
         InseparableErr: Label 'and %1 are unseparable';
@@ -25,7 +25,14 @@ codeunit 87250 "wan Deferral Events"
             GenJournalLine.FieldError("wan Deferral Starting Date", StrSubstNo(InseparableErr, GenJournalLine.FieldCaption("wan Deferral Ending Date")));
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnAfterInsertGLEntry', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", OnPostGLAccOnBeforeInsertGLEntry, '', false, false)]
+    local procedure OnPostGLAccOnBeforeInsertGLEntry(var GenJournalLine: Record "Gen. Journal Line"; var GLEntry: Record "G/L Entry"; var IsHandled: Boolean; Balancing: Boolean)
+    begin
+        if Balancing then
+            GenJournalLine."wan Deferral Entry No." := 0;
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", OnAfterInsertGLEntry, '', false, false)]
     local procedure OnAfterInsertGLEntry(GLEntry: Record "G/L Entry"; GenJnlLine: Record "Gen. Journal Line"; TempGLEntryBuf: Record "G/L Entry" temporary; CalcAddCurrResiduals: Boolean)
     var
         DeferralLedgerEntry: Record "wan Deferral Ledger Entry";
@@ -53,7 +60,7 @@ codeunit 87250 "wan Deferral Events"
                 end;
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"G/L Entry", 'OnBeforeDeleteEvent', '', true, true)]
+    [EventSubscriber(ObjectType::Table, Database::"G/L Entry", OnBeforeDeleteEvent, '', true, true)]
     local procedure OnBeforeDeleteGLEntry(Rec: Record "G/L Entry")
     var
         DeferralLedgerEntry: Record "wan Deferral Ledger Entry";
@@ -76,7 +83,7 @@ codeunit 87250 "wan Deferral Events"
         */
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"G/L Entry", 'OnAfterDeleteEvent', '', true, true)]
+    [EventSubscriber(ObjectType::Table, Database::"G/L Entry", OnAfterDeleteEvent, '', true, true)]
     local procedure OnAfterDeleteGLEntry(Rec: Record "G/L Entry")
     var
         DeferralLedgerEntry: Record "wan Deferral Ledger Entry";
@@ -94,14 +101,14 @@ codeunit 87250 "wan Deferral Events"
         */
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Deferral Utilities", 'OnBeforeValidateDeferralTemplate', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Deferral Utilities", OnBeforeValidateDeferralTemplate, '', false, false)]
     local procedure OnBeforeValidateDeferralTemplate(DeferralTemplate: Record "Deferral Template"; var IsHandled: Boolean)
     begin
         if DeferralTemplate."No. of Periods" = 0 then
             IsHandled := true;
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforePostDeferralPostBuffer', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", OnBeforePostDeferralPostBuffer, '', false, false)]
     local procedure OnBeforePostDeferralPostBuffer(var GenJournalLine: Record "Gen. Journal Line"; var IsHandled: Boolean)
     var
         DeferralTemplate: Record "Deferral Template";
@@ -112,7 +119,7 @@ codeunit 87250 "wan Deferral Events"
             IsHandled := (DeferralTemplate."No. of Periods" = 0);
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", 'OnBeforeDeferralPosting', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Line", OnBeforeDeferralPosting, '', false, false)]
     local procedure OnBeforeDeferralPosting(DeferralCode: Code[10]; SourceCode: Code[10]; var AccountNo: Code[20]; var GenJournalLine: Record "Gen. Journal Line"; Balancing: Boolean; var IsHandled: Boolean)
     var
         DeferralTemplate: Record "Deferral Template";

@@ -158,6 +158,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Deferral Ledger Entries - Control PostingDate - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 1703023434 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>wan Deferral Tool Delete</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Deferral Tool Delete - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 4209501611 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Deferral Expenses &amp; Deferred Revenue</source>
           <note from="Developer" annotates="general" priority="2"></note>

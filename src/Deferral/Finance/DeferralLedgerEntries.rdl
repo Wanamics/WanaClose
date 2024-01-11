@@ -1375,6 +1375,9 @@
                   <TablixMembers>
                     <TablixMember>
                       <Group Name="Détails" />
+                      <Visibility>
+                        <Hidden>=Fields!OutstandingAmount.Value = 0</Hidden>
+                      </Visibility>
                     </TablixMember>
                     <TablixMember>
                       <KeepWithGroup>Before</KeepWithGroup>
