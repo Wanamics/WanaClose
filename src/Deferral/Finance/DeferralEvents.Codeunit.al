@@ -5,7 +5,7 @@ codeunit 87250 "wan Deferral Events"
     var
         InseparableErr: Label 'and %1 are unseparable';
         GLAccount: Record "G/L Account";
-        DeferralTemplate: Record "Deferral Header";
+        DeferralTemplate: Record "Deferral Template";
     begin
         if GenJournalLine."Account Type" <> GenJournalLine."Account Type"::"G/L Account" then
             exit;
