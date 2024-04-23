@@ -191,6 +191,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Deferral Ledger Entries - Control PostingDate - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 1703023434 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>wan Deferral Tool Delete</source>
+          <target>[NAB: NOT TRANSLATED]</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Deferral Tool Delete - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 4209501611 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Deferral Expenses &amp; Deferred Revenue</source>
           <target>Proposer CCA &amp; PCA</target>
@@ -365,6 +372,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 131084823 - Method 3288397685 - NamedType 4104898276" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data</source>
+          <target>Données</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Method ExportOnPostReport - NamedType SheetName</note>
+        </trans-unit>
         <trans-unit id="Report 131084823 - Method 1544076788 - NamedType 331638123" size-unit="char" translate="yes" xml:space="preserve">
           <source>All parameter are required</source>
           <target>Tous les paramètres sont obligatoires</target>
@@ -373,7 +386,7 @@
         </trans-unit>
         <trans-unit id="Report 131084823 - Method 1544076788 - NamedType 750120336" size-unit="char" translate="yes" xml:space="preserve">
           <source>Do you want to suggest payable outstanding on %1?</source>
-          <target>Voulez-vous proposer les factures et avoits non parvenus au %1 ?</target>
+          <target>Voulez-vous proposer les factures et avoirs non parvenus au %1 ?</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Method OnPreReport - NamedType ConfirmQst</note>
         </trans-unit>
