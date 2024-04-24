@@ -138,8 +138,6 @@ report 87211 "wan Suggest Outstd. Receivable"
             end;
 
             trigger OnPostDataItem()
-            // var
-            //     GLAccount: Record "G/L Account";
             begin
                 if SumOutstandingAmount <> 0 then begin
                     UpdateGenJournalLineAmount();
@@ -341,8 +339,8 @@ end;
         TempGenJournalLine."Line No." += 10000;
         GenJournalLine.TransferFields(TempGenJournalLine, true);
         GenJournalLine."External Document No." := pOrderNo;
-        GenJournalLine.Description := CopyStr(Strsubstno(GenJournalLine.Description, pOrderNo, Customer.Name), 1, maxstrlen(GenJournalLine.Description));
-        GenJournalLine."IC Partner Code" := Customer."IC Partner Code";
+        GenJournalLine.Description := CopyStr(Strsubstno(GenJournalLine.Description, pOrderNo, Customer.Name), 1, MaxStrLen(GenJournalLine.Description));
+        // GenJournalLine."IC Partner Code" := Customer."IC Partner Code";
         GenJournalLine.Insert(true);
     end;
 
@@ -412,7 +410,7 @@ end;
     var
         SheetName: Label 'Data', Locked = true;
         PostedLine: Record "Sales Shipment Line";
-        PurchLine: Record "Purchase Line";
+        PurchLine: Record "Sales Line";
     begin
         ExcelBuffer.NewRow();
         AddColumn(PostedLine.FieldCaption("Document No."));
@@ -423,7 +421,7 @@ end;
         AddColumn(PostedLine.FieldCaption(Type));
         AddColumn(PostedLine.FieldCaption("No."));
         AddColumn(PostedLine.FieldCaption(Description));
-        AddColumn(PurchLine.FieldCaption("Qty. Rcd. Not Invoiced"));
+        AddColumn(PurchLine.FieldCaption("Qty. Shipped Not Invd. (Base)"));
         AddColumn(GeneralPostingSetup.FieldCaption("Purch. Account"));
         AddColumn(OrderLine.FieldCaption("VAT Base Amount"));
         AddColumn(OrderLine.FieldCaption("Amount Including VAT"));
@@ -454,7 +452,7 @@ end;
         AddColumn(pRec."Posting Date");
         AddColumn(pRec."Sell-to Customer No.");
         AddColumn(Customer.Name);
-        AddColumn(pRec."Order No.");
+        AddColumn(OrderLine."Document No."); // (pRec."Order No.");
         AddColumn(pRec.Type);
         AddColumn(pRec."No.");
         AddColumn(pRec.Description);

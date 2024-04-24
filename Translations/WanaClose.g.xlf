@@ -389,7 +389,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Control OutstdVATAccountNo - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 131084823 - Control 1831623764 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account root 378 on a french chart of account.</source>
+          <source>Account root 38 on a french chart of account.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report wan Suggest Payable Outstd. - Control PermanentInventoryAccountNo - Property ToolTip</note>
         </trans-unit>

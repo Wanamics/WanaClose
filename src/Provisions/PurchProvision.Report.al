@@ -191,7 +191,7 @@ report 87210 "wan Suggest Payable Outstd."
                     {
                         ApplicationArea = All;
                         Caption = 'Permanent Inventory Account No.';
-                        ToolTip = 'Account root 378 on a french chart of account.';
+                        ToolTip = 'Account root 38 on a french chart of account.';
                         TableRelation = "G/L Account" where("Direct Posting" = const(true));
                         Visible = not ExpectedCostPostingToGL;
                     }
@@ -324,8 +324,8 @@ report 87210 "wan Suggest Payable Outstd."
         TempGenJournalLine."Line No." += 10000;
         GenJournalLine.TransferFields(TempGenJournalLine, true);
         GenJournalLine."External Document No." := pOrderNo;
-        GenJournalLine.Description := CopyStr(Strsubstno(GenJournalLine.Description, pOrderNo, Vendor.Name), 1, maxstrlen(GenJournalLine.Description));
-        GenJournalLine."IC Partner Code" := Vendor."IC Partner Code";
+        GenJournalLine.Description := CopyStr(Strsubstno(GenJournalLine.Description, pOrderNo, Vendor.Name), 1, MaxStrLen(GenJournalLine.Description));
+        // GenJournalLine."IC Partner Code" := Vendor."IC Partner Code";
         GenJournalLine.Insert(true);
     end;
 
@@ -427,7 +427,7 @@ report 87210 "wan Suggest Payable Outstd."
         AddColumn(pRec."Posting Date");
         AddColumn(pRec."Buy-from Vendor No.");
         AddColumn(Vendor.Name);
-        AddColumn(pRec."Order No.");
+        AddColumn(OrderLine."Document No."); // (pRec."Order No.");
         AddColumn(pRec.Type);
         AddColumn(pRec."No.");
         AddColumn(pRec.Description);
