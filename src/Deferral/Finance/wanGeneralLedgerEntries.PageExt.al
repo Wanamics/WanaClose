@@ -41,7 +41,7 @@ pageextension 87254 "wan General Ledger Entries" extends "General Ledger Entries
                 Caption = 'Deferral Entries';
                 ApplicationArea = All;
                 Image = PeriodEntries;
-                // Enabled = wanEnableDeferralEntries;
+                Enabled = wanEnableDeferralEntries;
                 trigger OnAction()
                 begin
                     if wanDeferralLedgerEntry.IsEmpty then begin
@@ -65,12 +65,13 @@ pageextension 87254 "wan General Ledger Entries" extends "General Ledger Entries
     trigger OnAfterGetRecord()
     begin
         Clear(wanDeferralLedgerEntry);
-        if wanDeferralLedgerEntry.Get(Rec."Entry No.") then;
+        // if wanDeferralLedgerEntry.Get(Rec."Entry No.") then;
+        wanEnableDeferralEntries := wanDeferralLedgerEntry.Get(Rec."Entry No.");
         wanDeferralLedgerEntry.SetRange("Deferral G/L Entry No.", wanDeferralLedgerEntry."Deferral G/L Entry No.");
     end;
 
     var
-        // wanEnableDeferralEntries: Boolean;
+        wanEnableDeferralEntries: Boolean;
         wanDeferralLedgerEntry: Record "wan Deferral Ledger Entry";
 
     local procedure wanValidateDeferralDates();
@@ -79,18 +80,20 @@ pageextension 87254 "wan General Ledger Entries" extends "General Ledger Entries
     begin
         if not (Rec."Gen. Posting Type" in [Rec."Gen. Posting Type"::Purchase, Rec."Gen. Posting Type"::Sale]) then
             Rec.TestField("Gen. Posting Type");
-        wanDeferralLedgerEntry.Validate("Starting Date");
-        wanDeferralLedgerEntry.Validate("Ending Date");
-        if (wanDeferralLedgerEntry."Starting Date" = 0D) or (wanDeferralLedgerEntry."Ending Date" = 0D) then
-            exit;
-        if wanDeferralLedgerEntry."G/L Entry No." <> 0 then
-            wanDeferralLedgerEntry.Modify(true)
-        else begin
+        // if (wanDeferralLedgerEntry."Starting Date" = 0D) or (wanDeferralLedgerEntry."Ending Date" = 0D) then
+        // exit;
+        if wanDeferralLedgerEntry."G/L Entry No." <> 0 then begin
+            wanDeferralLedgerEntry.Validate("Starting Date");
+            wanDeferralLedgerEntry.Validate("Ending Date");
+            wanDeferralLedgerEntry.Modify(true);
+        end else begin
             wanDeferralLedgerEntry."G/L Entry No." := Rec."Entry No.";
             wanDeferralLedgerEntry."Gen. Posting Type" := Rec."Gen. Posting Type";
             wanDeferralLedgerEntry."IC Partner Code" := Rec."IC Partner Code";
             wanDeferralLedgerEntry."Posting Date" := Rec."Posting Date";
             wanDeferralLedgerEntry."Deferral G/L Entry No." := Rec."Entry No.";
+            wanDeferralLedgerEntry.Validate("Starting Date");
+            wanDeferralLedgerEntry.Validate("Ending Date");
             wanDeferralLedgerEntry.Insert(true);
         end;
     end;

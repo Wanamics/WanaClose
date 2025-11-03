@@ -1,4 +1,4 @@
-report 87211 "wan Suggest Outstd. Receivable"
+report 87254 "wan Suggest Outstd. Receivable"
 {
     Caption = 'Suggest Outstanding Receivable';
     ProcessingOnly = true;

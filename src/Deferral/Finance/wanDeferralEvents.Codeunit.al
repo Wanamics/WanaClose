@@ -129,4 +129,12 @@ codeunit 87250 "wan Deferral Events"
         if DeferralTemplate.Get(DeferralCode) then
             IsHandled := (DeferralTemplate."No. of Periods" = 0);
     end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Deferral Utilities", OnBeforeCreateDeferralSchedule, '', false, false)]
+    local procedure OnBeforeCreateDeferralSchedule(DeferralCode: Code[10]; DeferralDocType: Integer; GenJnlTemplateName: Code[10]; GenJnlBatchName: Code[10]; DocumentType: Integer; DocumentNo: Code[20]; LineNo: Integer; AmountToDefer: Decimal; CalcMethod: Enum "Deferral Calculation Method"; var StartDate: Date; var NoOfPeriods: Integer; ApplyDeferralPercentage: Boolean; DeferralDescription: Text[100]; var AdjustStartDate: Boolean; CurrencyCode: Code[10]; var IsHandled: Boolean; var RedistributeDeferralSchedule: Boolean)
+    var
+        DeferralTemplate: Record "Deferral Template";
+    begin
+        IsHandled := DeferralTemplate.Get(DeferralCode) and (DeferralTemplate."No. of Periods" = 0);
+    end;
 }

@@ -1,4 +1,4 @@
-report 87210 "wan Suggest Payable Outstd."
+report 87253 "wan Suggest Payable Outstd."
 {
     Caption = 'Suggest Payable Outstanding';
     ProcessingOnly = true;

@@ -1,4 +1,4 @@
-pageextension 87210 "wan Recurring General Journal" extends "Recurring General Journal"
+pageextension 87250 "wan Recurring General Journal" extends "Recurring General Journal"
 {
     actions
     {
