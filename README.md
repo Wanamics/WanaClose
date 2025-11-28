@@ -1,4 +1,4 @@
-# WanaClose
+# Extension WanaClose
 Certaines opérations doivent être renouvelées à chaque arrêté comptable (ou Cut-off), qu’il s’agisse d’une fin d’exercice ou d’une situation intermédiaire.
 
 Les fonctions ci-après viennent compléter les fonctions standards proposées à cet effet.
