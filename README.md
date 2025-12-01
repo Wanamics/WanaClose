@@ -3,7 +3,7 @@ Certaines opérations doivent être renouvelées à chaque arrêté comptable (o
 
 Les fonctions ci-après viennent compléter les fonctions standards proposées à cet effet.
 
-![WanaClose](docs/assets/WanaClose.png)
+![WanaClose](images/WanaClose.png)
 
 > Ce n’est que l’une des extensions gracieusement mises à votre disposition (voir [Extensions | Wanamics](https://www.wanamics.fr/extensions-business-central/Extensions)).  
 Vous pouvez donc en disposer librement dans le cadre de la licence open source qui vous est accordée (voir [Licence Open Source | Wanamics](https://www.wanamics.fr/licence-open-source/)).
@@ -34,13 +34,13 @@ De plus, il faut tenir compte des achats hors articles (lignes de **Type** *Comp
 
 Une **Feuille abonnement** est utilisée à cet effet et permettra, lors de la validation de reprendre cette provision au premier jour de la période suivante.
 
-![Feuille abonnement](docs/assets/feuille-abonnement.png)
+![Feuille abonnement](images/feuille-abonnement.png)
 
 Outre les factures non parvenues (FNP), il est tenu compte des avoirs à recevoir (AàR ou retours fournisseurs dont l'avoir reste attendu).
 
 Une fonction similaire s’applique aux ventes pour les factures à établir (FàE ou expéditions non facturées), et les avoirs à établir (AàE ou retours clients).
 
-![Provisions](docs/assets/provisions.png)
+![Provisions](images/provisions.png)
 
 Attention : les lignes ainsi proposées ne doivent pas être validées plusieurs fois à la même date et pour la même sélection. En revanche il est possible de procéder en plusieurs sélections distinctes et validations successives, par exemple pour dissocier les transactions intragroupe.
 
@@ -60,7 +60,7 @@ Les fonctions décrites ci-après proposent une solution plus souple, et peu imp
 
 ### Feuille de saisie
 Les colonnes **Date début** et **Date fin** sont ajoutées aux feuilles de saisie Achats et Ventes :
-![Feuille de saisie date début / fin](docs/assets/feuille-debut-fin.png)
+![Feuille de saisie date début / fin](images/feuille-debut-fin.png)
 
 **Remarques**
 * La **Date début** et la **Date fin** sont indissociables.
@@ -73,24 +73,24 @@ A l’inverse, les **Date début** et **Date fin** sont incompatibles avec un au
 ### Ecritures comptables
 La consultation des écritures comptables, est complétée des colonnes **Date début** et **Date fin** (à ajouter par **Personnaliser**, pas de filtre ou de tri sur ces colonnes) :
 
-![Ecritures comptables](docs/assets/ecritures-comptables.png)
+![Ecritures comptables](images/ecritures-comptables.png)
 
 Les **Date début** et **Date fin** peuvent y être modifiées et seront prises en compte lors du prochain calcul des CCA/PCA (le **Type compta. TVA** de l’écriture doit être *Achat* ou *Vente*).
 
 ### Proposer CCA & PCA
 La feuille comptabilité est complétée d’une action **Proposer CCA & PCA** :
-![Proposer CCA PCA](docs/assets/proposer-cca-pca.png)
+![Proposer CCA PCA](images/proposer-cca-pca.png)
 
 **Remarques**
 * Pour la feuille de saisie utilisée, l’option **Copier paramètres TVA sur les lignes feuille** ne doit pas être activée.
 * La **Date comptabilisation** doit coïncider avec la fin d’une période comptable.
 
-![Feuille Closing](docs/assets/feuille-closing.png)
+![Feuille Closing](images/feuille-closing.png)
 
 ### Détail de la répartition
 Depuis une ligne de la feuille de saisie, ou depuis la consultation des écritures comptables, l’action **Ecritures CCA & PCA** permet d’afficher les écritures liées (celle d’origine ainsi que les écritures de CCA & PCA déjà comptabilisées). Cette action est inactive (grisée) s’il ne s’agit pas d’une écriture de PCA/CCA.
 
-![Ecritures CCA & PCA](docs/assets/modifier-cca-pca.png)
+![Ecritures CCA & PCA](images/modifier-cca-pca.png)
 
 ### Exemples
 
@@ -120,7 +120,7 @@ Cependant, si l’écriture d’origine concerne un partenaire inter-société, 
 Il a pour but de justifier le solde des comptes de charges et produits constatés d’avance.
 
 Il faudra donc veiller à utiliser des comptes dédiés à cet effet.
-![Etat CCA & PCA](docs/assets/etat-cca-pca.png)
+![Etat CCA & PCA](images/etat-cca-pca.png)
 
 ### Documents achats et ventes
 Les **Date début** et **Date fin** peuvent également être saisies sur les lignes de factures et avoirs (à ajouter par **Personnaliser**).
